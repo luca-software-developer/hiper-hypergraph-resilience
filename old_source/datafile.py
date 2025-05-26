@@ -1,5 +1,6 @@
 from typing import Dict, Tuple, List
-from hypernetwork import Hypernetwork
+
+from old_source.hypernetwork import Hypernetwork
 
 DATASETS = ['Restaurants-Rev', 'Music-Rev',
             'Geometry', 'NDC-classes-unique-hyperedges',

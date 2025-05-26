@@ -85,7 +85,7 @@ class Hypernetwork:
         """
         return np.sum([self.deg(node) for node in self.nodes_map.keys()]) / self.n
 
-    def avg_hyperdeg(self) -> float:
+    def avg_hyperdegree(self) -> float:
         """
         Returns the average hyperdegree of the hypernetwork.
         """
@@ -126,6 +126,6 @@ class Hypernetwork:
         """
         print(f'Order: {self.order()}')
         print(f'Size: {self.size()}')
-        print(f'Avg degree: {self.avg_deg()}')
-        print(f'Avg hyperdeg: {self.avg_hyperdeg()}')
-        print(f'Avg hyperedge size: {self.avg_hyperedge_size()}')
+        print(f'Avg degree: {self.avg_deg():.2f}')
+        print(f'Avg hyperdegree: {self.avg_hyperdegree():.2f}')
+        print(f'Avg hyperedge size: {self.avg_hyperedge_size():.2f}')

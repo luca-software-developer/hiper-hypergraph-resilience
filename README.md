@@ -1,1 +1,1 @@
-# hiper-hypergraph-resilience
+# HIPER: Hypergraph-based Investigation of Perturbation Effects and Resilience
