@@ -1,5 +1,8 @@
 # HIPER: Hypergraph-based Investigation of Perturbation Effects and Resilience
 
+![Version: 1.0.0](https://img.shields.io/badge/version-1.0.0-blue)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue)
+
 ## Overview
 
 HIPER provides optimized data structures and algorithms for hypernetwork
