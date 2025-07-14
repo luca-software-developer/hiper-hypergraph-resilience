@@ -7,7 +7,7 @@ Provides s-walk and hyperpath functionality.
 """
 
 from collections import deque
-from typing import Dict, List, Tuple, Optional
+from typing import Dict, List, Tuple, Optional, Set
 
 from hiper.core.hypernetwork import Hypernetwork
 
@@ -84,29 +84,42 @@ class HypergraphDistance:
                 target not in hypernetwork.nodes):
             return None
 
-        # BFS queue: (current_node, visited_nodes, edge_path)
-        queue = deque([(source, [source], [])])
+        # BFS queue: (current_node, visited_nodes, edge_path, last_edge_nodes)
+        queue: deque[
+            Tuple[int, List[int], List[int], Optional[Set[int]]]] = deque([
+            (source, [source], [], None)
+        ])
         visited = set()
 
         while queue:
-            current_node, visited_nodes, edge_path = queue.popleft()
+            current_node, visited_nodes, edge_path, last_edge_nodes \
+                = queue.popleft()
 
             # Create state key for cycle detection
-            state_key = (current_node, tuple(sorted(visited_nodes)))
+            state_key = (current_node, tuple(sorted(visited_nodes)),
+                         len(edge_path))
             if state_key in visited:
                 continue
             visited.add(state_key)
 
             # Explore all hyperedges containing current node
             for edge_id in hypernetwork.get_hyperedges(current_node):
+                if edge_path and edge_id == edge_path[-1]:
+                    continue
+
                 edge_nodes = set(hypernetwork.get_nodes(edge_id))
 
                 # Check s-walk condition
-                visited_set = set(visited_nodes)
-                required_intersection = min(self.s, len(visited_nodes))
-                actual_intersection = len(edge_nodes & visited_set)
+                if len(edge_path) == 0:
+                    s_walk_valid = True
+                else:
+                    if last_edge_nodes is not None:
+                        actual_intersection = len(edge_nodes & last_edge_nodes)
+                        s_walk_valid = actual_intersection >= self.s
+                    else:
+                        s_walk_valid = True
 
-                if actual_intersection < required_intersection:
+                if not s_walk_valid:
                     continue
 
                 # Explore all nodes in this hyperedge
@@ -114,10 +127,12 @@ class HypergraphDistance:
                     if next_node == target:
                         return edge_path + [edge_id]
 
+                    visited_set = set(visited_nodes)
                     if next_node not in visited_set:
                         new_visited = visited_nodes + [next_node]
                         new_path = edge_path + [edge_id]
-                        queue.append((next_node, new_visited, new_path))
+                        queue.append((next_node, new_visited, new_path,
+                                      edge_nodes.copy()))
 
         return None
 

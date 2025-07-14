@@ -3,7 +3,8 @@
 metrics package
 
 Provides resilience metrics for hypergraphs, including connectivity measures,
-redundancy coefficients, efficiency metrics, and structural integrity measures.
+redundancy coefficients, efficiency metrics, structural integrity measures,
+and comprehensive resilience analysis frameworks.
 
 The metrics package implements:
 - Hypergraph connectivity (κ(H))
@@ -15,9 +16,13 @@ The metrics package implements:
 - Hyperedge fragmentation index (HFI)
 - Centrality disruption index (CDI)
 - Entropy loss (EL)
+- Higher-order cohesion resilience (HOCR_m)
+- Largest higher-order component resilience (LHC_m)
+- Comprehensive resilience experiments with TOPSIS-based strategies
 
 These metrics enable comprehensive analysis of hypergraph resilience under
-various attack scenarios including node and hyperedge removal.
+various attack scenarios including node and hyperedge removal with both
+random and targeted strategies.
 
 Classes:
     HypergraphConnectivity: Computes minimum nodes to disconnect hypergraph
@@ -29,6 +34,11 @@ Classes:
     HyperedgeFragmentationIndex: Measures hyperedge fragmentation
     CentralityDisruptionIndex: Measures centrality distribution changes
     EntropyLoss: Measures entropy changes in distributions
+    HigherOrderCohesionMetrics: Computes HOCR_m and LHC_m metrics
+    HyperedgeTopsisRanker: TOPSIS-based ranking for hyperedges
+    ComprehensiveResilienceExperiment: Complete experimental framework
+    TopsisNodeRanker: TOPSIS-based ranking for nodes
+    ResilienceExperiment: Basic resilience experiment framework
 
 Example usage:
     from hiper.core import Hypernetwork
@@ -36,11 +46,9 @@ Example usage:
         HypergraphConnectivity,
         RedundancyCoefficient,
         SwalkEfficiency,
-        HyperedgeIntegrity,
-        AverageHyperedgeCardinality,
-        HyperedgeFragmentationIndex,
-        CentralityDisruptionIndex,
-        EntropyLoss
+        HigherOrderCohesionMetrics,
+        HyperedgeTopsisRanker,
+        ComprehensiveResilienceExperiment
     )
 
     # Create hypergraph
@@ -48,57 +56,59 @@ Example usage:
     hn.add_hyperedge(0, [1, 2, 3])
     hn.add_hyperedge(1, [2, 3, 4])
 
-    # Compute metrics
+    # Compute traditional metrics
     kappa = HypergraphConnectivity().compute(hn)
     rho = RedundancyCoefficient().compute(hn)
     efficiency = SwalkEfficiency(s=1).compute(hn)
-    hi = HyperedgeIntegrity()
-    ahc = AverageHyperedgeCardinality()
-    hfi = HyperedgeFragmentationIndex()
 
-    # Create a perturbed version for comparison
+    # Compute higher-order cohesion metrics
+    ho_metrics = HigherOrderCohesionMetrics(m=2)
+    components = ho_metrics.compute_mth_order_components(hn)
+
+    # Create perturbed version for comparison
     hn_perturbed = Hypernetwork()
-    hn_perturbed.add_hyperedge(0, [1, 2])  # Missing node 3
-    hn_perturbed.add_hyperedge(1, [2, 4])  # Missing node 3
+    hn_perturbed.add_hyperedge(0, [1, 2])
+    hn_perturbed.add_hyperedge(1, [2, 4])
 
-    # Compute integrity and fragmentation metrics
-    integrity = hi.compute(hn_perturbed, hn)
-    cardinality = ahc.compute(hn_perturbed)
-    fragmentation = hfi.compute(hn_perturbed, hn)
+    hocr = ho_metrics.compute_hocr_m(hn, hn_perturbed)
+    lhc = ho_metrics.compute_lhc_m(hn, hn_perturbed)
 
-    # Compute disruption metrics
-    cdi = CentralityDisruptionIndex(centrality_type='degree')
-    disruption = cdi.compute(hn, hn_perturbed)
-
-    el = EntropyLoss(distribution_type='node_degree')
-    entropy_loss = el.compute(hn, hn_perturbed)
+    # TOPSIS ranking for targeted attacks
+    hyperedge_ranker = HyperedgeTopsisRanker()
+    ranked_hyperedges = hyperedge_ranker.rank_hyperedges(hn)
 """
 
+from .average_hyperedge_cardinality import AverageHyperedgeCardinality
+from .centrality_disruption import CentralityDisruptionIndex
+from .comprehensive_resilience import ComprehensiveResilienceExperiment
 from .connectivity import HypergraphConnectivity, HyperedgeConnectivity
 from .distance import HypergraphDistance
+from .entropy_loss import EntropyLoss
 from .experiments import ResilienceExperiment
+from .higher_order_cohesion import HigherOrderCohesionMetrics
+from .hyperedge_fragmentation import HyperedgeFragmentationIndex
+from .hyperedge_integrity import HyperedgeIntegrity
+from .hyperedge_topsis import HyperedgeTopsisRanker
 from .redundancy import RedundancyCoefficient
 from .swalk import SwalkEfficiency
 from .topsis import TopsisNodeRanker
-from .hyperedge_integrity import HyperedgeIntegrity
-from .average_hyperedge_cardinality import AverageHyperedgeCardinality
-from .hyperedge_fragmentation import HyperedgeFragmentationIndex
-from .centrality_disruption import CentralityDisruptionIndex
-from .entropy_loss import EntropyLoss
 
 __all__ = [
     'HypergraphConnectivity',
     'HyperedgeConnectivity',
+    'HypergraphDistance',
     'RedundancyCoefficient',
     'SwalkEfficiency',
-    'HypergraphDistance',
     'TopsisNodeRanker',
     'ResilienceExperiment',
     'HyperedgeIntegrity',
-    'AverageHyperedgeCardinality',
-    'HyperedgeFragmentationIndex',
     'CentralityDisruptionIndex',
-    'EntropyLoss'
+    'HyperedgeFragmentationIndex',
+    'EntropyLoss',
+    'AverageHyperedgeCardinality',
+    'HigherOrderCohesionMetrics',
+    'HyperedgeTopsisRanker',
+    'ComprehensiveResilienceExperiment'
 ]
 
 __version__ = '1.0.0'
