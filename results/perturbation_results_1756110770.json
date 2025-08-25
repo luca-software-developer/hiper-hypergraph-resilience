@@ -1,0 +1,4188 @@
+{
+  "hypercl_20_single": {
+    "dataset": "hypercl_20",
+    "original_metrics": {
+      "order": 933.0,
+      "size": 1000.0,
+      "avg_degree": 34.21650589496249,
+      "avg_hyperedge_size": 5.685
+    },
+    "random_targeting": {
+      "1": {
+        "targets": [
+          931,
+          710,
+          85,
+          208,
+          409,
+          14,
+          498,
+          788,
+          218
+        ],
+        "n_targets": 9,
+        "final_metrics": {
+          "order": 924.0,
+          "size": 1000.0,
+          "avg_degree": 33.75757575757576,
+          "avg_hyperedge_size": 5.626
+        }
+      },
+      "2": {
+        "targets": [
+          478,
+          176,
+          137,
+          260,
+          355,
+          202,
+          437,
+          100,
+          618,
+          107,
+          247,
+          106,
+          800,
+          835,
+          465,
+          590,
+          418,
+          29
+        ],
+        "n_targets": 18,
+        "final_metrics": {
+          "order": 897.0,
+          "size": 993.0,
+          "avg_degree": 30.109253065774805,
+          "avg_hyperedge_size": 5.230614300100705
+        }
+      },
+      "5": {
+        "targets": [
+          263,
+          394,
+          156,
+          848,
+          134,
+          864,
+          461,
+          676,
+          510,
+          698,
+          194,
+          257,
+          110,
+          943,
+          842,
+          821,
+          142,
+          653,
+          93,
+          323,
+          861,
+          944,
+          199,
+          22,
+          416,
+          484,
+          706,
+          265,
+          941,
+          304,
+          772,
+          468,
+          111,
+          904,
+          937,
+          443,
+          11,
+          483,
+          398,
+          508,
+          997,
+          183,
+          546,
+          918
+        ],
+        "n_targets": 44,
+        "final_metrics": {
+          "order": 836.0,
+          "size": 976.0,
+          "avg_degree": 23.72488038277512,
+          "avg_hyperedge_size": 4.511270491803279
+        }
+      },
+      "10": {
+        "targets": [
+          472,
+          597,
+          609,
+          611,
+          886,
+          768,
+          881,
+          524,
+          593,
+          318,
+          614,
+          428,
+          640,
+          801,
+          92,
+          189,
+          403,
+          785,
+          327,
+          809,
+          837,
+          697,
+          617,
+          514,
+          669,
+          795,
+          237,
+          637,
+          25,
+          965,
+          627,
+          908,
+          253,
+          95,
+          3,
+          299,
+          291,
+          431,
+          643,
+          940,
+          559,
+          78,
+          677,
+          160,
+          8,
+          449,
+          909,
+          155,
+          596,
+          993,
+          436,
+          191,
+          905,
+          76,
+          310,
+          830,
+          556,
+          790,
+          346,
+          224,
+          901,
+          486,
+          393,
+          712,
+          147,
+          99,
+          949,
+          868,
+          33,
+          984,
+          629,
+          460,
+          857,
+          320,
+          440,
+          296,
+          714,
+          87,
+          976
+        ],
+        "n_targets": 79,
+        "final_metrics": {
+          "order": 716.0,
+          "size": 925.0,
+          "avg_degree": 15.064245810055866,
+          "avg_hyperedge_size": 3.4583783783783786
+        }
+      }
+    },
+    "topsis_targeting": {
+      "1": {
+        "targets": [
+          119,
+          507,
+          887,
+          567,
+          550,
+          47,
+          625,
+          44,
+          34
+        ],
+        "n_targets": 9,
+        "final_metrics": {
+          "order": 915.0,
+          "size": 993.0,
+          "avg_degree": 30.489617486338798,
+          "avg_hyperedge_size": 5.311178247734139
+        }
+      },
+      "2": {
+        "targets": [
+          117,
+          406,
+          269,
+          192,
+          66,
+          509,
+          998,
+          334,
+          572,
+          475,
+          675,
+          2,
+          903,
+          958,
+          458,
+          753,
+          432
+        ],
+        "n_targets": 17,
+        "final_metrics": {
+          "order": 880.0,
+          "size": 985.0,
+          "avg_degree": 25.279545454545456,
+          "avg_hyperedge_size": 4.7360406091370555
+        }
+      },
+      "5": {
+        "targets": [
+          108,
+          607,
+          423,
+          165,
+          807,
+          125,
+          13,
+          168,
+          295,
+          867,
+          0,
+          61,
+          922,
+          469,
+          62,
+          521,
+          827,
+          557,
+          542,
+          252,
+          10,
+          246,
+          547,
+          381,
+          256,
+          128,
+          133,
+          445,
+          513,
+          348,
+          57,
+          292,
+          679,
+          375,
+          713,
+          293,
+          112,
+          854,
+          755,
+          90,
+          588
+        ],
+        "n_targets": 41,
+        "final_metrics": {
+          "order": 795.0,
+          "size": 941.0,
+          "avg_degree": 16.42012578616352,
+          "avg_hyperedge_size": 3.7417640807651433
+        }
+      },
+      "10": {
+        "targets": [
+          733,
+          197,
+          971,
+          55,
+          594,
+          529,
+          390,
+          544,
+          124,
+          412,
+          935,
+          222,
+          459,
+          519,
+          281,
+          308,
+          630,
+          951,
+          575,
+          103,
+          962,
+          996,
+          411,
+          991,
+          981,
+          46,
+          641,
+          174,
+          744,
+          661,
+          319,
+          666,
+          860,
+          476,
+          371,
+          911,
+          118,
+          487,
+          580,
+          35,
+          582,
+          23,
+          205,
+          79,
+          24,
+          515,
+          930,
+          186,
+          37,
+          204,
+          983,
+          574,
+          19,
+          973,
+          462,
+          530,
+          816,
+          648,
+          283,
+          549,
+          500,
+          841,
+          377,
+          477,
+          805,
+          600,
+          400,
+          307,
+          234,
+          82,
+          42
+        ],
+        "n_targets": 71,
+        "final_metrics": {
+          "order": 645.0,
+          "size": 858.0,
+          "avg_degree": 9.032558139534883,
+          "avg_hyperedge_size": 2.7062937062937062
+        }
+      }
+    }
+  },
+  "hypercl_20_multiple": {
+    "dataset": "hypercl_20",
+    "original_metrics": {
+      "order": 645.0,
+      "size": 858.0,
+      "avg_degree": 9.032558139534883,
+      "avg_hyperedge_size": 2.7062937062937062
+    },
+    "sequences": {
+      "2": {
+        "k": 2,
+        "step_size": 2,
+        "targets": [
+          796,
+          766
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 645.0,
+              "size": 858.0,
+              "avg_degree": 9.032558139534883,
+              "avg_hyperedge_size": 2.7062937062937062
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 2,
+            "metrics": {
+              "order": 643.0,
+              "size": 858.0,
+              "avg_degree": 9.026438569206842,
+              "avg_hyperedge_size": 2.699300699300699
+            }
+          }
+        ],
+        "total_attacks": 2
+      },
+      "5": {
+        "k": 5,
+        "step_size": 2,
+        "targets": [
+          429,
+          242,
+          977,
+          326,
+          558
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 643.0,
+              "size": 858.0,
+              "avg_degree": 9.026438569206842,
+              "avg_hyperedge_size": 2.699300699300699
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 2,
+            "metrics": {
+              "order": 641.0,
+              "size": 858.0,
+              "avg_degree": 9.004680187207489,
+              "avg_hyperedge_size": 2.6934731934731935
+            }
+          },
+          {
+            "step": 2,
+            "attacks_executed": 4,
+            "metrics": {
+              "order": 639.0,
+              "size": 858.0,
+              "avg_degree": 8.982785602503913,
+              "avg_hyperedge_size": 2.684149184149184
+            }
+          },
+          {
+            "step": 3,
+            "attacks_executed": 5,
+            "metrics": {
+              "order": 638.0,
+              "size": 858.0,
+              "avg_degree": 8.943573667711599,
+              "avg_hyperedge_size": 2.674825174825175
+            }
+          }
+        ],
+        "total_attacks": 5
+      },
+      "10": {
+        "k": 10,
+        "step_size": 2,
+        "targets": [
+          660,
+          579,
+          882,
+          503,
+          708,
+          717,
+          528,
+          6,
+          694,
+          649
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 638.0,
+              "size": 858.0,
+              "avg_degree": 8.943573667711599,
+              "avg_hyperedge_size": 2.674825174825175
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 2,
+            "metrics": {
+              "order": 636.0,
+              "size": 858.0,
+              "avg_degree": 8.91194968553459,
+              "avg_hyperedge_size": 2.6655011655011656
+            }
+          },
+          {
+            "step": 2,
+            "attacks_executed": 4,
+            "metrics": {
+              "order": 634.0,
+              "size": 857.0,
+              "avg_degree": 8.899053627760253,
+              "avg_hyperedge_size": 2.661610268378063
+            }
+          },
+          {
+            "step": 3,
+            "attacks_executed": 6,
+            "metrics": {
+              "order": 632.0,
+              "size": 857.0,
+              "avg_degree": 8.870253164556962,
+              "avg_hyperedge_size": 2.6534422403733955
+            }
+          },
+          {
+            "step": 4,
+            "attacks_executed": 8,
+            "metrics": {
+              "order": 630.0,
+              "size": 857.0,
+              "avg_degree": 8.784126984126985,
+              "avg_hyperedge_size": 2.6382730455075847
+            }
+          },
+          {
+            "step": 5,
+            "attacks_executed": 10,
+            "metrics": {
+              "order": 628.0,
+              "size": 855.0,
+              "avg_degree": 8.662420382165605,
+              "avg_hyperedge_size": 2.623391812865497
+            }
+          }
+        ],
+        "total_attacks": 10
+      },
+      "25": {
+        "k": 25,
+        "step_size": 5,
+        "targets": [
+          317,
+          817,
+          447,
+          696,
+          783,
+          743,
+          608,
+          956,
+          647,
+          340,
+          444,
+          75,
+          30,
+          60,
+          83,
+          214,
+          173,
+          407,
+          628,
+          262,
+          919,
+          555,
+          233,
+          167,
+          456
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 628.0,
+              "size": 855.0,
+              "avg_degree": 8.662420382165605,
+              "avg_hyperedge_size": 2.623391812865497
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 5,
+            "metrics": {
+              "order": 623.0,
+              "size": 852.0,
+              "avg_degree": 8.507223113964686,
+              "avg_hyperedge_size": 2.5985915492957745
+            }
+          },
+          {
+            "step": 2,
+            "attacks_executed": 10,
+            "metrics": {
+              "order": 618.0,
+              "size": 848.0,
+              "avg_degree": 8.281553398058252,
+              "avg_hyperedge_size": 2.563679245283019
+            }
+          },
+          {
+            "step": 3,
+            "attacks_executed": 15,
+            "metrics": {
+              "order": 613.0,
+              "size": 845.0,
+              "avg_degree": 8.055464926590538,
+              "avg_hyperedge_size": 2.523076923076923
+            }
+          },
+          {
+            "step": 4,
+            "attacks_executed": 20,
+            "metrics": {
+              "order": 608.0,
+              "size": 841.0,
+              "avg_degree": 7.7006578947368425,
+              "avg_hyperedge_size": 2.4827586206896552
+            }
+          },
+          {
+            "step": 5,
+            "attacks_executed": 25,
+            "metrics": {
+              "order": 603.0,
+              "size": 836.0,
+              "avg_degree": 7.366500829187396,
+              "avg_hyperedge_size": 2.437799043062201
+            }
+          }
+        ],
+        "total_attacks": 25
+      },
+      "50": {
+        "k": 50,
+        "step_size": 5,
+        "targets": [
+          439,
+          828,
+          506,
+          797,
+          900,
+          209,
+          913,
+          426,
+          655,
+          312,
+          685,
+          792,
+          49,
+          967,
+          650,
+          264,
+          374,
+          834,
+          213,
+          616,
+          604,
+          543,
+          652,
+          540,
+          902,
+          494,
+          325,
+          665,
+          838,
+          302,
+          803,
+          496,
+          303,
+          31,
+          969,
+          771,
+          826,
+          992,
+          874,
+          410,
+          361,
+          684,
+          321,
+          488,
+          39,
+          718,
+          70,
+          114,
+          636,
+          754
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 603.0,
+              "size": 836.0,
+              "avg_degree": 7.366500829187396,
+              "avg_hyperedge_size": 2.437799043062201
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 5,
+            "metrics": {
+              "order": 598.0,
+              "size": 835.0,
+              "avg_degree": 7.331103678929765,
+              "avg_hyperedge_size": 2.421556886227545
+            }
+          },
+          {
+            "step": 2,
+            "attacks_executed": 10,
+            "metrics": {
+              "order": 593.0,
+              "size": 831.0,
+              "avg_degree": 7.190556492411467,
+              "avg_hyperedge_size": 2.3971119133574006
+            }
+          },
+          {
+            "step": 3,
+            "attacks_executed": 15,
+            "metrics": {
+              "order": 588.0,
+              "size": 823.0,
+              "avg_degree": 7.01360544217687,
+              "avg_hyperedge_size": 2.376670716889429
+            }
+          },
+          {
+            "step": 4,
+            "attacks_executed": 20,
+            "metrics": {
+              "order": 583.0,
+              "size": 816.0,
+              "avg_degree": 6.775300171526586,
+              "avg_hyperedge_size": 2.3419117647058822
+            }
+          },
+          {
+            "step": 5,
+            "attacks_executed": 25,
+            "metrics": {
+              "order": 578.0,
+              "size": 813.0,
+              "avg_degree": 6.41522491349481,
+              "avg_hyperedge_size": 2.2952029520295203
+            }
+          },
+          {
+            "step": 6,
+            "attacks_executed": 30,
+            "metrics": {
+              "order": 573.0,
+              "size": 811.0,
+              "avg_degree": 6.303664921465969,
+              "avg_hyperedge_size": 2.2737361282367448
+            }
+          },
+          {
+            "step": 7,
+            "attacks_executed": 35,
+            "metrics": {
+              "order": 568.0,
+              "size": 807.0,
+              "avg_degree": 6.098591549295775,
+              "avg_hyperedge_size": 2.23543990086741
+            }
+          },
+          {
+            "step": 8,
+            "attacks_executed": 40,
+            "metrics": {
+              "order": 563.0,
+              "size": 802.0,
+              "avg_degree": 5.91829484902309,
+              "avg_hyperedge_size": 2.2032418952618453
+            }
+          },
+          {
+            "step": 9,
+            "attacks_executed": 45,
+            "metrics": {
+              "order": 558.0,
+              "size": 801.0,
+              "avg_degree": 5.724014336917563,
+              "avg_hyperedge_size": 2.168539325842697
+            }
+          },
+          {
+            "step": 10,
+            "attacks_executed": 50,
+            "metrics": {
+              "order": 553.0,
+              "size": 797.0,
+              "avg_degree": 5.500904159132007,
+              "avg_hyperedge_size": 2.1267252195734003
+            }
+          }
+        ],
+        "total_attacks": 50
+      },
+      "100": {
+        "k": 100,
+        "step_size": 10,
+        "targets": [
+          419,
+          306,
+          433,
+          695,
+          942,
+          924,
+          120,
+          219,
+          98,
+          961,
+          873,
+          987,
+          892,
+          778,
+          814,
+          770,
+          45,
+          157,
+          804,
+          645,
+          364,
+          846,
+          518,
+          682,
+          705,
+          413,
+          162,
+          980,
+          250,
+          776,
+          193,
+          268,
+          894,
+          692,
+          822,
+          823,
+          634,
+          77,
+          184,
+          601,
+          877,
+          615,
+          215,
+          388,
+          526,
+          883,
+          229,
+          104,
+          638,
+          89,
+          761,
+          657,
+          164,
+          806,
+          522,
+          386,
+          671,
+          149,
+          581,
+          434,
+          201,
+          280,
+          880,
+          548,
+          859,
+          757,
+          27,
+          402,
+          651,
+          527,
+          359,
+          284,
+          818,
+          278,
+          102,
+          358,
+          482,
+          511,
+          123,
+          972,
+          626,
+          642,
+          851,
+          366,
+          365,
+          172,
+          704,
+          339,
+          914,
+          275,
+          716,
+          159,
+          490,
+          852,
+          545,
+          633,
+          879,
+          779,
+          565,
+          397
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 553.0,
+              "size": 797.0,
+              "avg_degree": 5.500904159132007,
+              "avg_hyperedge_size": 2.1267252195734003
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 10,
+            "metrics": {
+              "order": 543.0,
+              "size": 790.0,
+              "avg_degree": 5.39963167587477,
+              "avg_hyperedge_size": 2.1
+            }
+          },
+          {
+            "step": 2,
+            "attacks_executed": 20,
+            "metrics": {
+              "order": 533.0,
+              "size": 784.0,
+              "avg_degree": 5.264540337711069,
+              "avg_hyperedge_size": 2.0676020408163267
+            }
+          },
+          {
+            "step": 3,
+            "attacks_executed": 30,
+            "metrics": {
+              "order": 523.0,
+              "size": 772.0,
+              "avg_degree": 5.009560229445507,
+              "avg_hyperedge_size": 2.022020725388601
+            }
+          },
+          {
+            "step": 4,
+            "attacks_executed": 40,
+            "metrics": {
+              "order": 513.0,
+              "size": 752.0,
+              "avg_degree": 4.803118908382066,
+              "avg_hyperedge_size": 1.9920212765957446
+            }
+          },
+          {
+            "step": 5,
+            "attacks_executed": 50,
+            "metrics": {
+              "order": 503.0,
+              "size": 740.0,
+              "avg_degree": 4.405566600397615,
+              "avg_hyperedge_size": 1.9324324324324325
+            }
+          },
+          {
+            "step": 6,
+            "attacks_executed": 60,
+            "metrics": {
+              "order": 493.0,
+              "size": 723.0,
+              "avg_degree": 4.174442190669371,
+              "avg_hyperedge_size": 1.8893499308437067
+            }
+          },
+          {
+            "step": 7,
+            "attacks_executed": 70,
+            "metrics": {
+              "order": 483.0,
+              "size": 710.0,
+              "avg_degree": 3.9420289855072466,
+              "avg_hyperedge_size": 1.856338028169014
+            }
+          },
+          {
+            "step": 8,
+            "attacks_executed": 80,
+            "metrics": {
+              "order": 473.0,
+              "size": 697.0,
+              "avg_degree": 3.632135306553911,
+              "avg_hyperedge_size": 1.8091822094691534
+            }
+          },
+          {
+            "step": 9,
+            "attacks_executed": 90,
+            "metrics": {
+              "order": 463.0,
+              "size": 688.0,
+              "avg_degree": 3.4384449244060473,
+              "avg_hyperedge_size": 1.760174418604651
+            }
+          },
+          {
+            "step": 10,
+            "attacks_executed": 100,
+            "metrics": {
+              "order": 453.0,
+              "size": 677.0,
+              "avg_degree": 3.1699779249448126,
+              "avg_hyperedge_size": 1.7163958641063515
+            }
+          }
+        ],
+        "total_attacks": 100
+      }
+    }
+  },
+  "hypercl_21_single": {
+    "dataset": "hypercl_21",
+    "original_metrics": {
+      "order": 923.0,
+      "size": 1000.0,
+      "avg_degree": 32.29469122426869,
+      "avg_hyperedge_size": 5.445
+    },
+    "random_targeting": {
+      "1": {
+        "targets": [
+          841,
+          977,
+          427,
+          179,
+          138,
+          78,
+          336,
+          537,
+          153
+        ],
+        "n_targets": 9,
+        "final_metrics": {
+          "order": 914.0,
+          "size": 999.0,
+          "avg_degree": 32.078774617067836,
+          "avg_hyperedge_size": 5.405405405405405
+        }
+      },
+      "2": {
+        "targets": [
+          933,
+          975,
+          207,
+          691,
+          235,
+          533,
+          166,
+          855,
+          650,
+          130,
+          453,
+          184,
+          279,
+          723,
+          904,
+          827,
+          419,
+          621
+        ],
+        "n_targets": 18,
+        "final_metrics": {
+          "order": 887.0,
+          "size": 990.0,
+          "avg_degree": 28.29086809470124,
+          "avg_hyperedge_size": 5.0
+        }
+      },
+      "5": {
+        "targets": [
+          980,
+          99,
+          794,
+          349,
+          475,
+          381,
+          922,
+          177,
+          267,
+          731,
+          618,
+          387,
+          770,
+          945,
+          771,
+          888,
+          647,
+          218,
+          976,
+          472,
+          402,
+          981,
+          167,
+          928,
+          198,
+          645,
+          968,
+          860,
+          156,
+          828,
+          539,
+          586,
+          15,
+          857,
+          685,
+          29,
+          178,
+          836,
+          773,
+          557,
+          578,
+          125,
+          625
+        ],
+        "n_targets": 43,
+        "final_metrics": {
+          "order": 827.0,
+          "size": 967.0,
+          "avg_degree": 22.471584038694076,
+          "avg_hyperedge_size": 4.377456049638056
+        }
+      },
+      "10": {
+        "targets": [
+          660,
+          214,
+          897,
+          201,
+          974,
+          737,
+          324,
+          907,
+          909,
+          874,
+          36,
+          320,
+          666,
+          414,
+          100,
+          786,
+          350,
+          8,
+          116,
+          802,
+          227,
+          41,
+          844,
+          936,
+          449,
+          581,
+          86,
+          819,
+          71,
+          223,
+          924,
+          593,
+          697,
+          638,
+          572,
+          582,
+          224,
+          872,
+          421,
+          176,
+          220,
+          425,
+          983,
+          512,
+          6,
+          838,
+          14,
+          826,
+          347,
+          824,
+          734,
+          111,
+          134,
+          758,
+          212,
+          94,
+          117,
+          718,
+          867,
+          881,
+          927,
+          264,
+          110,
+          183,
+          544,
+          154,
+          617,
+          368,
+          560,
+          517,
+          170,
+          104,
+          804,
+          128,
+          574,
+          531,
+          594,
+          798
+        ],
+        "n_targets": 78,
+        "final_metrics": {
+          "order": 708.0,
+          "size": 915.0,
+          "avg_degree": 13.954802259887005,
+          "avg_hyperedge_size": 3.3300546448087434
+        }
+      }
+    },
+    "topsis_targeting": {
+      "1": {
+        "targets": [
+          58,
+          151,
+          727,
+          115,
+          408,
+          107,
+          724,
+          615,
+          548
+        ],
+        "n_targets": 9,
+        "final_metrics": {
+          "order": 905.0,
+          "size": 992.0,
+          "avg_degree": 28.731491712707182,
+          "avg_hyperedge_size": 5.080645161290323
+        }
+      },
+      "2": {
+        "targets": [
+          268,
+          44,
+          777,
+          352,
+          251,
+          613,
+          454,
+          139,
+          992,
+          552,
+          186,
+          443,
+          809,
+          497,
+          774,
+          124,
+          155
+        ],
+        "n_targets": 17,
+        "final_metrics": {
+          "order": 870.0,
+          "size": 979.0,
+          "avg_degree": 23.751724137931035,
+          "avg_hyperedge_size": 4.560776302349336
+        }
+      },
+      "5": {
+        "targets": [
+          377,
+          934,
+          259,
+          783,
+          875,
+          611,
+          850,
+          168,
+          311,
+          620,
+          559,
+          316,
+          847,
+          903,
+          671,
+          619,
+          59,
+          534,
+          478,
+          589,
+          470,
+          488,
+          772,
+          595,
+          309,
+          458,
+          147,
+          149,
+          705,
+          756,
+          657,
+          1,
+          310,
+          766,
+          602,
+          477,
+          716,
+          192,
+          74,
+          426,
+          743
+        ],
+        "n_targets": 41,
+        "final_metrics": {
+          "order": 786.0,
+          "size": 939.0,
+          "avg_degree": 15.745547073791348,
+          "avg_hyperedge_size": 3.647497337593184
+        }
+      },
+      "10": {
+        "targets": [
+          707,
+          389,
+          146,
+          524,
+          505,
+          232,
+          492,
+          676,
+          829,
+          993,
+          664,
+          348,
+          885,
+          103,
+          254,
+          209,
+          202,
+          680,
+          39,
+          159,
+          967,
+          372,
+          749,
+          733,
+          748,
+          501,
+          230,
+          739,
+          568,
+          255,
+          409,
+          812,
+          898,
+          656,
+          991,
+          817,
+          583,
+          608,
+          499,
+          47,
+          21,
+          923,
+          630,
+          833,
+          464,
+          521,
+          815,
+          342,
+          195,
+          294,
+          710,
+          596,
+          704,
+          270,
+          525,
+          740,
+          171,
+          19,
+          359,
+          317,
+          862,
+          661,
+          580,
+          82,
+          376,
+          987,
+          979,
+          948,
+          600,
+          738
+        ],
+        "n_targets": 70,
+        "final_metrics": {
+          "order": 638.0,
+          "size": 860.0,
+          "avg_degree": 8.463949843260188,
+          "avg_hyperedge_size": 2.630232558139535
+        }
+      }
+    }
+  },
+  "hypercl_21_multiple": {
+    "dataset": "hypercl_21",
+    "original_metrics": {
+      "order": 638.0,
+      "size": 860.0,
+      "avg_degree": 8.463949843260188,
+      "avg_hyperedge_size": 2.630232558139535
+    },
+    "sequences": {
+      "2": {
+        "k": 2,
+        "step_size": 2,
+        "targets": [
+          703,
+          132
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 638.0,
+              "size": 860.0,
+              "avg_degree": 8.463949843260188,
+              "avg_hyperedge_size": 2.630232558139535
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 2,
+            "metrics": {
+              "order": 636.0,
+              "size": 860.0,
+              "avg_degree": 8.421383647798741,
+              "avg_hyperedge_size": 2.6209302325581394
+            }
+          }
+        ],
+        "total_attacks": 2
+      },
+      "5": {
+        "k": 5,
+        "step_size": 2,
+        "targets": [
+          140,
+          123,
+          52,
+          343,
+          746
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 636.0,
+              "size": 860.0,
+              "avg_degree": 8.421383647798741,
+              "avg_hyperedge_size": 2.6209302325581394
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 2,
+            "metrics": {
+              "order": 634.0,
+              "size": 859.0,
+              "avg_degree": 8.419558359621451,
+              "avg_hyperedge_size": 2.6181606519208382
+            }
+          },
+          {
+            "step": 2,
+            "attacks_executed": 4,
+            "metrics": {
+              "order": 632.0,
+              "size": 859.0,
+              "avg_degree": 8.389240506329115,
+              "avg_hyperedge_size": 2.610011641443539
+            }
+          },
+          {
+            "step": 3,
+            "attacks_executed": 5,
+            "metrics": {
+              "order": 631.0,
+              "size": 859.0,
+              "avg_degree": 8.370839936608558,
+              "avg_hyperedge_size": 2.6030267753201395
+            }
+          }
+        ],
+        "total_attacks": 5
+      },
+      "10": {
+        "k": 10,
+        "step_size": 2,
+        "targets": [
+          439,
+          364,
+          763,
+          289,
+          686,
+          38,
+          165,
+          864,
+          627,
+          982
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 631.0,
+              "size": 859.0,
+              "avg_degree": 8.370839936608558,
+              "avg_hyperedge_size": 2.6030267753201395
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 2,
+            "metrics": {
+              "order": 629.0,
+              "size": 858.0,
+              "avg_degree": 8.308426073131956,
+              "avg_hyperedge_size": 2.590909090909091
+            }
+          },
+          {
+            "step": 2,
+            "attacks_executed": 4,
+            "metrics": {
+              "order": 627.0,
+              "size": 856.0,
+              "avg_degree": 8.226475279106857,
+              "avg_hyperedge_size": 2.578271028037383
+            }
+          },
+          {
+            "step": 3,
+            "attacks_executed": 6,
+            "metrics": {
+              "order": 625.0,
+              "size": 855.0,
+              "avg_degree": 8.1728,
+              "avg_hyperedge_size": 2.568421052631579
+            }
+          },
+          {
+            "step": 4,
+            "attacks_executed": 8,
+            "metrics": {
+              "order": 623.0,
+              "size": 855.0,
+              "avg_degree": 8.141252006420546,
+              "avg_hyperedge_size": 2.55906432748538
+            }
+          },
+          {
+            "step": 5,
+            "attacks_executed": 10,
+            "metrics": {
+              "order": 621.0,
+              "size": 853.0,
+              "avg_degree": 8.096618357487923,
+              "avg_hyperedge_size": 2.553341148886284
+            }
+          }
+        ],
+        "total_attacks": 10
+      },
+      "25": {
+        "k": 25,
+        "step_size": 5,
+        "targets": [
+          751,
+          506,
+          622,
+          243,
+          752,
+          515,
+          412,
+          187,
+          851,
+          526,
+          890,
+          670,
+          699,
+          868,
+          10,
+          64,
+          234,
+          334,
+          378,
+          609,
+          536,
+          65,
+          374,
+          486,
+          984
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 621.0,
+              "size": 853.0,
+              "avg_degree": 8.096618357487923,
+              "avg_hyperedge_size": 2.553341148886284
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 5,
+            "metrics": {
+              "order": 616.0,
+              "size": 851.0,
+              "avg_degree": 8.042207792207792,
+              "avg_hyperedge_size": 2.538190364277321
+            }
+          },
+          {
+            "step": 2,
+            "attacks_executed": 10,
+            "metrics": {
+              "order": 611.0,
+              "size": 846.0,
+              "avg_degree": 7.957446808510638,
+              "avg_hyperedge_size": 2.521276595744681
+            }
+          },
+          {
+            "step": 3,
+            "attacks_executed": 15,
+            "metrics": {
+              "order": 606.0,
+              "size": 844.0,
+              "avg_degree": 7.792079207920792,
+              "avg_hyperedge_size": 2.495260663507109
+            }
+          },
+          {
+            "step": 4,
+            "attacks_executed": 20,
+            "metrics": {
+              "order": 601.0,
+              "size": 841.0,
+              "avg_degree": 7.560732113144759,
+              "avg_hyperedge_size": 2.460166468489893
+            }
+          },
+          {
+            "step": 5,
+            "attacks_executed": 25,
+            "metrics": {
+              "order": 596.0,
+              "size": 840.0,
+              "avg_degree": 7.429530201342282,
+              "avg_hyperedge_size": 2.432142857142857
+            }
+          }
+        ],
+        "total_attacks": 25
+      },
+      "50": {
+        "k": 50,
+        "step_size": 5,
+        "targets": [
+          98,
+          566,
+          598,
+          652,
+          902,
+          315,
+          37,
+          886,
+          631,
+          822,
+          711,
+          252,
+          114,
+          62,
+          764,
+          811,
+          172,
+          514,
+          938,
+          129,
+          262,
+          210,
+          887,
+          180,
+          228,
+          757,
+          966,
+          708,
+          355,
+          523,
+          383,
+          744,
+          651,
+          61,
+          415,
+          726,
+          45,
+          483,
+          882,
+          50,
+          624,
+          199,
+          649,
+          75,
+          20,
+          325,
+          188,
+          360,
+          89,
+          28
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 596.0,
+              "size": 840.0,
+              "avg_degree": 7.429530201342282,
+              "avg_hyperedge_size": 2.432142857142857
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 5,
+            "metrics": {
+              "order": 591.0,
+              "size": 837.0,
+              "avg_degree": 7.363790186125211,
+              "avg_hyperedge_size": 2.4205495818399045
+            }
+          },
+          {
+            "step": 2,
+            "attacks_executed": 10,
+            "metrics": {
+              "order": 586.0,
+              "size": 837.0,
+              "avg_degree": 7.290102389078498,
+              "avg_hyperedge_size": 2.3966547192353644
+            }
+          },
+          {
+            "step": 3,
+            "attacks_executed": 15,
+            "metrics": {
+              "order": 581.0,
+              "size": 835.0,
+              "avg_degree": 7.094664371772805,
+              "avg_hyperedge_size": 2.367664670658683
+            }
+          },
+          {
+            "step": 4,
+            "attacks_executed": 20,
+            "metrics": {
+              "order": 576.0,
+              "size": 832.0,
+              "avg_degree": 6.895833333333333,
+              "avg_hyperedge_size": 2.3365384615384617
+            }
+          },
+          {
+            "step": 5,
+            "attacks_executed": 25,
+            "metrics": {
+              "order": 571.0,
+              "size": 829.0,
+              "avg_degree": 6.739054290718038,
+              "avg_hyperedge_size": 2.310012062726176
+            }
+          },
+          {
+            "step": 6,
+            "attacks_executed": 30,
+            "metrics": {
+              "order": 566.0,
+              "size": 825.0,
+              "avg_degree": 6.607773851590106,
+              "avg_hyperedge_size": 2.2884848484848486
+            }
+          },
+          {
+            "step": 7,
+            "attacks_executed": 35,
+            "metrics": {
+              "order": 561.0,
+              "size": 817.0,
+              "avg_degree": 6.413547237076648,
+              "avg_hyperedge_size": 2.2607099143206852
+            }
+          },
+          {
+            "step": 8,
+            "attacks_executed": 40,
+            "metrics": {
+              "order": 556.0,
+              "size": 812.0,
+              "avg_degree": 6.255395683453237,
+              "avg_hyperedge_size": 2.2389162561576357
+            }
+          },
+          {
+            "step": 9,
+            "attacks_executed": 45,
+            "metrics": {
+              "order": 551.0,
+              "size": 808.0,
+              "avg_degree": 6.0653357531760435,
+              "avg_hyperedge_size": 2.2042079207920793
+            }
+          },
+          {
+            "step": 10,
+            "attacks_executed": 50,
+            "metrics": {
+              "order": 546.0,
+              "size": 800.0,
+              "avg_degree": 5.956043956043956,
+              "avg_hyperedge_size": 2.18625
+            }
+          }
+        ],
+        "total_attacks": 50
+      },
+      "100": {
+        "k": 100,
+        "step_size": 10,
+        "targets": [
+          542,
+          970,
+          416,
+          211,
+          736,
+          653,
+          799,
+          297,
+          491,
+          895,
+          662,
+          590,
+          796,
+          689,
+          500,
+          643,
+          913,
+          2,
+          244,
+          706,
+          77,
+          550,
+          494,
+          513,
+          76,
+          789,
+          112,
+          937,
+          247,
+          725,
+          502,
+          306,
+          683,
+          939,
+          469,
+          787,
+          396,
+          398,
+          999,
+          665,
+          282,
+          236,
+          695,
+          365,
+          68,
+          135,
+          241,
+          690,
+          576,
+          863,
+          896,
+          728,
+          818,
+          503,
+          914,
+          899,
+          290,
+          832,
+          173,
+          721,
+          9,
+          340,
+          694,
+          407,
+          969,
+          940,
+          451,
+          375,
+          935,
+          852,
+          678,
+          732,
+          956,
+          274,
+          386,
+          271,
+          358,
+          96,
+          272,
+          277,
+          174,
+          843,
+          88,
+          668,
+          761,
+          420,
+          747,
+          319,
+          951,
+          118,
+          23,
+          63,
+          575,
+          565,
+          91,
+          72,
+          839,
+          487,
+          769,
+          265
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 546.0,
+              "size": 800.0,
+              "avg_degree": 5.956043956043956,
+              "avg_hyperedge_size": 2.18625
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 10,
+            "metrics": {
+              "order": 536.0,
+              "size": 792.0,
+              "avg_degree": 5.876865671641791,
+              "avg_hyperedge_size": 2.1565656565656566
+            }
+          },
+          {
+            "step": 2,
+            "attacks_executed": 20,
+            "metrics": {
+              "order": 526.0,
+              "size": 778.0,
+              "avg_degree": 5.756653992395437,
+              "avg_hyperedge_size": 2.140102827763496
+            }
+          },
+          {
+            "step": 3,
+            "attacks_executed": 30,
+            "metrics": {
+              "order": 516.0,
+              "size": 770.0,
+              "avg_degree": 5.515503875968992,
+              "avg_hyperedge_size": 2.102597402597403
+            }
+          },
+          {
+            "step": 4,
+            "attacks_executed": 40,
+            "metrics": {
+              "order": 506.0,
+              "size": 761.0,
+              "avg_degree": 5.142292490118577,
+              "avg_hyperedge_size": 2.0459921156373193
+            }
+          },
+          {
+            "step": 5,
+            "attacks_executed": 50,
+            "metrics": {
+              "order": 496.0,
+              "size": 747.0,
+              "avg_degree": 4.866935483870968,
+              "avg_hyperedge_size": 2.0066934404283803
+            }
+          },
+          {
+            "step": 6,
+            "attacks_executed": 60,
+            "metrics": {
+              "order": 486.0,
+              "size": 737.0,
+              "avg_degree": 4.617283950617284,
+              "avg_hyperedge_size": 1.9633649932157395
+            }
+          },
+          {
+            "step": 7,
+            "attacks_executed": 70,
+            "metrics": {
+              "order": 476.0,
+              "size": 724.0,
+              "avg_degree": 4.281512605042017,
+              "avg_hyperedge_size": 1.9129834254143647
+            }
+          },
+          {
+            "step": 8,
+            "attacks_executed": 80,
+            "metrics": {
+              "order": 466.0,
+              "size": 702.0,
+              "avg_degree": 4.051502145922747,
+              "avg_hyperedge_size": 1.8874643874643875
+            }
+          },
+          {
+            "step": 9,
+            "attacks_executed": 90,
+            "metrics": {
+              "order": 456.0,
+              "size": 691.0,
+              "avg_degree": 3.780701754385965,
+              "avg_hyperedge_size": 1.8393632416787264
+            }
+          },
+          {
+            "step": 10,
+            "attacks_executed": 100,
+            "metrics": {
+              "order": 446.0,
+              "size": 679.0,
+              "avg_degree": 3.5201793721973096,
+              "avg_hyperedge_size": 1.7864506627393226
+            }
+          }
+        ],
+        "total_attacks": 100
+      }
+    }
+  },
+  "hypercl_23_single": {
+    "dataset": "hypercl_23",
+    "original_metrics": {
+      "order": 952.0,
+      "size": 1000.0,
+      "avg_degree": 32.08403361344538,
+      "avg_hyperedge_size": 5.506
+    },
+    "random_targeting": {
+      "1": {
+        "targets": [
+          891,
+          390,
+          966,
+          968,
+          744,
+          119,
+          696,
+          991,
+          322
+        ],
+        "n_targets": 9,
+        "final_metrics": {
+          "order": 943.0,
+          "size": 999.0,
+          "avg_degree": 32.01272534464475,
+          "avg_hyperedge_size": 5.4774774774774775
+        }
+      },
+      "2": {
+        "targets": [
+          391,
+          878,
+          241,
+          462,
+          468,
+          73,
+          559,
+          944,
+          578,
+          223,
+          521,
+          914,
+          393,
+          761,
+          422,
+          394,
+          863,
+          620
+        ],
+        "n_targets": 18,
+        "final_metrics": {
+          "order": 916.0,
+          "size": 987.0,
+          "avg_degree": 28.37991266375546,
+          "avg_hyperedge_size": 5.092198581560283
+        }
+      },
+      "5": {
+        "targets": [
+          497,
+          52,
+          72,
+          445,
+          2,
+          793,
+          454,
+          698,
+          718,
+          457,
+          704,
+          613,
+          755,
+          897,
+          529,
+          818,
+          496,
+          982,
+          634,
+          513,
+          575,
+          47,
+          172,
+          503,
+          655,
+          7,
+          997,
+          484,
+          507,
+          504,
+          506,
+          570,
+          685,
+          455,
+          350,
+          730,
+          269,
+          768,
+          618,
+          702,
+          417,
+          879,
+          603,
+          988
+        ],
+        "n_targets": 44,
+        "final_metrics": {
+          "order": 854.0,
+          "size": 969.0,
+          "avg_degree": 22.037470725995316,
+          "avg_hyperedge_size": 4.378740970072239
+        }
+      },
+      "10": {
+        "targets": [
+          260,
+          883,
+          388,
+          406,
+          857,
+          447,
+          265,
+          438,
+          46,
+          545,
+          204,
+          494,
+          873,
+          258,
+          918,
+          399,
+          335,
+          753,
+          331,
+          679,
+          724,
+          659,
+          689,
+          905,
+          466,
+          488,
+          365,
+          739,
+          449,
+          59,
+          551,
+          316,
+          985,
+          157,
+          189,
+          673,
+          565,
+          333,
+          284,
+          385,
+          211,
+          518,
+          716,
+          643,
+          282,
+          235,
+          808,
+          395,
+          375,
+          112,
+          839,
+          301,
+          15,
+          163,
+          20,
+          841,
+          183,
+          337,
+          151,
+          688,
+          969,
+          719,
+          942,
+          571,
+          695,
+          118,
+          360,
+          760,
+          419,
+          4,
+          202,
+          250,
+          777,
+          528,
+          734,
+          181,
+          781,
+          247,
+          221,
+          615,
+          10
+        ],
+        "n_targets": 81,
+        "final_metrics": {
+          "order": 731.0,
+          "size": 932.0,
+          "avg_degree": 14.019151846785226,
+          "avg_hyperedge_size": 3.351931330472103
+        }
+      }
+    },
+    "topsis_targeting": {
+      "1": {
+        "targets": [
+          26,
+          231,
+          40,
+          317,
+          450,
+          222,
+          682,
+          820,
+          283
+        ],
+        "n_targets": 9,
+        "final_metrics": {
+          "order": 934.0,
+          "size": 991.0,
+          "avg_degree": 28.595289079229122,
+          "avg_hyperedge_size": 5.147325933400605
+        }
+      },
+      "2": {
+        "targets": [
+          131,
+          977,
+          160,
+          465,
+          554,
+          39,
+          480,
+          502,
+          740,
+          108,
+          270,
+          372,
+          275,
+          440,
+          106,
+          962,
+          32,
+          705
+        ],
+        "n_targets": 18,
+        "final_metrics": {
+          "order": 898.0,
+          "size": 977.0,
+          "avg_degree": 23.456570155902003,
+          "avg_hyperedge_size": 4.593654042988741
+        }
+      },
+      "5": {
+        "targets": [
+          856,
+          600,
+          303,
+          90,
+          872,
+          133,
+          937,
+          637,
+          140,
+          711,
+          44,
+          138,
+          595,
+          374,
+          188,
+          400,
+          519,
+          228,
+          99,
+          35,
+          442,
+          373,
+          967,
+          153,
+          652,
+          158,
+          230,
+          82,
+          243,
+          524,
+          791,
+          145,
+          383,
+          686,
+          858,
+          485,
+          573,
+          827,
+          446,
+          959,
+          425,
+          523
+        ],
+        "n_targets": 42,
+        "final_metrics": {
+          "order": 812.0,
+          "size": 946.0,
+          "avg_degree": 15.64039408866995,
+          "avg_hyperedge_size": 3.6649048625792813
+        }
+      },
+      "10": {
+        "targets": [
+          300,
+          731,
+          823,
+          835,
+          21,
+          738,
+          795,
+          428,
+          853,
+          470,
+          592,
+          626,
+          815,
+          166,
+          916,
+          737,
+          645,
+          377,
+          838,
+          85,
+          721,
+          920,
+          907,
+          654,
+          582,
+          658,
+          102,
+          923,
+          978,
+          264,
+          917,
+          11,
+          71,
+          568,
+          880,
+          577,
+          886,
+          754,
+          929,
+          100,
+          81,
+          992,
+          19,
+          860,
+          142,
+          954,
+          325,
+          168,
+          913,
+          341,
+          621,
+          194,
+          304,
+          683,
+          24,
+          894,
+          353,
+          55,
+          587,
+          387,
+          849,
+          23,
+          227,
+          279,
+          993,
+          576,
+          786,
+          589,
+          471,
+          710,
+          41,
+          798,
+          54
+        ],
+        "n_targets": 73,
+        "final_metrics": {
+          "order": 658.0,
+          "size": 880.0,
+          "avg_degree": 8.738601823708207,
+          "avg_hyperedge_size": 2.664772727272727
+        }
+      }
+    }
+  },
+  "hypercl_23_multiple": {
+    "dataset": "hypercl_23",
+    "original_metrics": {
+      "order": 658.0,
+      "size": 880.0,
+      "avg_degree": 8.738601823708207,
+      "avg_hyperedge_size": 2.664772727272727
+    },
+    "sequences": {
+      "2": {
+        "k": 2,
+        "step_size": 2,
+        "targets": [
+          149,
+          354
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 658.0,
+              "size": 880.0,
+              "avg_degree": 8.738601823708207,
+              "avg_hyperedge_size": 2.664772727272727
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 2,
+            "metrics": {
+              "order": 656.0,
+              "size": 878.0,
+              "avg_degree": 8.75,
+              "avg_hyperedge_size": 2.664009111617312
+            }
+          }
+        ],
+        "total_attacks": 2
+      },
+      "5": {
+        "k": 5,
+        "step_size": 2,
+        "targets": [
+          667,
+          161,
+          355,
+          566,
+          410
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 656.0,
+              "size": 878.0,
+              "avg_degree": 8.75,
+              "avg_hyperedge_size": 2.664009111617312
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 2,
+            "metrics": {
+              "order": 654.0,
+              "size": 876.0,
+              "avg_degree": 8.672782874617736,
+              "avg_hyperedge_size": 2.651826484018265
+            }
+          },
+          {
+            "step": 2,
+            "attacks_executed": 4,
+            "metrics": {
+              "order": 652.0,
+              "size": 876.0,
+              "avg_degree": 8.604294478527608,
+              "avg_hyperedge_size": 2.6381278538812785
+            }
+          },
+          {
+            "step": 3,
+            "attacks_executed": 5,
+            "metrics": {
+              "order": 651.0,
+              "size": 875.0,
+              "avg_degree": 8.546850998463901,
+              "avg_hyperedge_size": 2.629714285714286
+            }
+          }
+        ],
+        "total_attacks": 5
+      },
+      "10": {
+        "k": 10,
+        "step_size": 2,
+        "targets": [
+          367,
+          434,
+          564,
+          866,
+          896,
+          810,
+          765,
+          629,
+          458,
+          756
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 651.0,
+              "size": 875.0,
+              "avg_degree": 8.546850998463901,
+              "avg_hyperedge_size": 2.629714285714286
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 2,
+            "metrics": {
+              "order": 649.0,
+              "size": 875.0,
+              "avg_degree": 8.523882896764253,
+              "avg_hyperedge_size": 2.624
+            }
+          },
+          {
+            "step": 2,
+            "attacks_executed": 4,
+            "metrics": {
+              "order": 647.0,
+              "size": 874.0,
+              "avg_degree": 8.491499227202473,
+              "avg_hyperedge_size": 2.6189931350114417
+            }
+          },
+          {
+            "step": 3,
+            "attacks_executed": 6,
+            "metrics": {
+              "order": 645.0,
+              "size": 874.0,
+              "avg_degree": 8.477519379844962,
+              "avg_hyperedge_size": 2.6155606407322654
+            }
+          },
+          {
+            "step": 4,
+            "attacks_executed": 8,
+            "metrics": {
+              "order": 643.0,
+              "size": 874.0,
+              "avg_degree": 8.429237947122862,
+              "avg_hyperedge_size": 2.6041189931350113
+            }
+          },
+          {
+            "step": 5,
+            "attacks_executed": 10,
+            "metrics": {
+              "order": 641.0,
+              "size": 873.0,
+              "avg_degree": 8.390015600624025,
+              "avg_hyperedge_size": 2.5967926689576175
+            }
+          }
+        ],
+        "total_attacks": 10
+      },
+      "25": {
+        "k": 25,
+        "step_size": 5,
+        "targets": [
+          174,
+          515,
+          409,
+          614,
+          703,
+          868,
+          460,
+          132,
+          720,
+          619,
+          152,
+          567,
+          581,
+          107,
+          885,
+          418,
+          312,
+          389,
+          80,
+          271,
+          882,
+          169,
+          405,
+          775,
+          311
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 641.0,
+              "size": 873.0,
+              "avg_degree": 8.390015600624025,
+              "avg_hyperedge_size": 2.5967926689576175
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 5,
+            "metrics": {
+              "order": 636.0,
+              "size": 870.0,
+              "avg_degree": 8.323899371069182,
+              "avg_hyperedge_size": 2.586206896551724
+            }
+          },
+          {
+            "step": 2,
+            "attacks_executed": 10,
+            "metrics": {
+              "order": 631.0,
+              "size": 868.0,
+              "avg_degree": 8.240887480190175,
+              "avg_hyperedge_size": 2.5668202764976957
+            }
+          },
+          {
+            "step": 3,
+            "attacks_executed": 15,
+            "metrics": {
+              "order": 626.0,
+              "size": 867.0,
+              "avg_degree": 7.980830670926518,
+              "avg_hyperedge_size": 2.5259515570934257
+            }
+          },
+          {
+            "step": 4,
+            "attacks_executed": 20,
+            "metrics": {
+              "order": 621.0,
+              "size": 864.0,
+              "avg_degree": 7.890499194847021,
+              "avg_hyperedge_size": 2.509259259259259
+            }
+          },
+          {
+            "step": 5,
+            "attacks_executed": 25,
+            "metrics": {
+              "order": 616.0,
+              "size": 863.0,
+              "avg_degree": 7.7564935064935066,
+              "avg_hyperedge_size": 2.482039397450753
+            }
+          }
+        ],
+        "total_attacks": 25
+      },
+      "50": {
+        "k": 50,
+        "step_size": 5,
+        "targets": [
+          666,
+          607,
+          302,
+          195,
+          426,
+          893,
+          668,
+          848,
+          328,
+          251,
+          881,
+          296,
+          36,
+          747,
+          136,
+          451,
+          376,
+          326,
+          543,
+          225,
+          461,
+          831,
+          975,
+          318,
+          555,
+          416,
+          874,
+          313,
+          606,
+          597,
+          156,
+          797,
+          88,
+          671,
+          953,
+          625,
+          242,
+          61,
+          599,
+          37,
+          520,
+          277,
+          955,
+          751,
+          93,
+          635,
+          687,
+          708,
+          191,
+          816
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 616.0,
+              "size": 863.0,
+              "avg_degree": 7.7564935064935066,
+              "avg_hyperedge_size": 2.482039397450753
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 5,
+            "metrics": {
+              "order": 611.0,
+              "size": 861.0,
+              "avg_degree": 7.715220949263503,
+              "avg_hyperedge_size": 2.4657375145180023
+            }
+          },
+          {
+            "step": 2,
+            "attacks_executed": 10,
+            "metrics": {
+              "order": 606.0,
+              "size": 860.0,
+              "avg_degree": 7.683168316831683,
+              "avg_hyperedge_size": 2.453488372093023
+            }
+          },
+          {
+            "step": 3,
+            "attacks_executed": 15,
+            "metrics": {
+              "order": 601.0,
+              "size": 856.0,
+              "avg_degree": 7.547420965058237,
+              "avg_hyperedge_size": 2.4299065420560746
+            }
+          },
+          {
+            "step": 4,
+            "attacks_executed": 20,
+            "metrics": {
+              "order": 596.0,
+              "size": 852.0,
+              "avg_degree": 7.359060402684563,
+              "avg_hyperedge_size": 2.402582159624413
+            }
+          },
+          {
+            "step": 5,
+            "attacks_executed": 25,
+            "metrics": {
+              "order": 591.0,
+              "size": 848.0,
+              "avg_degree": 7.262267343485617,
+              "avg_hyperedge_size": 2.3867924528301887
+            }
+          },
+          {
+            "step": 6,
+            "attacks_executed": 30,
+            "metrics": {
+              "order": 586.0,
+              "size": 846.0,
+              "avg_degree": 7.126279863481229,
+              "avg_hyperedge_size": 2.3605200945626477
+            }
+          },
+          {
+            "step": 7,
+            "attacks_executed": 35,
+            "metrics": {
+              "order": 581.0,
+              "size": 839.0,
+              "avg_degree": 7.049913941480207,
+              "avg_hyperedge_size": 2.3516090584028606
+            }
+          },
+          {
+            "step": 8,
+            "attacks_executed": 40,
+            "metrics": {
+              "order": 576.0,
+              "size": 838.0,
+              "avg_degree": 6.864583333333333,
+              "avg_hyperedge_size": 2.3257756563245824
+            }
+          },
+          {
+            "step": 9,
+            "attacks_executed": 45,
+            "metrics": {
+              "order": 571.0,
+              "size": 836.0,
+              "avg_degree": 6.6795096322241685,
+              "avg_hyperedge_size": 2.29066985645933
+            }
+          },
+          {
+            "step": 10,
+            "attacks_executed": 50,
+            "metrics": {
+              "order": 566.0,
+              "size": 829.0,
+              "avg_degree": 6.522968197879859,
+              "avg_hyperedge_size": 2.266586248492159
+            }
+          }
+        ],
+        "total_attacks": 50
+      },
+      "100": {
+        "k": 100,
+        "step_size": 10,
+        "targets": [
+          48,
+          832,
+          329,
+          491,
+          474,
+          177,
+          53,
+          843,
+          208,
+          746,
+          505,
+          922,
+          845,
+          641,
+          531,
+          0,
+          789,
+          436,
+          397,
+          960,
+          324,
+          217,
+          961,
+          18,
+          187,
+          464,
+          233,
+          553,
+          147,
+          801,
+          946,
+          91,
+          423,
+          371,
+          111,
+          952,
+          601,
+          561,
+          382,
+          180,
+          834,
+          1,
+          772,
+          14,
+          924,
+          396,
+          956,
+          77,
+          544,
+          583,
+          805,
+          49,
+          340,
+          709,
+          263,
+          936,
+          349,
+          963,
+          631,
+          287,
+          215,
+          877,
+          266,
+          986,
+          182,
+          137,
+          987,
+          109,
+          974,
+          989,
+          13,
+          693,
+          854,
+          272,
+          308,
+          678,
+          68,
+          522,
+          840,
+          431,
+          104,
+          651,
+          864,
+          120,
+          229,
+          381,
+          788,
+          339,
+          903,
+          262,
+          998,
+          278,
+          185,
+          219,
+          796,
+          293,
+          305,
+          200,
+          585,
+          124
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 566.0,
+              "size": 829.0,
+              "avg_degree": 6.522968197879859,
+              "avg_hyperedge_size": 2.266586248492159
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 10,
+            "metrics": {
+              "order": 556.0,
+              "size": 822.0,
+              "avg_degree": 6.420863309352518,
+              "avg_hyperedge_size": 2.236009732360097
+            }
+          },
+          {
+            "step": 2,
+            "attacks_executed": 20,
+            "metrics": {
+              "order": 546.0,
+              "size": 807.0,
+              "avg_degree": 6.274725274725275,
+              "avg_hyperedge_size": 2.218091697645601
+            }
+          },
+          {
+            "step": 3,
+            "attacks_executed": 30,
+            "metrics": {
+              "order": 536.0,
+              "size": 797.0,
+              "avg_degree": 6.063432835820896,
+              "avg_hyperedge_size": 2.1882057716436636
+            }
+          },
+          {
+            "step": 4,
+            "attacks_executed": 40,
+            "metrics": {
+              "order": 526.0,
+              "size": 784.0,
+              "avg_degree": 5.749049429657795,
+              "avg_hyperedge_size": 2.139030612244898
+            }
+          },
+          {
+            "step": 5,
+            "attacks_executed": 50,
+            "metrics": {
+              "order": 516.0,
+              "size": 777.0,
+              "avg_degree": 5.27906976744186,
+              "avg_hyperedge_size": 2.0707850707850706
+            }
+          },
+          {
+            "step": 6,
+            "attacks_executed": 60,
+            "metrics": {
+              "order": 506.0,
+              "size": 761.0,
+              "avg_degree": 4.940711462450593,
+              "avg_hyperedge_size": 2.032851511169514
+            }
+          },
+          {
+            "step": 7,
+            "attacks_executed": 70,
+            "metrics": {
+              "order": 496.0,
+              "size": 748.0,
+              "avg_degree": 4.612903225806452,
+              "avg_hyperedge_size": 1.9852941176470589
+            }
+          },
+          {
+            "step": 8,
+            "attacks_executed": 80,
+            "metrics": {
+              "order": 486.0,
+              "size": 737.0,
+              "avg_degree": 4.246913580246914,
+              "avg_hyperedge_size": 1.9294436906377206
+            }
+          },
+          {
+            "step": 9,
+            "attacks_executed": 90,
+            "metrics": {
+              "order": 476.0,
+              "size": 720.0,
+              "avg_degree": 3.899159663865546,
+              "avg_hyperedge_size": 1.8847222222222222
+            }
+          },
+          {
+            "step": 10,
+            "attacks_executed": 100,
+            "metrics": {
+              "order": 466.0,
+              "size": 712.0,
+              "avg_degree": 3.6137339055793993,
+              "avg_hyperedge_size": 1.8286516853932584
+            }
+          }
+        ],
+        "total_attacks": 100
+      }
+    }
+  },
+  "hypercl_25_single": {
+    "dataset": "hypercl_25",
+    "original_metrics": {
+      "order": 967.0,
+      "size": 1000.0,
+      "avg_degree": 32.622543950361944,
+      "avg_hyperedge_size": 5.608
+    },
+    "random_targeting": {
+      "1": {
+        "targets": [
+          516,
+          829,
+          51,
+          315,
+          137,
+          131,
+          415,
+          72,
+          20
+        ],
+        "n_targets": 9,
+        "final_metrics": {
+          "order": 958.0,
+          "size": 999.0,
+          "avg_degree": 32.430062630480165,
+          "avg_hyperedge_size": 5.574574574574575
+        }
+      },
+      "2": {
+        "targets": [
+          863,
+          314,
+          738,
+          242,
+          206,
+          453,
+          43,
+          165,
+          79,
+          480,
+          182,
+          684,
+          277,
+          31,
+          841,
+          790,
+          102,
+          933
+        ],
+        "n_targets": 18,
+        "final_metrics": {
+          "order": 931.0,
+          "size": 992.0,
+          "avg_degree": 28.206229860365198,
+          "avg_hyperedge_size": 5.102822580645161
+        }
+      },
+      "5": {
+        "targets": [
+          249,
+          680,
+          628,
+          766,
+          695,
+          84,
+          435,
+          720,
+          25,
+          60,
+          372,
+          103,
+          884,
+          721,
+          57,
+          892,
+          543,
+          533,
+          82,
+          486,
+          897,
+          825,
+          214,
+          835,
+          175,
+          692,
+          889,
+          603,
+          807,
+          974,
+          464,
+          944,
+          245,
+          75,
+          676,
+          466,
+          22,
+          210,
+          726,
+          208,
+          187,
+          905,
+          652,
+          815,
+          125
+        ],
+        "n_targets": 45,
+        "final_metrics": {
+          "order": 868.0,
+          "size": 969.0,
+          "avg_degree": 22.297235023041473,
+          "avg_hyperedge_size": 4.447884416924665
+        }
+      },
+      "10": {
+        "targets": [
+          624,
+          523,
+          10,
+          442,
+          498,
+          2,
+          233,
+          108,
+          195,
+          494,
+          297,
+          422,
+          149,
+          925,
+          91,
+          65,
+          592,
+          846,
+          139,
+          561,
+          718,
+          859,
+          857,
+          915,
+          144,
+          24,
+          413,
+          318,
+          550,
+          78,
+          711,
+          444,
+          938,
+          657,
+          627,
+          193,
+          883,
+          581,
+          311,
+          192,
+          768,
+          59,
+          180,
+          714,
+          646,
+          895,
+          664,
+          251,
+          53,
+          701,
+          520,
+          844,
+          901,
+          418,
+          337,
+          979,
+          359,
+          530,
+          968,
+          178,
+          105,
+          728,
+          513,
+          267,
+          564,
+          471,
+          870,
+          364,
+          86,
+          951,
+          618,
+          259,
+          803,
+          734,
+          789,
+          650,
+          112,
+          887,
+          704,
+          796,
+          201,
+          445
+        ],
+        "n_targets": 82,
+        "final_metrics": {
+          "order": 743.0,
+          "size": 930.0,
+          "avg_degree": 13.884253028263796,
+          "avg_hyperedge_size": 3.3645161290322583
+        }
+      }
+    },
+    "topsis_targeting": {
+      "1": {
+        "targets": [
+          317,
+          92,
+          458,
+          369,
+          545,
+          553,
+          32,
+          485,
+          942
+        ],
+        "n_targets": 9,
+        "final_metrics": {
+          "order": 949.0,
+          "size": 993.0,
+          "avg_degree": 28.368809272918863,
+          "avg_hyperedge_size": 5.162134944612286
+        }
+      },
+      "2": {
+        "targets": [
+          8,
+          744,
+          190,
+          446,
+          281,
+          556,
+          563,
+          234,
+          392,
+          227,
+          74,
+          917,
+          621,
+          918,
+          847,
+          539,
+          843,
+          113
+        ],
+        "n_targets": 18,
+        "final_metrics": {
+          "order": 913.0,
+          "size": 976.0,
+          "avg_degree": 23.253012048192772,
+          "avg_hyperedge_size": 4.617827868852459
+        }
+      },
+      "5": {
+        "targets": [
+          932,
+          688,
+          120,
+          585,
+          710,
+          449,
+          990,
+          241,
+          185,
+          432,
+          341,
+          552,
+          26,
+          880,
+          313,
+          828,
+          501,
+          899,
+          914,
+          978,
+          591,
+          548,
+          856,
+          729,
+          408,
+          223,
+          860,
+          28,
+          972,
+          265,
+          862,
+          787,
+          749,
+          570,
+          673,
+          212,
+          389,
+          381,
+          129,
+          244,
+          270,
+          69,
+          473
+        ],
+        "n_targets": 43,
+        "final_metrics": {
+          "order": 825.0,
+          "size": 948.0,
+          "avg_degree": 15.825454545454546,
+          "avg_hyperedge_size": 3.7225738396624473
+        }
+      },
+      "10": {
+        "targets": [
+          54,
+          648,
+          428,
+          691,
+          508,
+          132,
+          492,
+          322,
+          840,
+          662,
+          390,
+          490,
+          89,
+          849,
+          55,
+          483,
+          430,
+          715,
+          634,
+          690,
+          568,
+          202,
+          134,
+          644,
+          562,
+          423,
+          577,
+          751,
+          578,
+          853,
+          320,
+          589,
+          222,
+          158,
+          907,
+          908,
+          706,
+          467,
+          584,
+          319,
+          264,
+          622,
+          821,
+          9,
+          436,
+          945,
+          292,
+          479,
+          873,
+          205,
+          115,
+          891,
+          339,
+          255,
+          331,
+          39,
+          994,
+          124,
+          966,
+          743,
+          733,
+          275,
+          299,
+          640,
+          482,
+          674,
+          596,
+          629,
+          174,
+          169,
+          703,
+          399,
+          537,
+          855
+        ],
+        "n_targets": 74,
+        "final_metrics": {
+          "order": 669.0,
+          "size": 889.0,
+          "avg_degree": 9.336322869955158,
+          "avg_hyperedge_size": 2.750281214848144
+        }
+      }
+    }
+  },
+  "hypercl_25_multiple": {
+    "dataset": "hypercl_25",
+    "original_metrics": {
+      "order": 669.0,
+      "size": 889.0,
+      "avg_degree": 9.336322869955158,
+      "avg_hyperedge_size": 2.750281214848144
+    },
+    "sequences": {
+      "2": {
+        "k": 2,
+        "step_size": 2,
+        "targets": [
+          810,
+          146
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 669.0,
+              "size": 889.0,
+              "avg_degree": 9.336322869955158,
+              "avg_hyperedge_size": 2.750281214848144
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 2,
+            "metrics": {
+              "order": 667.0,
+              "size": 889.0,
+              "avg_degree": 9.337331334332834,
+              "avg_hyperedge_size": 2.7457817772778403
+            }
+          }
+        ],
+        "total_attacks": 2
+      },
+      "5": {
+        "k": 5,
+        "step_size": 2,
+        "targets": [
+          236,
+          909,
+          472,
+          304
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 667.0,
+              "size": 889.0,
+              "avg_degree": 9.337331334332834,
+              "avg_hyperedge_size": 2.7457817772778403
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 2,
+            "metrics": {
+              "order": 665.0,
+              "size": 889.0,
+              "avg_degree": 9.281203007518798,
+              "avg_hyperedge_size": 2.7367829021372327
+            }
+          },
+          {
+            "step": 2,
+            "attacks_executed": 4,
+            "metrics": {
+              "order": 663.0,
+              "size": 889.0,
+              "avg_degree": 9.221719457013574,
+              "avg_hyperedge_size": 2.7277840269966256
+            }
+          }
+        ],
+        "total_attacks": 4
+      },
+      "10": {
+        "k": 10,
+        "step_size": 2,
+        "targets": [
+          263,
+          207,
+          784,
+          226,
+          343,
+          502,
+          306,
+          378,
+          795,
+          536
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 663.0,
+              "size": 889.0,
+              "avg_degree": 9.221719457013574,
+              "avg_hyperedge_size": 2.7277840269966256
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 2,
+            "metrics": {
+              "order": 661.0,
+              "size": 889.0,
+              "avg_degree": 9.195158850226928,
+              "avg_hyperedge_size": 2.719910011248594
+            }
+          },
+          {
+            "step": 2,
+            "attacks_executed": 4,
+            "metrics": {
+              "order": 659.0,
+              "size": 888.0,
+              "avg_degree": 9.168437025796662,
+              "avg_hyperedge_size": 2.713963963963964
+            }
+          },
+          {
+            "step": 3,
+            "attacks_executed": 6,
+            "metrics": {
+              "order": 657.0,
+              "size": 888.0,
+              "avg_degree": 9.08675799086758,
+              "avg_hyperedge_size": 2.699324324324324
+            }
+          },
+          {
+            "step": 4,
+            "attacks_executed": 8,
+            "metrics": {
+              "order": 655.0,
+              "size": 887.0,
+              "avg_degree": 8.977099236641221,
+              "avg_hyperedge_size": 2.682074408117249
+            }
+          },
+          {
+            "step": 5,
+            "attacks_executed": 10,
+            "metrics": {
+              "order": 653.0,
+              "size": 887.0,
+              "avg_degree": 8.903522205206738,
+              "avg_hyperedge_size": 2.66967305524239
+            }
+          }
+        ],
+        "total_attacks": 10
+      },
+      "25": {
+        "k": 25,
+        "step_size": 5,
+        "targets": [
+          463,
+          411,
+          660,
+          156,
+          885,
+          834,
+          351,
+          988,
+          361,
+          325,
+          965,
+          145,
+          802,
+          515,
+          809,
+          636,
+          865,
+          630,
+          535,
+          443,
+          293,
+          839,
+          651,
+          719,
+          350
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 653.0,
+              "size": 887.0,
+              "avg_degree": 8.903522205206738,
+              "avg_hyperedge_size": 2.66967305524239
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 5,
+            "metrics": {
+              "order": 648.0,
+              "size": 885.0,
+              "avg_degree": 8.907407407407407,
+              "avg_hyperedge_size": 2.6598870056497175
+            }
+          },
+          {
+            "step": 2,
+            "attacks_executed": 10,
+            "metrics": {
+              "order": 643.0,
+              "size": 882.0,
+              "avg_degree": 8.908242612752721,
+              "avg_hyperedge_size": 2.6541950113378685
+            }
+          },
+          {
+            "step": 3,
+            "attacks_executed": 15,
+            "metrics": {
+              "order": 638.0,
+              "size": 878.0,
+              "avg_degree": 8.802507836990596,
+              "avg_hyperedge_size": 2.634396355353075
+            }
+          },
+          {
+            "step": 4,
+            "attacks_executed": 20,
+            "metrics": {
+              "order": 633.0,
+              "size": 872.0,
+              "avg_degree": 8.704581358609795,
+              "avg_hyperedge_size": 2.6227064220183487
+            }
+          },
+          {
+            "step": 5,
+            "attacks_executed": 25,
+            "metrics": {
+              "order": 628.0,
+              "size": 870.0,
+              "avg_degree": 8.643312101910828,
+              "avg_hyperedge_size": 2.6091954022988504
+            }
+          }
+        ],
+        "total_attacks": 25
+      },
+      "50": {
+        "k": 50,
+        "step_size": 5,
+        "targets": [
+          447,
+          328,
+          612,
+          635,
+          936,
+          737,
+          805,
+          196,
+          986,
+          617,
+          580,
+          890,
+          104,
+          560,
+          47,
+          153,
+          326,
+          573,
+          111,
+          44,
+          947,
+          391,
+          687,
+          14,
+          142,
+          188,
+          786,
+          155,
+          401,
+          882,
+          365,
+          773,
+          393,
+          996,
+          783,
+          49,
+          266,
+          569,
+          675,
+          382,
+          639,
+          858,
+          4,
+          357,
+          571,
+          797,
+          693,
+          386,
+          160,
+          525
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 628.0,
+              "size": 870.0,
+              "avg_degree": 8.643312101910828,
+              "avg_hyperedge_size": 2.6091954022988504
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 5,
+            "metrics": {
+              "order": 623.0,
+              "size": 867.0,
+              "avg_degree": 8.53290529695024,
+              "avg_hyperedge_size": 2.588235294117647
+            }
+          },
+          {
+            "step": 2,
+            "attacks_executed": 10,
+            "metrics": {
+              "order": 618.0,
+              "size": 864.0,
+              "avg_degree": 8.41747572815534,
+              "avg_hyperedge_size": 2.5671296296296298
+            }
+          },
+          {
+            "step": 3,
+            "attacks_executed": 15,
+            "metrics": {
+              "order": 613.0,
+              "size": 864.0,
+              "avg_degree": 8.293637846655791,
+              "avg_hyperedge_size": 2.542824074074074
+            }
+          },
+          {
+            "step": 4,
+            "attacks_executed": 20,
+            "metrics": {
+              "order": 608.0,
+              "size": 862.0,
+              "avg_degree": 8.223684210526315,
+              "avg_hyperedge_size": 2.52784222737819
+            }
+          },
+          {
+            "step": 5,
+            "attacks_executed": 25,
+            "metrics": {
+              "order": 603.0,
+              "size": 862.0,
+              "avg_degree": 8.135986733001658,
+              "avg_hyperedge_size": 2.508120649651972
+            }
+          },
+          {
+            "step": 6,
+            "attacks_executed": 30,
+            "metrics": {
+              "order": 598.0,
+              "size": 860.0,
+              "avg_degree": 8.060200668896321,
+              "avg_hyperedge_size": 2.4918604651162792
+            }
+          },
+          {
+            "step": 7,
+            "attacks_executed": 35,
+            "metrics": {
+              "order": 593.0,
+              "size": 860.0,
+              "avg_degree": 7.8482293423271505,
+              "avg_hyperedge_size": 2.453488372093023
+            }
+          },
+          {
+            "step": 8,
+            "attacks_executed": 40,
+            "metrics": {
+              "order": 588.0,
+              "size": 856.0,
+              "avg_degree": 7.6768707482993195,
+              "avg_hyperedge_size": 2.425233644859813
+            }
+          },
+          {
+            "step": 9,
+            "attacks_executed": 45,
+            "metrics": {
+              "order": 583.0,
+              "size": 849.0,
+              "avg_degree": 7.4030874785591765,
+              "avg_hyperedge_size": 2.392226148409894
+            }
+          },
+          {
+            "step": 10,
+            "attacks_executed": 50,
+            "metrics": {
+              "order": 578.0,
+              "size": 847.0,
+              "avg_degree": 7.166089965397924,
+              "avg_hyperedge_size": 2.3530106257378987
+            }
+          }
+        ],
+        "total_attacks": 50
+      },
+      "100": {
+        "k": 100,
+        "step_size": 10,
+        "targets": [
+          194,
+          694,
+          213,
+          218,
+          572,
+          330,
+          23,
+          661,
+          869,
+          61,
+          81,
+          747,
+          272,
+          823,
+          296,
+          831,
+          504,
+          183,
+          782,
+          98,
+          976,
+          723,
+          921,
+          935,
+          604,
+          800,
+          500,
+          992,
+          611,
+          906,
+          340,
+          940,
+          50,
+          514,
+          817,
+          750,
+          375,
+          785,
+          454,
+          836,
+          742,
+          238,
+          329,
+          597,
+          42,
+          119,
+          540,
+          722,
+          696,
+          541,
+          770,
+          38,
+          779,
+          373,
+          598,
+          136,
+          793,
+          983,
+          699,
+          735,
+          324,
+          625,
+          937,
+          388,
+          170,
+          527,
+          656,
+          528,
+          285,
+          216,
+          77,
+          19,
+          565,
+          487,
+          260,
+          7,
+          346,
+          669,
+          338,
+          186,
+          827,
+          376,
+          683,
+          854,
+          740,
+          395,
+          876,
+          558,
+          588,
+          252,
+          700,
+          200,
+          601,
+          957,
+          11,
+          746,
+          788,
+          229,
+          511,
+          235
+        ],
+        "metrics_timeline": [
+          {
+            "step": 0,
+            "attacks_executed": 0,
+            "metrics": {
+              "order": 578.0,
+              "size": 847.0,
+              "avg_degree": 7.166089965397924,
+              "avg_hyperedge_size": 2.3530106257378987
+            }
+          },
+          {
+            "step": 1,
+            "attacks_executed": 10,
+            "metrics": {
+              "order": 568.0,
+              "size": 838.0,
+              "avg_degree": 7.102112676056338,
+              "avg_hyperedge_size": 2.3341288782816227
+            }
+          },
+          {
+            "step": 2,
+            "attacks_executed": 20,
+            "metrics": {
+              "order": 558.0,
+              "size": 831.0,
+              "avg_degree": 7.025089605734767,
+              "avg_hyperedge_size": 2.3104693140794224
+            }
+          },
+          {
+            "step": 3,
+            "attacks_executed": 30,
+            "metrics": {
+              "order": 548.0,
+              "size": 818.0,
+              "avg_degree": 6.594890510948905,
+              "avg_hyperedge_size": 2.249388753056235
+            }
+          },
+          {
+            "step": 4,
+            "attacks_executed": 40,
+            "metrics": {
+              "order": 538.0,
+              "size": 808.0,
+              "avg_degree": 6.289962825278811,
+              "avg_hyperedge_size": 2.2017326732673266
+            }
+          },
+          {
+            "step": 5,
+            "attacks_executed": 50,
+            "metrics": {
+              "order": 528.0,
+              "size": 795.0,
+              "avg_degree": 6.026515151515151,
+              "avg_hyperedge_size": 2.1635220125786163
+            }
+          },
+          {
+            "step": 6,
+            "attacks_executed": 60,
+            "metrics": {
+              "order": 518.0,
+              "size": 785.0,
+              "avg_degree": 5.718146718146718,
+              "avg_hyperedge_size": 2.115923566878981
+            }
+          },
+          {
+            "step": 7,
+            "attacks_executed": 70,
+            "metrics": {
+              "order": 508.0,
+              "size": 771.0,
+              "avg_degree": 5.496062992125984,
+              "avg_hyperedge_size": 2.084306095979248
+            }
+          },
+          {
+            "step": 8,
+            "attacks_executed": 80,
+            "metrics": {
+              "order": 498.0,
+              "size": 767.0,
+              "avg_degree": 5.172690763052209,
+              "avg_hyperedge_size": 2.0273794002607564
+            }
+          },
+          {
+            "step": 9,
+            "attacks_executed": 90,
+            "metrics": {
+              "order": 488.0,
+              "size": 760.0,
+              "avg_degree": 4.918032786885246,
+              "avg_hyperedge_size": 1.9842105263157894
+            }
+          },
+          {
+            "step": 10,
+            "attacks_executed": 100,
+            "metrics": {
+              "order": 478.0,
+              "size": 745.0,
+              "avg_degree": 4.702928870292887,
+              "avg_hyperedge_size": 1.9583892617449665
+            }
+          }
+        ],
+        "total_attacks": 100
+      }
+    }
+  }
+}

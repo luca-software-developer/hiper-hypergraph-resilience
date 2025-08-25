@@ -1,0 +1,185 @@
+{
+  "analysis_summary": {
+    "datasets_analyzed": 4,
+    "total_experiments": 8,
+    "analysis_timestamp": 1756110770.4359415
+  },
+  "dataset_summaries": {
+    "hypercl_20": {
+      "original_metrics": {
+        "order": 933.0,
+        "size": 1000.0,
+        "avg_degree": 34.21650589496249,
+        "avg_hyperedge_size": 5.685
+      },
+      "max_degradation_random": {
+        "order": {
+          "percentage": 10,
+          "final_value": 716.0
+        },
+        "size": {
+          "percentage": 10,
+          "final_value": 925.0
+        },
+        "avg_degree": {
+          "percentage": 10,
+          "final_value": 15.064245810055866
+        },
+        "avg_hyperedge_size": {
+          "percentage": 10,
+          "final_value": 3.4583783783783786
+        }
+      },
+      "max_degradation_topsis": {
+        "order": {
+          "percentage": 10,
+          "final_value": 645.0
+        },
+        "size": {
+          "percentage": 10,
+          "final_value": 858.0
+        },
+        "avg_degree": {
+          "percentage": 10,
+          "final_value": 9.032558139534883
+        },
+        "avg_hyperedge_size": {
+          "percentage": 10,
+          "final_value": 2.7062937062937062
+        }
+      }
+    },
+    "hypercl_21": {
+      "original_metrics": {
+        "order": 923.0,
+        "size": 1000.0,
+        "avg_degree": 32.29469122426869,
+        "avg_hyperedge_size": 5.445
+      },
+      "max_degradation_random": {
+        "order": {
+          "percentage": 10,
+          "final_value": 708.0
+        },
+        "size": {
+          "percentage": 10,
+          "final_value": 915.0
+        },
+        "avg_degree": {
+          "percentage": 10,
+          "final_value": 13.954802259887005
+        },
+        "avg_hyperedge_size": {
+          "percentage": 10,
+          "final_value": 3.3300546448087434
+        }
+      },
+      "max_degradation_topsis": {
+        "order": {
+          "percentage": 10,
+          "final_value": 638.0
+        },
+        "size": {
+          "percentage": 10,
+          "final_value": 860.0
+        },
+        "avg_degree": {
+          "percentage": 10,
+          "final_value": 8.463949843260188
+        },
+        "avg_hyperedge_size": {
+          "percentage": 10,
+          "final_value": 2.630232558139535
+        }
+      }
+    },
+    "hypercl_23": {
+      "original_metrics": {
+        "order": 952.0,
+        "size": 1000.0,
+        "avg_degree": 32.08403361344538,
+        "avg_hyperedge_size": 5.506
+      },
+      "max_degradation_random": {
+        "order": {
+          "percentage": 10,
+          "final_value": 731.0
+        },
+        "size": {
+          "percentage": 10,
+          "final_value": 932.0
+        },
+        "avg_degree": {
+          "percentage": 10,
+          "final_value": 14.019151846785226
+        },
+        "avg_hyperedge_size": {
+          "percentage": 10,
+          "final_value": 3.351931330472103
+        }
+      },
+      "max_degradation_topsis": {
+        "order": {
+          "percentage": 10,
+          "final_value": 658.0
+        },
+        "size": {
+          "percentage": 10,
+          "final_value": 880.0
+        },
+        "avg_degree": {
+          "percentage": 10,
+          "final_value": 8.738601823708207
+        },
+        "avg_hyperedge_size": {
+          "percentage": 10,
+          "final_value": 2.664772727272727
+        }
+      }
+    },
+    "hypercl_25": {
+      "original_metrics": {
+        "order": 967.0,
+        "size": 1000.0,
+        "avg_degree": 32.622543950361944,
+        "avg_hyperedge_size": 5.608
+      },
+      "max_degradation_random": {
+        "order": {
+          "percentage": 10,
+          "final_value": 743.0
+        },
+        "size": {
+          "percentage": 10,
+          "final_value": 930.0
+        },
+        "avg_degree": {
+          "percentage": 10,
+          "final_value": 13.884253028263796
+        },
+        "avg_hyperedge_size": {
+          "percentage": 10,
+          "final_value": 3.3645161290322583
+        }
+      },
+      "max_degradation_topsis": {
+        "order": {
+          "percentage": 10,
+          "final_value": 669.0
+        },
+        "size": {
+          "percentage": 10,
+          "final_value": 889.0
+        },
+        "avg_degree": {
+          "percentage": 10,
+          "final_value": 9.336322869955158
+        },
+        "avg_hyperedge_size": {
+          "percentage": 10,
+          "final_value": 2.750281214848144
+        }
+      }
+    }
+  }
+}

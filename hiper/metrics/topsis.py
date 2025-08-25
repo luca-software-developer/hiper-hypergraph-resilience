@@ -152,25 +152,32 @@ class TopsisNodeRanker:
     @staticmethod
     def _compute_local_clustering(hypernetwork: Hypernetwork,
                                   node_id: int) -> float:
-        """Compute local clustering coefficient for a node."""
-        neighbors = set(hypernetwork.get_neighbors(node_id))
-        k = len(neighbors)
+        """Compute hypergraph clustering coefficient for a node."""
+        # Get all hyperedges containing this node
+        node_hyperedges = hypernetwork.get_hyperedges(node_id)
 
-        if k < 2:
+        if len(node_hyperedges) < 2:
             return 0.0
 
-        # Count edges between neighbors (approximation for hypergraphs)
-        connections = 0
-        neighbors_list = list(neighbors)
+        # For hypergraph clustering, we measure how many pairs of hyperedges
+        # containing this node also share other common nodes
+        shared_connections = 0
+        total_pairs = 0
 
-        for i, n1 in enumerate(neighbors_list):
-            for n2 in neighbors_list[i + 1:]:
-                # Check if n1 and n2 are connected
-                if n2 in hypernetwork.get_neighbors(n1):
-                    connections += 1
+        hyperedges_list = list(node_hyperedges)
+        for i, edge1 in enumerate(hyperedges_list):
+            for edge2 in hyperedges_list[i + 1:]:
+                total_pairs += 1
 
-        max_connections = k * (k - 1) // 2
-        return connections / max_connections if max_connections > 0 else 0.0
+                # Get nodes in both hyperedges (excluding the central node)
+                nodes1 = set(hypernetwork.get_nodes(edge1)) - {node_id}
+                nodes2 = set(hypernetwork.get_nodes(edge2)) - {node_id}
+
+                # If they share additional nodes, they form a clustered structure
+                if len(nodes1.intersection(nodes2)) > 0:
+                    shared_connections += 1
+
+        return shared_connections / total_pairs if total_pairs > 0 else 0.0
 
     @staticmethod
     def _compute_degree_centrality(hypernetwork: Hypernetwork,
