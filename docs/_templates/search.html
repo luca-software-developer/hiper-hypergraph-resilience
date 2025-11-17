@@ -1,0 +1,60 @@
+{% extends "!search.html" %}
+
+{% block body %}
+<h1>{{ _('Search') }}</h1>
+
+<div id="fallback" class="admonition warning">
+  <p class="first admonition-title">{{ _('Please activate JavaScript to enable the search functionality.') }}</p>
+  <p class="last">
+    {% trans %}Searching for multiple words only shows matches that contain
+    all words.{% endtrans %}
+  </p>
+</div>
+
+<div id="search-field" style="margin: 2em 0;">
+  <form role="search" method="get" action="{{ pathto('search') }}">
+    <div style="display: flex; gap: 10px; align-items: center;">
+      <input
+        type="text"
+        name="q"
+        id="search-input"
+        placeholder="{{ _('Search documentation...') }}"
+        style="flex: 1; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px;"
+        autofocus
+      />
+      <input
+        type="submit"
+        value="{{ _('Search') }}"
+        style="padding: 10px 20px; font-size: 16px; background-color: #2980b9; color: white; border: none; border-radius: 4px; cursor: pointer;"
+      />
+    </div>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+<div id="search-results">
+{% if search_performed %}
+  <h2>{{ _('Search Results') }}</h2>
+  {% if not search_results %}
+    <p>{{ _('Your search did not match any documents. Please make sure that all words are spelled correctly and that you\'ve selected enough categories.') }}</p>
+  {% endif %}
+{% endif %}
+{{ search_results }}
+</div>
+
+<script type="text/javascript">
+  // Focus the search input when page loads
+  document.addEventListener('DOMContentLoaded', function() {
+    var searchInput = document.getElementById('search-input');
+    if (searchInput) {
+      // Get query from URL if present
+      var params = new URLSearchParams(window.location.search);
+      var query = params.get('q');
+      if (query) {
+        searchInput.value = query;
+      }
+    }
+  });
+</script>
+{% endblock %}
