@@ -63,8 +63,8 @@ Run specific test files:
 
 .. code-block:: bash
 
-   python test_performance_single.py
-   python test_simulation.py
+   python examples/tests/test_performance_single.py
+   python examples/tests/test_simulation.py
 
 Code Style
 ----------
