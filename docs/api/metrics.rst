@@ -42,6 +42,22 @@ hiper.metrics.hyperedge_topsis
    :undoc-members:
    :show-inheritance:
 
+hiper.metrics.wsm
+~~~~~~~~~~~~~~~~~
+
+.. automodule:: hiper.metrics.wsm
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+hiper.metrics.moora
+~~~~~~~~~~~~~~~~~~~
+
+.. automodule:: hiper.metrics.moora
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Structural Metrics
 ------------------
 

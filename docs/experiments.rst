@@ -80,6 +80,33 @@ Run experiments on both node and hyperedge removal.
 * ``higher_order_cohesion_comparison.png`` - Advanced metrics
 * ``strategy_effectiveness_heatmap.png`` - Comparative effectiveness
 
+MCDM Methods Comparison
+-----------------------
+
+Compare different Multi-Criteria Decision Making methods for node selection.
+
+**Command:**
+
+.. code-block:: bash
+
+   python examples/compare_selection_methods.py [dataset_name]
+   # Or combine all results:
+   python examples/compare_selection_methods.py --combine
+
+**What it does:**
+
+* Compares three MCDM methods: TOPSIS, WSM (Weighted Sum Model), MOORA
+* Tests targeted node removal using each method
+* Removal percentages: 5%, 10%, 25%
+* Analyzes whether simpler methods (WSM, MOORA) achieve comparable results to TOPSIS
+
+**Results location:** ``comparison_results/``
+
+* ``methods_comparison_all_datasets.png`` - Side-by-side comparison of all three methods
+* ``results_<dataset>.json`` - Results for individual datasets
+* ``comparison_results_all_datasets.json`` - Complete numerical results
+* ``<dataset>_comparison.png`` - Individual dataset plots
+
 Statistical Analysis
 --------------------
 

@@ -160,6 +160,36 @@ Rank nodes by importance using TOPSIS:
    bottom_nodes = ranker.get_bottom_nodes(hn, percentage=10)
    print(f"Least critical nodes: {bottom_nodes}")
 
+MCDM Methods Comparison
+------------------------
+
+Compare different MCDM methods for node ranking:
+
+.. code-block:: python
+
+   from hiper import Hypernetwork
+   from hiper.metrics.topsis import TopsisNodeRanker
+   from hiper.metrics.wsm import WSMNodeRanker
+   from hiper.metrics.moora import MOORANodeRanker
+
+   # Create hypernetwork
+   hn = Hypernetwork()
+   # ... add hyperedges ...
+
+   # Create different rankers
+   topsis = TopsisNodeRanker()
+   wsm = WSMNodeRanker()
+   moora = MOORANodeRanker()
+
+   # Compare rankings
+   topsis_ranking = topsis.rank_nodes(hn)
+   wsm_ranking = wsm.rank_nodes(hn)
+   moora_ranking = moora.rank_nodes(hn)
+
+   print(f"TOPSIS top node: {topsis_ranking[0]}")
+   print(f"WSM top node: {wsm_ranking[0]}")
+   print(f"MOORA top node: {moora_ranking[0]}")
+
 Custom Metrics
 --------------
 
