@@ -18,8 +18,8 @@ class SwalkEfficiency:
     The s-walk efficiency measures how efficiently nodes can reach each
     other via s-walks, computed as the average of inverse distances.
 
-    Formula: ℰs(H) = (1/(|V|(|V|-1))) * Σ(1/d_H^s(u,v))
-    for all pairs u,v ∈ V with u ≠ v.
+    Formula: ``ℰs(H) = (1/(|V|(|V|-1))) * Σ(1/d_H^s(u,v))``
+    for all pairs ``u,v ∈ V`` with ``u ≠ v``.
     """
 
     def __init__(self, s: int = 1):

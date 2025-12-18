@@ -21,13 +21,13 @@ class HyperedgeFragmentationIndex:
     The Hyperedge Fragmentation Index measures how much the original hyperedges
     have been fragmented by a perturbation:
 
-    HFI = 1 - (1/|E|) * Σ(|e ∩ V'|/|e|) for e ∈ E
+    ``HFI = 1 - (1/|E|) * Σ(|e ∩ V'|/|e|)`` for ``e ∈ E``
 
     where:
     - E is the original set of hyperedges
     - V' is the set of nodes after perturbation
-    - e ∩ V' is the intersection of original hyperedge e with remaining nodes
-    - |e| is the original size of hyperedge e
+    - ``e ∩ V'`` is the intersection of original hyperedge e with remaining nodes
+    - ``|e|`` is the original size of hyperedge e
 
     A value of 0.0 indicates no fragmentation (all hyperedges intact),
     while 1.0 indicates complete fragmentation (all hyperedges destroyed).

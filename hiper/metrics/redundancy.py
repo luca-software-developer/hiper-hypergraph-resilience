@@ -18,8 +18,8 @@ class RedundancyCoefficient:
     The redundancy coefficient measures the average degree of normalized
     overlap between pairs of hyperedges in the hypergraph.
 
-    Formula: ρ(H) = (1/|E|²) * Σ(|e1 ∩ e2| / √(|e1| * |e2|))
-    for all pairs e1, e2 ∈ E with e1 ≠ e2.
+    Formula: ``ρ(H) = (1/|E|²) * Σ(|e1 ∩ e2| / √(|e1| * |e2|))``
+    for all pairs ``e1, e2 ∈ E`` with ``e1 ≠ e2``.
     """
 
     @staticmethod
