@@ -36,7 +36,7 @@ Quick Start
 Key Features
 ------------
 
-* **Optimized Data Structures**: Efficient dict-of-sets representation for O(1) operations
+* **Optimized Data Structures**: Efficient dict-of-sets representation for O(1) amortized operations
 * **Attack Simulation**: Comprehensive security analysis through individual and coordinated attacks
 * **Resilience Analysis**: TOPSIS-based node ranking and removal strategies
 * **Modular Architecture**: Selective importing based on application requirements
@@ -49,6 +49,7 @@ Table of Contents
    :maxdepth: 2
    :caption: User Guide
 
+   installation
    experiments
    examples
 

@@ -10,6 +10,23 @@ analysis and attack simulation. The library implements hypernetworks using
 efficient dict-of-sets representation to achieve O(1) amortized performance
 for most operations.
 
+## Installation
+
+Install HIPER locally using pip:
+
+```bash
+pip install -e .
+```
+
+This installs the package in editable mode, which is ideal for development as
+changes to the source code are immediately available without reinstalling.
+
+For a standard installation:
+
+```bash
+pip install .
+```
+
 ## Key Features
 
 The library offers comprehensive hypernetwork manipulation capabilities with
@@ -72,7 +89,7 @@ hypernetwork.print_info()
 
 ## Attack Simulation
 
-The simulation framework enables comprehensive analysis through individual 
+The simulation framework enables comprehensive analysis through individual
 attacks and coordinated sequences.
 
 ```python
@@ -113,7 +130,8 @@ The library provides several example scripts in the `examples/` directory for
 comprehensive hypernetwork analysis. Each script performs specific experiments
 and saves results in dedicated output directories.
 
-For detailed documentation of all examples, see [`examples/README.md`](examples/README.md).
+For detailed documentation of all examples, see [
+`examples/README.md`](examples/README.md).
 
 ### Resilience Experiments
 
@@ -124,11 +142,15 @@ python examples/run_resilience_experiments.py [optional_dataset_path]
 ```
 
 **What it does:**
+
 - Removes nodes at percentages: 1%, 2%, 5%, 10%, 25%
-- Uses three strategies: Random, TOPSIS Top (critical), TOPSIS Bottom (peripheral)
+- Uses three strategies: Random, TOPSIS Top (critical), TOPSIS Bottom (
+  peripheral)
+- Supports multiple MCDM methods: TOPSIS, WSM, MOORA
 - Computes metrics: connectivity, redundancy coefficient, s-walk efficiency
 
 **Results location:** `resilience_results/`
+
 - `resilience_analysis.png` - Metric degradation plots
 - `impact_comparison.png` - Strategy comparison
 - `resilience_summary.csv` - Detailed numeric results
@@ -142,12 +164,14 @@ python examples/run_perturbation_analysis.py
 ```
 
 **What it does:**
+
 - Single perturbations: 1%, 2%, 5%, 10% node removal
 - Multiple perturbations: Attack sequences with k ∈ {2, 5, 10, 25, 50, 100}
 - Compares Random vs TOPSIS targeting strategies
 - Analyzes component fragmentation and largest component evolution
 
 **Results location:** `results/`
+
 - `{dataset}_single_comparison.png` - Single perturbation plots
 - `{dataset}_multiple_timeline.png` - Evolution over attack sequences
 - `{dataset}_component_analysis.png` - Fragmentation analysis
@@ -164,16 +188,40 @@ python examples/run_node_hyperedge_experiments.py
 ```
 
 **What it does:**
+
 - Tests removal of both nodes and hyperedges
 - Computes traditional metrics (connectivity, redundancy)
 - Computes higher-order cohesion metrics (HOCR_m, LHC_m)
 - Removal percentages: 1%, 2%, 5%, 10%, 25%
 
 **Results location:** `resilience_results/plots/`
+
 - `node_removal_traditional_metrics.png` - Node removal analysis
 - `hyperedge_removal_traditional_metrics.png` - Hyperedge removal analysis
 - `higher_order_cohesion_comparison.png` - Advanced metrics
 - `strategy_effectiveness_heatmap.png` - Comparative effectiveness
+
+### MCDM Methods Comparison
+
+Compare different Multi-Criteria Decision Making methods for node selection:
+
+```bash
+python examples/compare_selection_methods.py
+```
+
+**What it does:**
+
+- Compares three MCDM methods: TOPSIS, WSM (Weighted Sum Model), MOORA
+- Tests targeted node removal using each method
+- Removal percentages: 5%, 10%, 25%
+- Analyzes whether simpler methods (WSM, MOORA) achieve comparable results to
+  TOPSIS
+
+**Results location:** `comparison_results/`
+
+- `methods_comparison.png` - Side-by-side comparison of all three methods
+- `difference_from_topsis.png` - Percentage difference from TOPSIS baseline
+- `comparison_results.json` - Complete numerical results
 
 ### Statistical Analysis
 
@@ -184,12 +232,14 @@ python examples/run_statistical_analysis.py
 ```
 
 **What it does:**
+
 - Computes structural features for all datasets in `data/` directory
 - Performs ANOVA/Kruskal-Wallis tests across hypergraph families
 - Correlation analysis between features and resilience metrics
 - Normalized metrics for size-independent comparisons
 
 **Results location:** `statistical_analysis_results/`
+
 - `data_directory_features_by_family.png` - Feature distributions by family
 - `structural_correlations_heatmap.png` - Feature correlation matrix
 - `structural_features_scatter.png` - Relationship visualizations
@@ -235,13 +285,15 @@ python examples/run_statistical_analysis.py
 ```
 
 Results will be organized in:
+
 - `results/` - Perturbation analysis outputs
 - `resilience_results/` - Resilience experiment outputs
 - `statistical_analysis_results/` - Statistical analysis outputs
 
 ## API Documentation
 
-Complete API documentation is available and built with **Sphinx**. The documentation
+Complete API documentation is available and built with **Sphinx**. The
+documentation
 includes:
 
 - Complete class and function references with type hints
@@ -290,10 +342,10 @@ make.bat html  # Windows
 
 - **User Guide**: Getting started, experiments, and examples
 - **API Reference**: Complete module, class, and function documentation
-  - Core modules (Hypernetwork, Node, Hyperedge)
-  - Dataset management (loading and configuration)
-  - Metrics (experiments, TOPSIS, connectivity, distance, etc.)
-  - Simulation framework (simulator, attacks, sequences)
+    - Core modules (Hypernetwork, Node, Hyperedge)
+    - Dataset management (loading and configuration)
+    - Metrics (experiments, TOPSIS, connectivity, distance, etc.)
+    - Simulation framework (simulator, attacks, sequences)
 - **Development**: Contributing guidelines and license
 
 ## Configuration

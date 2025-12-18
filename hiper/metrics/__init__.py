@@ -89,9 +89,11 @@ from .higher_order_cohesion import HigherOrderCohesionMetrics
 from .hyperedge_fragmentation import HyperedgeFragmentationIndex
 from .hyperedge_integrity import HyperedgeIntegrity
 from .hyperedge_topsis import HyperedgeTopsisRanker
+from .moora import MOORANodeRanker
 from .redundancy import RedundancyCoefficient
 from .swalk import SwalkEfficiency
 from .topsis import TopsisNodeRanker
+from .wsm import WSMNodeRanker
 
 __all__ = [
     'HypergraphConnectivity',
@@ -100,6 +102,8 @@ __all__ = [
     'RedundancyCoefficient',
     'SwalkEfficiency',
     'TopsisNodeRanker',
+    'WSMNodeRanker',
+    'MOORANodeRanker',
     'ResilienceExperiment',
     'HyperedgeIntegrity',
     'CentralityDisruptionIndex',

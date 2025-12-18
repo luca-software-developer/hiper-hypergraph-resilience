@@ -1,0 +1,241 @@
+{
+  "topsis": {
+    "experiments": {
+      "random_removal": {
+        "5": {
+          "order": 905.0,
+          "size": 996.0,
+          "avg_degree": 30.752854511970536,
+          "avg_hyperdegree": 5.808471454880294,
+          "avg_hyperedge_size": 5.2777774336624885
+        },
+        "10": {
+          "order": 857.0,
+          "size": 993.6666666666666,
+          "avg_degree": 29.459354336833915,
+          "avg_hyperdegree": 5.845585375340335,
+          "avg_hyperedge_size": 5.041637347832146
+        },
+        "20": {
+          "order": 762.0,
+          "size": 973.6666666666666,
+          "avg_degree": 25.35258092738408,
+          "avg_hyperdegree": 5.7419072615923,
+          "avg_hyperedge_size": 4.493464103025864
+        }
+      },
+      "topsis_top_removal": {
+        "5": {
+          "order": 905.0,
+          "size": 973.0,
+          "avg_degree": 20.1878453038674,
+          "avg_hyperdegree": 4.61767955801105,
+          "avg_hyperedge_size": 4.294964028776978
+        },
+        "10": {
+          "order": 857.0,
+          "size": 942.0,
+          "avg_degree": 14.308051341890316,
+          "avg_hyperdegree": 3.988331388564761,
+          "avg_hyperedge_size": 3.6284501061571124
+        },
+        "20": {
+          "order": 762.0,
+          "size": 890.0,
+          "avg_degree": 8.349081364829397,
+          "avg_hyperdegree": 3.241469816272966,
+          "avg_hyperedge_size": 2.7752808988764044
+        }
+      },
+      "topsis_bottom_removal": {
+        "5": {
+          "order": 905.0,
+          "size": 994.0,
+          "avg_degree": 33.30386740331492,
+          "avg_hyperdegree": 6.01767955801105,
+          "avg_hyperedge_size": 5.47887323943662
+        },
+        "10": {
+          "order": 857.0,
+          "size": 993.0,
+          "avg_degree": 34.34539089848308,
+          "avg_hyperdegree": 6.27071178529755,
+          "avg_hyperedge_size": 5.411883182275932
+        },
+        "20": {
+          "order": 762.0,
+          "size": 986.0,
+          "avg_degree": 36.349081364829395,
+          "avg_hyperdegree": 6.821522309711286,
+          "avg_hyperedge_size": 5.271805273833672
+        }
+      }
+    },
+    "execution_time": 28.518929719924927
+  },
+  "wsm": {
+    "experiments": {
+      "random_removal": {
+        "5": {
+          "order": 905.0,
+          "size": 995.0,
+          "avg_degree": 30.151749539594846,
+          "avg_hyperdegree": 5.748434622467772,
+          "avg_hyperedge_size": 5.228445522472327
+        },
+        "10": {
+          "order": 857.0,
+          "size": 987.3333333333334,
+          "avg_degree": 29.288214702450407,
+          "avg_hyperdegree": 5.820692337611824,
+          "avg_hyperedge_size": 5.05240846599873
+        },
+        "20": {
+          "order": 762.0,
+          "size": 975.6666666666666,
+          "avg_degree": 25.485564304461946,
+          "avg_hyperdegree": 5.76246719160105,
+          "avg_hyperedge_size": 4.50045961737095
+        }
+      },
+      "wsm_top_removal": {
+        "5": {
+          "order": 905.0,
+          "size": 974.0,
+          "avg_degree": 20.247513812154697,
+          "avg_hyperdegree": 4.6276243093922655,
+          "avg_hyperedge_size": 4.299794661190965
+        },
+        "10": {
+          "order": 857.0,
+          "size": 944.0,
+          "avg_degree": 14.403733955659277,
+          "avg_hyperdegree": 3.99416569428238,
+          "avg_hyperedge_size": 3.6260593220338984
+        },
+        "20": {
+          "order": 762.0,
+          "size": 891.0,
+          "avg_degree": 8.456692913385826,
+          "avg_hyperdegree": 3.2532808398950133,
+          "avg_hyperedge_size": 2.782267115600449
+        }
+      },
+      "wsm_bottom_removal": {
+        "5": {
+          "order": 905.0,
+          "size": 995.0,
+          "avg_degree": 33.38342541436464,
+          "avg_hyperdegree": 6.025414364640884,
+          "avg_hyperedge_size": 5.480402010050251
+        },
+        "10": {
+          "order": 857.0,
+          "size": 990.0,
+          "avg_degree": 34.55775962660444,
+          "avg_hyperdegree": 6.275379229871645,
+          "avg_hyperedge_size": 5.432323232323232
+        },
+        "20": {
+          "order": 762.0,
+          "size": 987.0,
+          "avg_degree": 36.56692913385827,
+          "avg_hyperdegree": 6.846456692913386,
+          "avg_hyperedge_size": 5.285714285714286
+        }
+      }
+    },
+    "execution_time": 28.568230152130127
+  },
+  "moora": {
+    "experiments": {
+      "random_removal": {
+        "5": {
+          "order": 905.0,
+          "size": 994.0,
+          "avg_degree": 30.206261510128915,
+          "avg_hyperdegree": 5.752117863720073,
+          "avg_hyperedge_size": 5.237155217636727
+        },
+        "10": {
+          "order": 857.0,
+          "size": 989.6666666666666,
+          "avg_degree": 28.56398288603656,
+          "avg_hyperdegree": 5.74095682613769,
+          "avg_hyperedge_size": 4.971443539117256
+        },
+        "20": {
+          "order": 762.0,
+          "size": 971.0,
+          "avg_degree": 25.611548556430446,
+          "avg_hyperdegree": 5.782152230971128,
+          "avg_hyperedge_size": 4.537490527595652
+        }
+      },
+      "moora_top_removal": {
+        "5": {
+          "order": 905.0,
+          "size": 974.0,
+          "avg_degree": 20.170165745856355,
+          "avg_hyperdegree": 4.622099447513812,
+          "avg_hyperedge_size": 4.294661190965092
+        },
+        "10": {
+          "order": 857.0,
+          "size": 945.0,
+          "avg_degree": 14.331388564760793,
+          "avg_hyperdegree": 3.9918319719953326,
+          "avg_hyperedge_size": 3.6201058201058203
+        },
+        "20": {
+          "order": 762.0,
+          "size": 889.0,
+          "avg_degree": 8.333333333333334,
+          "avg_hyperdegree": 3.2335958005249346,
+          "avg_hyperedge_size": 2.7716535433070866
+        }
+      },
+      "moora_bottom_removal": {
+        "5": {
+          "order": 905.0,
+          "size": 995.0,
+          "avg_degree": 33.37237569060773,
+          "avg_hyperdegree": 6.025414364640884,
+          "avg_hyperedge_size": 5.480402010050251
+        },
+        "10": {
+          "order": 857.0,
+          "size": 991.0,
+          "avg_degree": 34.55075845974329,
+          "avg_hyperdegree": 6.2788798133022174,
+          "avg_hyperedge_size": 5.429868819374369
+        },
+        "20": {
+          "order": 762.0,
+          "size": 987.0,
+          "avg_degree": 36.6246719160105,
+          "avg_hyperdegree": 6.850393700787402,
+          "avg_hyperedge_size": 5.288753799392097
+        }
+      }
+    },
+    "execution_time": 28.12214970588684
+  },
+  "metadata": {
+    "removal_percentages": [
+      5,
+      10,
+      20
+    ],
+    "random_trials": 3,
+    "hypergraph_order": 952,
+    "hypergraph_size": 1000
+  },
+  "original_metrics": {
+    "order": 952.0,
+    "size": 1000.0,
+    "avg_degree": 32.08403361344538,
+    "avg_hyperdegree": 5.783613445378151,
+    "avg_hyperedge_size": 5.506
+  }
+}

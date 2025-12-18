@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hiper"
+version = "1.0.0"
+description = "High-performance hypernetwork analysis & simulation library"
+readme = "README.md"
+authors = [
+    { name = "Luca Dello Russo" }
+]
+license = { text = "MIT" }
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+keywords = [
+    "hypernetwork",
+    "hypergraph",
+    "network-analysis",
+    "resilience",
+    "simulation",
+    "attack-simulation"
+]
+
+dependencies = [
+    "seaborn~=0.13.2",
+    "pandas~=2.3.2",
+    "numpy~=2.2.6",
+    "tabulate~=0.9.0",
+    "hypergraphx~=1.7.7",
+    "hypernetx~=2.4.0",
+    "matplotlib~=3.10.3",
+    "scipy~=1.15.3",
+]
+
+[project.urls]
+Homepage = "https://github.com/luca-software-developer/hiper-hypergraph-resilience"
+Repository = "https://github.com/luca-software-developer/hiper-hypergraph-resilience"
+Documentation = "https://github.com/luca-software-developer/hiper-hypergraph-resilience"
+"Bug Tracker" = "https://github.com/luca-software-developer/hiper-hypergraph-resilience/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["hiper*"]
+exclude = ["test*", "examples*", "docs*", "old_source*"]
+
+[tool.setuptools.package-data]
+hiper = ["*.json"]

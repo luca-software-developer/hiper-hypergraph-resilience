@@ -20,6 +20,22 @@ class Hypernetwork:
         self.nodes_map: Dict[int, Set[int]] = {}
         self.edges_map: Dict[int, Set[int]] = {}
 
+    def lightweight_copy(self) -> 'Hypernetwork':
+        """
+        Create a lightweight copy of the hypernetwork.
+
+        Returns:
+            A new Hypernetwork instance with copied structure
+        """
+        new_hn = Hypernetwork()
+        new_hn.nodes_map = {
+            nid: edges.copy() for nid, edges in self.nodes_map.items()
+        }
+        new_hn.edges_map = {
+            eid: nodes.copy() for eid, nodes in self.edges_map.items()
+        }
+        return new_hn
+
     def add_node(self, node_id: int) -> None:
         """Add a node if not present."""
         self.nodes_map.setdefault(node_id, set())

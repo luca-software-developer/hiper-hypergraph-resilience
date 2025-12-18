@@ -44,18 +44,19 @@ class TestComprehensiveResilienceExperiment(unittest.TestCase):
         self.assertEqual(self.experiment.m, 2)
         self.assertIsNotNone(self.experiment.traditional_metrics)
         self.assertIsNotNone(self.experiment.higher_order_metrics)
-        self.assertIsNotNone(self.experiment.node_topsis)
+        self.assertIsNotNone(self.experiment.node_ranker)
         self.assertIsNotNone(self.experiment.hyperedge_topsis)
 
     def test_compute_all_metrics(self):
-        """Test computation of all traditional metrics."""
+        """Test computation of all structural metrics."""
         metrics = self.experiment._compute_all_metrics(self.hn)
 
         expected_metrics = [
-            'hypergraph_connectivity',
-            'hyperedge_connectivity',
-            'redundancy_coefficient',
-            'swalk_efficiency'
+            'order',
+            'size',
+            'avg_degree',
+            'avg_hyperdegree',
+            'avg_hyperedge_size'
         ]
 
         for metric_name in expected_metrics:
@@ -161,12 +162,13 @@ class TestComprehensiveResilienceExperiment(unittest.TestCase):
         # Should return averaged metrics
         self.assertIsInstance(result, dict)
 
-        # Should contain traditional metrics
+        # Should contain structural metrics
         expected_metrics = [
-            'hypergraph_connectivity',
-            'hyperedge_connectivity',
-            'redundancy_coefficient',
-            'swalk_efficiency'
+            'order',
+            'size',
+            'avg_degree',
+            'avg_hyperdegree',
+            'avg_hyperedge_size'
         ]
 
         for metric in expected_metrics:
@@ -178,9 +180,9 @@ class TestComprehensiveResilienceExperiment(unittest.TestCase):
         # Mock metrics computation
         mock_compute.return_value = {'test_metric': 0.5}
 
-        # Mock TOPSIS ranking
+        # Mock ranking
         with patch.object(
-                self.experiment.node_topsis, 'rank_nodes'
+                self.experiment.node_ranker, 'rank_nodes'
         ) as mock_rank:
             mock_rank.return_value = [(1, 0.8), (2, 0.6), (3, 0.4), (4, 0.2)]
 
@@ -314,33 +316,22 @@ class TestComprehensiveResilienceExperiment(unittest.TestCase):
         self.assertIn('original_metric', results['original_metrics'])
 
     def test_compute_all_metrics_handles_exceptions(self):
-        """Test that metric computation handles exceptions gracefully."""
-        # Create a mock metric that raises an exception
-        failing_metric = MagicMock()
-        failing_metric.compute.side_effect = Exception("Test exception")
+        """Test that metric computation returns valid metrics."""
+        # Test with empty hypernetwork
+        empty_hn = Hypernetwork()
+        metrics = self.experiment._compute_all_metrics(empty_hn)
 
-        # Replace one metric with the failing one
-        original_metric = self.experiment.traditional_metrics[
-            'hypergraph_connectivity'
-        ]
-        self.experiment.traditional_metrics[
-            'hypergraph_connectivity'
-        ] = failing_metric
+        # Should return metrics with 0 values
+        self.assertEqual(metrics['order'], 0.0)
+        self.assertEqual(metrics['size'], 0.0)
+        self.assertEqual(metrics['avg_degree'], 0.0)
+        self.assertEqual(metrics['avg_hyperdegree'], 0.0)
+        self.assertEqual(metrics['avg_hyperedge_size'], 0.0)
 
-        try:
-            metrics = self.experiment._compute_all_metrics(self.hn)
-
-            # Should have the failing metric with value 0.0
-            self.assertEqual(metrics['hypergraph_connectivity'], 0.0)
-
-            # Other metrics should still work
-            self.assertIn('redundancy_coefficient', metrics)
-
-        finally:
-            # Restore original metric
-            self.experiment.traditional_metrics[
-                'hypergraph_connectivity'
-            ] = original_metric
+        # Test with valid hypernetwork
+        metrics = self.experiment._compute_all_metrics(self.hn)
+        self.assertGreater(metrics['order'], 0.0)
+        self.assertGreater(metrics['size'], 0.0)
 
 
 if __name__ == '__main__':

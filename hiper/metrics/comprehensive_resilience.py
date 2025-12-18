@@ -11,7 +11,6 @@ targeted attacks on both nodes and hyperedges, and evaluation using both
 traditional metrics and new higher-order cohesion measures.
 """
 
-import copy
 import random
 from typing import Dict, List, Any, Tuple
 
@@ -27,15 +26,17 @@ except ImportError:
     plt = None
 
 from hiper.core.hypernetwork import Hypernetwork
+from hiper.metrics.topsis import TopsisNodeRanker
+from hiper.metrics.wsm import WSMNodeRanker
+from hiper.metrics.moora import MOORANodeRanker
+from hiper.metrics.hyperedge_topsis import HyperedgeTopsisRanker
+from hiper.metrics.higher_order_cohesion import HigherOrderCohesionMetrics
 from hiper.metrics.connectivity import (
     HypergraphConnectivity,
     HyperedgeConnectivity
 )
 from hiper.metrics.redundancy import RedundancyCoefficient
 from hiper.metrics.swalk import SwalkEfficiency
-from hiper.metrics.topsis import TopsisNodeRanker
-from hiper.metrics.hyperedge_topsis import HyperedgeTopsisRanker
-from hiper.metrics.higher_order_cohesion import HigherOrderCohesionMetrics
 
 
 class ComprehensiveResilienceExperiment:
@@ -48,16 +49,19 @@ class ComprehensiveResilienceExperiment:
     using both traditional metrics and new higher-order cohesion measures.
     """
 
-    def __init__(self, s: int = 1, m: int = 2):
+    def __init__(self, s: int = 1, m: int = 2, node_ranker: str = 'topsis'):
         """
         Initialize comprehensive experiment framework.
 
         Args:
             s: Parameter for s-walk computations.
             m: Parameter for m-th order component analysis.
+            node_ranker: Node ranking method to use. Options: 'topsis', 'wsm',
+                        'moora'. Default: 'topsis'.
         """
         self.s = s
         self.m = m
+        self.node_ranker_name = node_ranker
 
         # Initialize traditional metrics
         self.traditional_metrics = {
@@ -70,8 +74,15 @@ class ComprehensiveResilienceExperiment:
         # Initialize higher-order metrics
         self.higher_order_metrics = HigherOrderCohesionMetrics(m)
 
-        # Initialize TOPSIS rankers
-        self.node_topsis = TopsisNodeRanker()
+        # Initialize node ranker based on selection
+        if node_ranker.lower() == 'wsm':
+            self.node_ranker = WSMNodeRanker()
+        elif node_ranker.lower() == 'moora':
+            self.node_ranker = MOORANodeRanker()
+        else:  # default to TOPSIS
+            self.node_ranker = TopsisNodeRanker()
+
+        # Initialize hyperedge ranker (always TOPSIS)
         self.hyperedge_topsis = HyperedgeTopsisRanker()
 
     def run_node_and_hyperedge_removal_experiments(
@@ -134,17 +145,54 @@ class ComprehensiveResilienceExperiment:
 
         return results
 
+    def run_node_removal_experiments(
+            self,
+            hypernetwork: Hypernetwork,
+            removal_percentages: List[float],
+            random_trials: int
+    ) -> Dict[str, Any]:
+        """
+        Run node removal experiments.
+
+        Args:
+            hypernetwork: Target hypergraph for analysis.
+            removal_percentages: List of percentages to remove.
+            random_trials: Number of trials for random removal strategies.
+
+        Returns:
+            Experiments results dictionary.
+        """
+        return self._run_node_removal_experiments(
+            hypernetwork, removal_percentages, random_trials
+        )
+
+    def compute_all_metrics(self, hypernetwork: Hypernetwork) -> Dict[
+        str, float
+    ]:
+        """
+        Compute all traditional resilience metrics.
+
+        Args:
+            hypernetwork: Target hypergraph for analysis.
+
+        Returns:
+            Dictionary with all computed metrics.
+        """
+        return self._compute_all_metrics(hypernetwork)
+
     def _run_node_removal_experiments(
             self,
             hypernetwork: Hypernetwork,
             removal_percentages: List[float],
             random_trials: int
     ) -> Dict[str, Any]:
-        """Run node removal experiments with random and TOPSIS strategies."""
+        """Run node removal experiments with random and ranking strategies."""
+        # Use ranker name in experiment keys
+        ranker_name = self.node_ranker_name
         experiments = {
             'random_removal': {},
-            'topsis_top_removal': {},
-            'topsis_bottom_removal': {}
+            f'{ranker_name}_top_removal': {},
+            f'{ranker_name}_bottom_removal': {}
         }
 
         for percentage in removal_percentages:
@@ -156,12 +204,12 @@ class ComprehensiveResilienceExperiment:
                     hypernetwork, percentage, random_trials
                 )
 
-            # TOPSIS top removal (remove most critical nodes)
-            experiments['topsis_top_removal'][percentage] = \
+            # Ranker-based top removal (remove most critical nodes)
+            experiments[f'{ranker_name}_top_removal'][percentage] = \
                 self._test_topsis_node_removal(hypernetwork, percentage, 'top')
 
-            # TOPSIS bottom removal (remove the least critical nodes)
-            experiments['topsis_bottom_removal'][percentage] = \
+            # Ranker-based bottom removal (remove the least critical nodes)
+            experiments[f'{ranker_name}_bottom_removal'][percentage] = \
                 self._test_topsis_node_removal(
                     hypernetwork, percentage, 'bottom'
                 )
@@ -217,7 +265,7 @@ class ComprehensiveResilienceExperiment:
 
         for trial in range(trials):
             # Create copy and remove random nodes
-            hn_copy = copy.deepcopy(hypernetwork)
+            hn_copy = hypernetwork.lightweight_copy()
             nodes_to_remove = self._select_random_nodes(hn_copy, percentage)
 
             for node_id in nodes_to_remove:
@@ -243,9 +291,9 @@ class ComprehensiveResilienceExperiment:
             percentage: float,
             strategy: str
     ) -> Dict[str, float]:
-        """Test TOPSIS-based node removal strategy."""
-        # Get TOPSIS ranking
-        ranked_nodes = self.node_topsis.rank_nodes(hypernetwork)
+        """Test ranking-based node removal strategy."""
+        # Get node ranking using selected ranker
+        ranked_nodes = self.node_ranker.rank_nodes(hypernetwork)
 
         # Select nodes based on strategy
         if strategy == 'top':
@@ -258,7 +306,7 @@ class ComprehensiveResilienceExperiment:
             )
 
         # Create copy and remove selected nodes
-        hn_copy = copy.deepcopy(hypernetwork)
+        hn_copy = hypernetwork.lightweight_copy()
         for node_id in nodes_to_remove:
             hn_copy.remove_node(node_id)
 
@@ -284,7 +332,7 @@ class ComprehensiveResilienceExperiment:
 
         for trial in range(trials):
             # Create copy and remove random hyperedges
-            hn_copy = copy.deepcopy(hypernetwork)
+            hn_copy = hypernetwork.lightweight_copy()
             hyperedges_to_remove = self._select_random_hyperedges(
                 hn_copy, percentage
             )
@@ -331,7 +379,7 @@ class ComprehensiveResilienceExperiment:
             )
 
         # Create copy and remove selected hyperedges
-        hn_copy = copy.deepcopy(hypernetwork)
+        hn_copy = hypernetwork.lightweight_copy()
         for he_id in hyperedges_to_remove:
             hn_copy.remove_hyperedge(he_id)
 
@@ -346,19 +394,29 @@ class ComprehensiveResilienceExperiment:
 
         return metrics
 
-    def _compute_all_metrics(self, hypernetwork: Hypernetwork) -> Dict[
+    @staticmethod
+    def _compute_all_metrics(hypernetwork: Hypernetwork) -> Dict[
         str, float
     ]:
-        """Compute all traditional resilience metrics for the hypergraph."""
-        metrics = {}
+        """
+        Compute structural metrics for the hypergraph.
+        """
+        metrics = {'order': float(hypernetwork.order()),
+                   'size': float(hypernetwork.size())}
 
-        for name, metric_calculator in self.traditional_metrics.items():
-            try:
-                value = metric_calculator.compute(hypernetwork)
-                metrics[name] = float(value)
-            except Exception as e:
-                print(f"Warning: Failed to compute {name}: {e}")
-                metrics[name] = 0.0
+        if hypernetwork.order() > 0:
+            metrics['avg_degree'] = float(hypernetwork.avg_deg())
+            metrics['avg_hyperdegree'] = float(hypernetwork.avg_hyperdegree())
+        else:
+            metrics['avg_degree'] = 0.0
+            metrics['avg_hyperdegree'] = 0.0
+
+        if hypernetwork.size() > 0:
+            metrics['avg_hyperedge_size'] = float(
+                hypernetwork.avg_hyperedge_size()
+            )
+        else:
+            metrics['avg_hyperedge_size'] = 0.0
 
         return metrics
 
