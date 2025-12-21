@@ -199,10 +199,10 @@ class TestRedundancyCoefficient(unittest.TestCase):
         # Pair (0,2): intersection=1, normalized=1/sqrt(2*2)=0.5
         # Pair (1,2): intersection=1, normalized=1/sqrt(2*2)=0.5
         # Total = 3 * 0.5 = 1.5
-        # Formula: (2 * 1.5) / (3^2) = 3.0 / 9 = 1/3
+        # Formula: (2 * 1.5) / (3 * (3-1)) = 3.0 / 6 = 1/2
 
         rho = self.redundancy_calc.compute(hn_verify)
-        expected_rho = 1.0 / 3.0
+        expected_rho = 1.0 / 2.0
         self.assertAlmostEqual(rho, expected_rho, places=5)
 
 

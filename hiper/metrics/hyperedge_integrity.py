@@ -20,7 +20,7 @@ class HyperedgeIntegrity:
     The Hyperedge Integrity measures the fraction of hyperedges that remain
     in the hypergraph after a perturbation:
 
-    ``HI = |E'| / |E|``
+    :math:`\\text{HI} = \\frac{|E'|}{|E|}`
 
     where E is the original set of hyperedges and E' is the set of hyperedges
     after perturbation.

@@ -23,11 +23,11 @@ class CentralityDisruptionIndex:
     The Centrality Disruption Index measures how much a perturbation affects
     the centrality distribution of nodes using the Kolmogorov-Smirnov test:
 
-    CDI = KS({C^pre_v}, {C^post_v})
+    :math:`\\text{CDI} = \\text{KS}(\\{C^{\\text{pre}}_v\\}, \\{C^{\\text{post}}_v\\})`
 
     where:
-    - C^pre_v are centrality values before perturbation
-    - C^post_v are centrality values after perturbation
+    - :math:`C^{\\text{pre}}_v` are centrality values before perturbation
+    - :math:`C^{\\text{post}}_v` are centrality values after perturbation
     - KS is the Kolmogorov-Smirnov distance between distributions
 
     The metric returns a value in [0, 1] where:
@@ -93,7 +93,7 @@ class CentralityDisruptionIndex:
         except (ValueError, RuntimeError):
             # Fallback to normalized absolute difference of means
             mean_before = np.mean(values_before)
-            mean_after = int(np.mean(values_after))
+            mean_after = np.mean(values_after)
             max_val = max(max(values_before), max(values_after))
             if max_val == 0:
                 return 0.0

@@ -26,6 +26,7 @@ extensions = [
     'sphinx.ext.viewcode',         # Add links to highlighted source code
     'sphinx.ext.intersphinx',      # Link to other project's documentation
     'sphinx.ext.autosummary',      # Generate autodoc summaries
+    'sphinx.ext.mathjax',          # Render mathematical formulas with MathJax
     'sphinx_autodoc_typehints',    # Include type hints in documentation
 ]
 

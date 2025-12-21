@@ -18,8 +18,9 @@ class RedundancyCoefficient:
     The redundancy coefficient measures the average degree of normalized
     overlap between pairs of hyperedges in the hypergraph.
 
-    Formula: ``ρ(H) = (1/|E|²) * Σ(|e1 ∩ e2| / √(|e1| * |e2|))``
-    for all pairs ``e1, e2 ∈ E`` with ``e1 ≠ e2``.
+    Formula: :math:`\\rho(H) = \\frac{2}{|E|(|E|-1)} \\sum_{\\substack{e_1, e_2 \\in E \\\\ e_1 \\neq e_2 \\\\ e_1 < e_2}} \\frac{|e_1 \\cap e_2|}{\\sqrt{|e_1| \\cdot |e_2|}}`
+
+    The sum is over all unordered pairs of distinct hyperedges.
     """
 
     @staticmethod
@@ -61,11 +62,10 @@ class RedundancyCoefficient:
                     total_overlap += normalized_overlap
                     pair_count += 1
 
-        # Apply formula: ρ(H) = (1/|E|²) * Σ(normalized_overlaps)
-        # Note: We sum over distinct pairs, so we need 2 * pair_count
-        # to account for both (e1,e2) and (e2,e1)
+        # Apply formula: ρ(H) = 2/(|E|(|E|-1)) * Σ(normalized_overlaps)
+        # We sum over unordered pairs (i < j), hence the factor of 2
         if pair_count > 0:
-            return (2 * total_overlap) / (m * m)
+            return (2 * total_overlap) / (m * (m - 1))
         else:
             return 0.0
 

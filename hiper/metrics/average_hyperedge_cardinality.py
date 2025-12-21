@@ -21,9 +21,9 @@ class AverageHyperedgeCardinality:
     The Average Hyperedge Cardinality measures the mean size of hyperedges
     in the hypergraph after perturbation:
 
-    ``AHC = (1/|E'|) * Σ|e|`` for ``e ∈ E'``
+    :math:`\\text{AHC} = \\frac{1}{|E'|} \\sum_{e \\in E'} |e|`
 
-    where E' is the set of hyperedges after perturbation and ``|e|`` is the
+    where E' is the set of hyperedges after perturbation and :math:`|e|` is the
     cardinality (size) of hyperedge e.
 
     This metric provides insight into how perturbations affect the

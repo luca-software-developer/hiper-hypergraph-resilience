@@ -22,12 +22,12 @@ class EntropyLoss:
     The Entropy Loss measures how much entropy is lost in a distribution
     after a perturbation:
 
-    EL = H(P^pre) - H(P^post)
+    :math:`\\text{EL} = H(P^{\\text{pre}}) - H(P^{\\text{post}})`
 
     where:
-    - H(P) = -Σ p_i * log(p_i) is the Shannon entropy
-    - P^pre is the distribution before perturbation
-    - P^post is the distribution after perturbation
+    - :math:`H(P) = -\\sum p_i \\log(p_i)` is the Shannon entropy
+    - :math:`P^{\\text{pre}}` is the distribution before perturbation
+    - :math:`P^{\\text{post}}` is the distribution after perturbation
 
     Positive values indicate entropy loss (reduced diversity),
     negative values indicate entropy gain (increased diversity),

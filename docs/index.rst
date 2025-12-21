@@ -64,9 +64,8 @@ Table of Contents
 
 .. toctree::
    :maxdepth: 1
-   :caption: Development
+   :caption: License
 
-   contributing
    license
 
 Indices and tables
