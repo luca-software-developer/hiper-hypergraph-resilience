@@ -1,0 +1,773 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>hiper.metrics.topsis &mdash; HIPER Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=81f5cde6" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.svg"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            HIPER
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#installing-hiper">Installing HIPER</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../installation.html#development-installation-recommended">Development Installation (Recommended)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../installation.html#standard-installation">Standard Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#verifying-installation">Verifying Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#uninstalling">Uninstalling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../experiments.html">Running Experiments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../experiments.html#resilience-experiments">Resilience Experiments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../experiments.html#perturbation-analysis">Perturbation Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../experiments.html#comprehensive-node-and-hyperedge-experiments">Comprehensive Node and Hyperedge Experiments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../experiments.html#mcdm-methods-comparison">MCDM Methods Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../experiments.html#statistical-analysis">Statistical Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../experiments.html#working-with-custom-datasets">Working with Custom Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../experiments.html#example-workflow">Example Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples.html#basic-hypernetwork-creation">Basic Hypernetwork Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples.html#loading-datasets">Loading Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples.html#attack-simulation">Attack Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples.html#attack-sequences">Attack Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples.html#resilience-analysis">Resilience Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples.html#topsis-node-ranking">TOPSIS Node Ranking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples.html#mcdm-methods-comparison">MCDM Methods Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples.html#custom-metrics">Custom Metrics</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/core.html">Core Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/core.html#module-hiper.core.hypernetwork">hiper.core.hypernetwork</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork"><code class="docutils literal notranslate"><span class="pre">Hypernetwork</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.__init__"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.lightweight_copy"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.lightweight_copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.add_node"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.add_node()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.remove_node"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.remove_node()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.add_hyperedge"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.add_hyperedge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.add_node_to_hyperedge"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.add_node_to_hyperedge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.remove_node_from_hyperedge"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.remove_node_from_hyperedge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.remove_hyperedge"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.remove_hyperedge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.get_nodes"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.get_nodes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.get_hyperedges"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.get_hyperedges()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.get_neighbors"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.get_neighbors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.degree"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.degree()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.hyperdegree"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.hyperdegree()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.order"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.order()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.size"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.size()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.avg_deg"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.avg_deg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.avg_hyperdegree"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.avg_hyperdegree()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.hyperedge_size"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.hyperedge_size()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.avg_hyperedge_size"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.avg_hyperedge_size()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.line_graph"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.line_graph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.print_info"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.print_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.nodes"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.nodes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.edges"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.edges</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/core.html#module-hiper.core.node">hiper.core.node</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/core.html#hiper.core.node.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.node.Node.__init__"><code class="docutils literal notranslate"><span class="pre">Node.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.node.Node.node_id"><code class="docutils literal notranslate"><span class="pre">Node.node_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.node.Node.first_incidence"><code class="docutils literal notranslate"><span class="pre">Node.first_incidence</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/core.html#module-hiper.core.hyperedge">hiper.core.hyperedge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/core.html#hiper.core.hyperedge.Hyperedge"><code class="docutils literal notranslate"><span class="pre">Hyperedge</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hyperedge.Hyperedge.__init__"><code class="docutils literal notranslate"><span class="pre">Hyperedge.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hyperedge.Hyperedge.edge_id"><code class="docutils literal notranslate"><span class="pre">Hyperedge.edge_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hyperedge.Hyperedge.first_incidence"><code class="docutils literal notranslate"><span class="pre">Hyperedge.first_incidence</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/core.html#module-hiper.core.incidence">hiper.core.incidence</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/core.html#hiper.core.incidence.Incidence"><code class="docutils literal notranslate"><span class="pre">Incidence</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.incidence.Incidence.__init__"><code class="docutils literal notranslate"><span class="pre">Incidence.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.incidence.Incidence.node"><code class="docutils literal notranslate"><span class="pre">Incidence.node</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.incidence.Incidence.edge"><code class="docutils literal notranslate"><span class="pre">Incidence.edge</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.incidence.Incidence.prev_in_node"><code class="docutils literal notranslate"><span class="pre">Incidence.prev_in_node</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.incidence.Incidence.next_in_node"><code class="docutils literal notranslate"><span class="pre">Incidence.next_in_node</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.incidence.Incidence.prev_in_edge"><code class="docutils literal notranslate"><span class="pre">Incidence.prev_in_edge</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.incidence.Incidence.next_in_edge"><code class="docutils literal notranslate"><span class="pre">Incidence.next_in_edge</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/datasets.html">Dataset Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/datasets.html#module-hiper.datasets">hiper.datasets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/datasets.html#hiper.datasets.DataFile"><code class="docutils literal notranslate"><span class="pre">DataFile</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/datasets.html#hiper.datasets.DataFile.hyperedges"><code class="docutils literal notranslate"><span class="pre">DataFile.hyperedges</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/datasets.html#hiper.datasets.DataFile.__init__"><code class="docutils literal notranslate"><span class="pre">DataFile.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/datasets.html#hiper.datasets.DataFile.get_hyperedges"><code class="docutils literal notranslate"><span class="pre">DataFile.get_hyperedges()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/datasets.html#hiper.datasets.Dataset"><code class="docutils literal notranslate"><span class="pre">Dataset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/datasets.html#hiper.datasets.Dataset.name"><code class="docutils literal notranslate"><span class="pre">Dataset.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/datasets.html#hiper.datasets.Dataset.hypernetwork"><code class="docutils literal notranslate"><span class="pre">Dataset.hypernetwork</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/datasets.html#hiper.datasets.Dataset.__init__"><code class="docutils literal notranslate"><span class="pre">Dataset.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/datasets.html#hiper.datasets.Dataset.get_hypernetwork"><code class="docutils literal notranslate"><span class="pre">Dataset.get_hypernetwork()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/datasets.html#hiper.datasets.Dataset.get_name"><code class="docutils literal notranslate"><span class="pre">Dataset.get_name()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/datasets.html#module-hiper.config">hiper.config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/datasets.html#hiper.config.load_config"><code class="docutils literal notranslate"><span class="pre">load_config()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/metrics.html">Metrics and Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/metrics.html#experimental-frameworks">Experimental Frameworks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.experiments">hiper.metrics.experiments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.experiments.ResilienceExperiment"><code class="docutils literal notranslate"><span class="pre">ResilienceExperiment</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.comprehensive_resilience">hiper.metrics.comprehensive_resilience</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.comprehensive_resilience.ComprehensiveResilienceExperiment"><code class="docutils literal notranslate"><span class="pre">ComprehensiveResilienceExperiment</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/metrics.html#ranking-and-selection">Ranking and Selection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.topsis">hiper.metrics.topsis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.topsis.TopsisNodeRanker"><code class="docutils literal notranslate"><span class="pre">TopsisNodeRanker</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.hyperedge_topsis">hiper.metrics.hyperedge_topsis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.hyperedge_topsis.HyperedgeTopsisRanker"><code class="docutils literal notranslate"><span class="pre">HyperedgeTopsisRanker</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.wsm">hiper.metrics.wsm</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.wsm.WSMNodeRanker"><code class="docutils literal notranslate"><span class="pre">WSMNodeRanker</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.moora">hiper.metrics.moora</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.moora.MOORANodeRanker"><code class="docutils literal notranslate"><span class="pre">MOORANodeRanker</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/metrics.html#structural-metrics">Structural Metrics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.connectivity">hiper.metrics.connectivity</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.connectivity.HypergraphConnectivity"><code class="docutils literal notranslate"><span class="pre">HypergraphConnectivity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.connectivity.HyperedgeConnectivity"><code class="docutils literal notranslate"><span class="pre">HyperedgeConnectivity</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.distance">hiper.metrics.distance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.distance.HypergraphDistance"><code class="docutils literal notranslate"><span class="pre">HypergraphDistance</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.redundancy">hiper.metrics.redundancy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.redundancy.RedundancyCoefficient"><code class="docutils literal notranslate"><span class="pre">RedundancyCoefficient</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.swalk">hiper.metrics.swalk</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.swalk.SwalkEfficiency"><code class="docutils literal notranslate"><span class="pre">SwalkEfficiency</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/metrics.html#higher-order-metrics">Higher-Order Metrics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.higher_order_cohesion">hiper.metrics.higher_order_cohesion</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.higher_order_cohesion.HigherOrderCohesionMetrics"><code class="docutils literal notranslate"><span class="pre">HigherOrderCohesionMetrics</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.hyperedge_fragmentation">hiper.metrics.hyperedge_fragmentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.hyperedge_fragmentation.HyperedgeFragmentationIndex"><code class="docutils literal notranslate"><span class="pre">HyperedgeFragmentationIndex</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.hyperedge_integrity">hiper.metrics.hyperedge_integrity</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.hyperedge_integrity.HyperedgeIntegrity"><code class="docutils literal notranslate"><span class="pre">HyperedgeIntegrity</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/metrics.html#additional-metrics">Additional Metrics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.average_hyperedge_cardinality">hiper.metrics.average_hyperedge_cardinality</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.average_hyperedge_cardinality.AverageHyperedgeCardinality"><code class="docutils literal notranslate"><span class="pre">AverageHyperedgeCardinality</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.centrality_disruption">hiper.metrics.centrality_disruption</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.centrality_disruption.CentralityDisruptionIndex"><code class="docutils literal notranslate"><span class="pre">CentralityDisruptionIndex</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.entropy_loss">hiper.metrics.entropy_loss</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.entropy_loss.EntropyLoss"><code class="docutils literal notranslate"><span class="pre">EntropyLoss</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/simulation.html">Simulation Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/simulation.html#module-hiper.simulation.simulator">hiper.simulation.simulator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.__init__"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.set_hypernetwork"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.set_hypernetwork()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.simulate_attack"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.simulate_attack()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.simulate_sequence"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.simulate_sequence()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.get_simulation_history"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.get_simulation_history()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.get_baseline_stats"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.get_baseline_stats()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.clear_history"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.clear_history()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.generate_summary_report"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.generate_summary_report()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/simulation.html#module-hiper.simulation.attack">hiper.simulation.attack</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.Attack"><code class="docutils literal notranslate"><span class="pre">Attack</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.Attack.__init__"><code class="docutils literal notranslate"><span class="pre">Attack.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.Attack.execute"><code class="docutils literal notranslate"><span class="pre">Attack.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.Attack.describe"><code class="docutils literal notranslate"><span class="pre">Attack.describe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.Attack.is_executed"><code class="docutils literal notranslate"><span class="pre">Attack.is_executed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.Attack.get_result"><code class="docutils literal notranslate"><span class="pre">Attack.get_result()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.Attack.reset"><code class="docutils literal notranslate"><span class="pre">Attack.reset()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.AddNodeAttack"><code class="docutils literal notranslate"><span class="pre">AddNodeAttack</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.AddNodeAttack.__init__"><code class="docutils literal notranslate"><span class="pre">AddNodeAttack.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.AddNodeAttack.execute"><code class="docutils literal notranslate"><span class="pre">AddNodeAttack.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.AddNodeAttack.describe"><code class="docutils literal notranslate"><span class="pre">AddNodeAttack.describe()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.RemoveNodeAttack"><code class="docutils literal notranslate"><span class="pre">RemoveNodeAttack</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.RemoveNodeAttack.__init__"><code class="docutils literal notranslate"><span class="pre">RemoveNodeAttack.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.RemoveNodeAttack.execute"><code class="docutils literal notranslate"><span class="pre">RemoveNodeAttack.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.RemoveNodeAttack.describe"><code class="docutils literal notranslate"><span class="pre">RemoveNodeAttack.describe()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.AddHyperedgeAttack"><code class="docutils literal notranslate"><span class="pre">AddHyperedgeAttack</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.AddHyperedgeAttack.__init__"><code class="docutils literal notranslate"><span class="pre">AddHyperedgeAttack.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.AddHyperedgeAttack.execute"><code class="docutils literal notranslate"><span class="pre">AddHyperedgeAttack.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.AddHyperedgeAttack.describe"><code class="docutils literal notranslate"><span class="pre">AddHyperedgeAttack.describe()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.RemoveHyperedgeAttack"><code class="docutils literal notranslate"><span class="pre">RemoveHyperedgeAttack</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.RemoveHyperedgeAttack.__init__"><code class="docutils literal notranslate"><span class="pre">RemoveHyperedgeAttack.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.RemoveHyperedgeAttack.execute"><code class="docutils literal notranslate"><span class="pre">RemoveHyperedgeAttack.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.RemoveHyperedgeAttack.describe"><code class="docutils literal notranslate"><span class="pre">RemoveHyperedgeAttack.describe()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/simulation.html#module-hiper.simulation.sequence">hiper.simulation.sequence</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence"><code class="docutils literal notranslate"><span class="pre">AttackSequence</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.__init__"><code class="docutils literal notranslate"><span class="pre">AttackSequence.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.add_attack"><code class="docutils literal notranslate"><span class="pre">AttackSequence.add_attack()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.add_attacks"><code class="docutils literal notranslate"><span class="pre">AttackSequence.add_attacks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.execute"><code class="docutils literal notranslate"><span class="pre">AttackSequence.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.get_results"><code class="docutils literal notranslate"><span class="pre">AttackSequence.get_results()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.get_execution_stats"><code class="docutils literal notranslate"><span class="pre">AttackSequence.get_execution_stats()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.is_executed"><code class="docutils literal notranslate"><span class="pre">AttackSequence.is_executed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.reset"><code class="docutils literal notranslate"><span class="pre">AttackSequence.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.clear"><code class="docutils literal notranslate"><span class="pre">AttackSequence.clear()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.size"><code class="docutils literal notranslate"><span class="pre">AttackSequence.size()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.describe"><code class="docutils literal notranslate"><span class="pre">AttackSequence.describe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.get_attack"><code class="docutils literal notranslate"><span class="pre">AttackSequence.get_attack()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.remove_attack"><code class="docutils literal notranslate"><span class="pre">AttackSequence.remove_attack()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.insert_attack"><code class="docutils literal notranslate"><span class="pre">AttackSequence.insert_attack()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">License</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../license.html#mit-license">MIT License</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">HIPER</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">hiper.metrics.topsis</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for hiper.metrics.topsis</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">topsis.py</span>
+
+<span class="sd">Implements TOPSIS (Technique for Order Preference by Similarity to Ideal</span>
+<span class="sd">Solution) method for ranking hypergraph nodes based on multiple criteria.</span>
+<span class="sd">Based on the approach described in the PIF-MN paper.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">hiper.core.hypernetwork</span><span class="w"> </span><span class="kn">import</span> <span class="n">Hypernetwork</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="c1"># Fallback implementation without numpy</span>
+    <span class="n">np</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<div class="viewcode-block" id="TopsisNodeRanker">
+<a class="viewcode-back" href="../../../api/metrics.html#hiper.metrics.topsis.TopsisNodeRanker">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">TopsisNodeRanker</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Ranks hypergraph nodes using TOPSIS multi-criteria decision method.</span>
+
+<span class="sd">    Criteria used (as per PIF-MN paper):</span>
+<span class="sd">    1. Number of hyperedges containing the node (hyperdegree)</span>
+<span class="sd">    2. Number of nodes in the neighborhood</span>
+<span class="sd">    3. Average clustering coefficient of the neighborhood</span>
+<span class="sd">    4. Degree centrality of the node</span>
+<span class="sd">    5. Binary indicator for participation in closed triads</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="TopsisNodeRanker.__init__">
+<a class="viewcode-back" href="../../../api/metrics.html#hiper.metrics.topsis.TopsisNodeRanker.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize TOPSIS ranker.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">criteria_names</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">&#39;hyperdegree&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;neighborhood_size&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;avg_clustering&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;degree_centrality&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;closed_triad_indicator&#39;</span>
+        <span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="TopsisNodeRanker.rank_nodes">
+<a class="viewcode-back" href="../../../api/metrics.html#hiper.metrics.topsis.TopsisNodeRanker.rank_nodes">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">rank_nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hypernetwork</span><span class="p">:</span> <span class="n">Hypernetwork</span><span class="p">,</span>
+                   <span class="n">weights</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Rank nodes using TOPSIS method.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            hypernetwork: Target hypergraph.</span>
+<span class="sd">            weights: Weights for criteria (default: equal weights).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            List of (node_id, topsis_score) tuples, sorted by score descending.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">hypernetwork</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">nodes</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span>
+
+        <span class="k">if</span> <span class="n">weights</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">criteria_names</span><span class="p">)</span>
+
+        <span class="c1"># Compute criteria matrix</span>
+        <span class="n">criteria_matrix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_criteria_matrix</span><span class="p">(</span><span class="n">hypernetwork</span><span class="p">,</span> <span class="n">nodes</span><span class="p">)</span>
+
+        <span class="c1"># Apply TOPSIS algorithm</span>
+        <span class="n">scores</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_apply_topsis</span><span class="p">(</span><span class="n">criteria_matrix</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span>
+
+        <span class="c1"># Create ranked list</span>
+        <span class="n">ranked_nodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">scores</span><span class="p">))</span>
+        <span class="n">ranked_nodes</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">ranked_nodes</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_criteria_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hypernetwork</span><span class="p">:</span> <span class="n">Hypernetwork</span><span class="p">,</span>
+                                 <span class="n">nodes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the criteria matrix for all nodes.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            hypernetwork: Target hypergraph.</span>
+<span class="sd">            nodes: List of node IDs.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Matrix where rows are nodes and columns are criteria.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">n_nodes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+        <span class="n">n_criteria</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">criteria_names</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">np</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_nodes</span><span class="p">,</span> <span class="n">n_criteria</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_criteria</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_nodes</span><span class="p">)]</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">node_id</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nodes</span><span class="p">):</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_compute_hyperdegree</span><span class="p">(</span><span class="n">hypernetwork</span><span class="p">,</span> <span class="n">node_id</span><span class="p">),</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_compute_neighborhood_size</span><span class="p">(</span><span class="n">hypernetwork</span><span class="p">,</span> <span class="n">node_id</span><span class="p">),</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_compute_avg_clustering</span><span class="p">(</span><span class="n">hypernetwork</span><span class="p">,</span> <span class="n">node_id</span><span class="p">),</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_compute_degree_centrality</span><span class="p">(</span><span class="n">hypernetwork</span><span class="p">,</span> <span class="n">node_id</span><span class="p">),</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_compute_closed_triad_indicator</span><span class="p">(</span><span class="n">hypernetwork</span><span class="p">,</span> <span class="n">node_id</span><span class="p">)</span>
+            <span class="p">]</span>
+
+            <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">np</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+        <span class="k">return</span> <span class="n">matrix</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_hyperdegree</span><span class="p">(</span><span class="n">hypernetwork</span><span class="p">:</span> <span class="n">Hypernetwork</span><span class="p">,</span>
+                             <span class="n">node_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute number of hyperedges containing the node.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hypernetwork</span><span class="o">.</span><span class="n">get_hyperedges</span><span class="p">(</span><span class="n">node_id</span><span class="p">)))</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_neighborhood_size</span><span class="p">(</span><span class="n">hypernetwork</span><span class="p">:</span> <span class="n">Hypernetwork</span><span class="p">,</span>
+                                   <span class="n">node_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute size of node&#39;s neighborhood.&quot;&quot;&quot;</span>
+        <span class="n">neighbors</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">hypernetwork</span><span class="o">.</span><span class="n">get_neighbors</span><span class="p">(</span><span class="n">node_id</span><span class="p">))</span>
+
+        <span class="c1"># Extended neighborhood: neighbors of neighbors</span>
+        <span class="n">extended_neighbors</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">neighbors</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="p">:</span>
+            <span class="n">extended_neighbors</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">hypernetwork</span><span class="o">.</span><span class="n">get_neighbors</span><span class="p">(</span><span class="n">neighbor</span><span class="p">))</span>
+
+        <span class="c1"># Remove the node itself</span>
+        <span class="n">extended_neighbors</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="n">node_id</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">extended_neighbors</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_avg_clustering</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hypernetwork</span><span class="p">:</span> <span class="n">Hypernetwork</span><span class="p">,</span>
+                                <span class="n">node_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute average clustering coefficient of node&#39;s neighborhood.&quot;&quot;&quot;</span>
+        <span class="n">neighbors</span> <span class="o">=</span> <span class="n">hypernetwork</span><span class="o">.</span><span class="n">get_neighbors</span><span class="p">(</span><span class="n">node_id</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">neighbors</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>
+
+        <span class="n">clustering_sum</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">valid_neighbors</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="p">:</span>
+            <span class="n">clustering</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_local_clustering</span><span class="p">(</span><span class="n">hypernetwork</span><span class="p">,</span> <span class="n">neighbor</span><span class="p">)</span>
+            <span class="n">clustering_sum</span> <span class="o">+=</span> <span class="n">clustering</span>
+            <span class="n">valid_neighbors</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">return</span> <span class="n">clustering_sum</span> <span class="o">/</span> <span class="n">valid_neighbors</span> <span class="k">if</span> <span class="n">valid_neighbors</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mf">0.0</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_local_clustering</span><span class="p">(</span><span class="n">hypernetwork</span><span class="p">:</span> <span class="n">Hypernetwork</span><span class="p">,</span>
+                                  <span class="n">node_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute hypergraph clustering coefficient for a node.&quot;&quot;&quot;</span>
+        <span class="c1"># Get all hyperedges containing this node</span>
+        <span class="n">node_hyperedges</span> <span class="o">=</span> <span class="n">hypernetwork</span><span class="o">.</span><span class="n">get_hyperedges</span><span class="p">(</span><span class="n">node_id</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">node_hyperedges</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>
+
+        <span class="c1"># For hypergraph clustering, we measure how many pairs of hyperedges</span>
+        <span class="c1"># containing this node also share other common nodes</span>
+        <span class="n">shared_connections</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">total_pairs</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">hyperedges_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">node_hyperedges</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">edge1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">hyperedges_list</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">edge2</span> <span class="ow">in</span> <span class="n">hyperedges_list</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]:</span>
+                <span class="n">total_pairs</span> <span class="o">+=</span> <span class="mi">1</span>
+
+                <span class="c1"># Get nodes in both hyperedges (excluding the central node)</span>
+                <span class="n">nodes1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">hypernetwork</span><span class="o">.</span><span class="n">get_nodes</span><span class="p">(</span><span class="n">edge1</span><span class="p">))</span> <span class="o">-</span> <span class="p">{</span><span class="n">node_id</span><span class="p">}</span>
+                <span class="n">nodes2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">hypernetwork</span><span class="o">.</span><span class="n">get_nodes</span><span class="p">(</span><span class="n">edge2</span><span class="p">))</span> <span class="o">-</span> <span class="p">{</span><span class="n">node_id</span><span class="p">}</span>
+
+                <span class="c1"># If they share additional nodes, they form a clustered structure</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">nodes2</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">shared_connections</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">return</span> <span class="n">shared_connections</span> <span class="o">/</span> <span class="n">total_pairs</span> <span class="k">if</span> <span class="n">total_pairs</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mf">0.0</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_degree_centrality</span><span class="p">(</span><span class="n">hypernetwork</span><span class="p">:</span> <span class="n">Hypernetwork</span><span class="p">,</span>
+                                   <span class="n">node_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute degree centrality of the node.&quot;&quot;&quot;</span>
+        <span class="n">degree</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">hypernetwork</span><span class="o">.</span><span class="n">get_neighbors</span><span class="p">(</span><span class="n">node_id</span><span class="p">))</span>
+        <span class="n">max_degree</span> <span class="o">=</span> <span class="n">hypernetwork</span><span class="o">.</span><span class="n">order</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span>
+
+        <span class="k">return</span> <span class="n">degree</span> <span class="o">/</span> <span class="n">max_degree</span> <span class="k">if</span> <span class="n">max_degree</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mf">0.0</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_closed_triad_indicator</span><span class="p">(</span><span class="n">hypernetwork</span><span class="p">:</span> <span class="n">Hypernetwork</span><span class="p">,</span>
+                                        <span class="n">node_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Binary indicator for participation in closed triads.&quot;&quot;&quot;</span>
+        <span class="n">neighbors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">hypernetwork</span><span class="o">.</span><span class="n">get_neighbors</span><span class="p">(</span><span class="n">node_id</span><span class="p">))</span>
+
+        <span class="c1"># Check all pairs of neighbors</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">n1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">neighbors</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">n2</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]:</span>
+                <span class="c1"># Check if n1 and n2 are connected (forming a triad)</span>
+                <span class="k">if</span> <span class="n">n2</span> <span class="ow">in</span> <span class="n">hypernetwork</span><span class="o">.</span><span class="n">get_neighbors</span><span class="p">(</span><span class="n">n1</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="mf">1.0</span>
+
+        <span class="k">return</span> <span class="mf">0.0</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_apply_topsis</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">criteria_matrix</span><span class="p">,</span> <span class="n">weights</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span>
+        <span class="nb">float</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Apply TOPSIS algorithm to criteria matrix.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            criteria_matrix: Matrix of criteria values.</span>
+<span class="sd">            weights: Weights for criteria.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            TOPSIS scores for each alternative.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Normalize the decision matrix</span>
+        <span class="n">normalized_matrix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_normalize_matrix</span><span class="p">(</span><span class="n">criteria_matrix</span><span class="p">)</span>
+
+        <span class="c1"># Apply weights</span>
+        <span class="n">weighted_matrix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_apply_weights</span><span class="p">(</span><span class="n">normalized_matrix</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span>
+
+        <span class="c1"># Determine ideal and negative-ideal solutions</span>
+        <span class="n">ideal_solution</span><span class="p">,</span> <span class="n">negative_ideal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_ideal_solutions</span><span class="p">(</span>
+            <span class="n">weighted_matrix</span><span class="p">)</span>
+
+        <span class="c1"># Calculate distances to ideal solutions</span>
+        <span class="n">distances_to_ideal</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">distances_to_negative</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="n">n_rows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">weighted_matrix</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">weighted_matrix</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> \
+            <span class="k">else</span> <span class="n">weighted_matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rows</span><span class="p">):</span>
+            <span class="n">row</span> <span class="o">=</span> <span class="n">weighted_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">dist_ideal</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">sum</span><span class="p">((</span><span class="n">row</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">ideal_solution</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span>
+                                       <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ideal_solution</span><span class="p">))))</span>
+            <span class="k">if</span> <span class="n">np</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">dist_negative</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">sum</span><span class="p">((</span><span class="n">row</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">negative_ideal</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span>
+                                              <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span>
+                                              <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">negative_ideal</span><span class="p">))))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">dist_negative</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">sum</span><span class="p">((</span><span class="n">row</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">negative_ideal</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span>
+                                              <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span>
+                                              <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">negative_ideal</span><span class="p">))))</span>
+
+            <span class="n">distances_to_ideal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dist_ideal</span><span class="p">)</span>
+            <span class="n">distances_to_negative</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dist_negative</span><span class="p">)</span>
+
+        <span class="c1"># Calculate TOPSIS scores</span>
+        <span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">distances_to_ideal</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">distances_to_ideal</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">distances_to_negative</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">score</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">score</span> <span class="o">=</span> <span class="p">(</span><span class="n">distances_to_negative</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span>
+                         <span class="p">(</span><span class="n">distances_to_ideal</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">distances_to_negative</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+            <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">scores</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_normalize_matrix</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Normalize criteria matrix using vector normalization.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            matrix: Raw criteria matrix.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Normalized matrix.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">np</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">normalized</span> <span class="o">=</span> <span class="n">matrix</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+                <span class="n">column_norm</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span>
+                                            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
+                <span class="k">if</span> <span class="n">column_norm</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">normalized</span><span class="p">[:,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[:,</span> <span class="n">j</span><span class="p">]</span> <span class="o">/</span> <span class="n">column_norm</span>
+            <span class="k">return</span> <span class="n">normalized</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Pure Python implementation</span>
+            <span class="n">n_rows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+            <span class="n">n_cols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">if</span> <span class="n">n_rows</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
+            <span class="n">normalized</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_cols</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rows</span><span class="p">)]</span>
+
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_cols</span><span class="p">):</span>
+                <span class="c1"># Calculate column norm</span>
+                <span class="n">column_norm</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span>
+                                            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rows</span><span class="p">)))</span>
+
+                <span class="c1"># Normalize column</span>
+                <span class="k">if</span> <span class="n">column_norm</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rows</span><span class="p">):</span>
+                        <span class="n">normalized</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">/</span> <span class="n">column_norm</span>
+
+            <span class="k">return</span> <span class="n">normalized</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_apply_weights</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">weights</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Apply weights to normalized matrix.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">np</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">matrix</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">n_rows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+            <span class="n">n_cols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">if</span> <span class="n">n_rows</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
+            <span class="n">weighted</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_cols</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rows</span><span class="p">)]</span>
+
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rows</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_cols</span><span class="p">):</span>
+                    <span class="n">weighted</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">weights</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+
+            <span class="k">return</span> <span class="n">weighted</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_find_ideal_solutions</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Find ideal and negative-ideal solutions.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">np</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">ideal_solution</span> <span class="o">=</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)))</span>
+                              <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">]))]</span>
+            <span class="n">negative_ideal</span> <span class="o">=</span> <span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)))</span>
+                              <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">]))]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">n_rows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+            <span class="n">n_cols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">if</span> <span class="n">n_rows</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
+
+            <span class="n">ideal_solution</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">negative_ideal</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_cols</span><span class="p">):</span>
+                <span class="n">column_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rows</span><span class="p">)]</span>
+                <span class="n">ideal_solution</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">column_values</span><span class="p">))</span>
+                <span class="n">negative_ideal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">column_values</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">ideal_solution</span><span class="p">,</span> <span class="n">negative_ideal</span>
+
+<div class="viewcode-block" id="TopsisNodeRanker.get_top_nodes">
+<a class="viewcode-back" href="../../../api/metrics.html#hiper.metrics.topsis.TopsisNodeRanker.get_top_nodes">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_top_nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hypernetwork</span><span class="p">:</span> <span class="n">Hypernetwork</span><span class="p">,</span>
+                      <span class="n">percentage</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get top percentage of nodes by TOPSIS ranking.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            hypernetwork: Target hypergraph.</span>
+<span class="sd">            percentage: Percentage of top nodes to return (0-100).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            List of top node IDs.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ranked_nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rank_nodes</span><span class="p">(</span><span class="n">hypernetwork</span><span class="p">)</span>
+        <span class="n">n_nodes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ranked_nodes</span><span class="p">)</span>
+        <span class="n">n_top</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">n_nodes</span> <span class="o">*</span> <span class="n">percentage</span> <span class="o">/</span> <span class="mf">100.0</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="n">node_id</span> <span class="k">for</span> <span class="n">node_id</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">ranked_nodes</span><span class="p">[:</span><span class="n">n_top</span><span class="p">]]</span></div>
+
+
+<div class="viewcode-block" id="TopsisNodeRanker.get_bottom_nodes">
+<a class="viewcode-back" href="../../../api/metrics.html#hiper.metrics.topsis.TopsisNodeRanker.get_bottom_nodes">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_bottom_nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hypernetwork</span><span class="p">:</span> <span class="n">Hypernetwork</span><span class="p">,</span>
+                         <span class="n">percentage</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get bottom percentage of nodes by TOPSIS ranking.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            hypernetwork: Target hypergraph.</span>
+<span class="sd">            percentage: Percentage of bottom nodes to return (0-100).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            List of bottom node IDs.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ranked_nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rank_nodes</span><span class="p">(</span><span class="n">hypernetwork</span><span class="p">)</span>
+        <span class="n">n_nodes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ranked_nodes</span><span class="p">)</span>
+        <span class="n">n_bottom</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">n_nodes</span> <span class="o">*</span> <span class="n">percentage</span> <span class="o">/</span> <span class="mf">100.0</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="n">node_id</span> <span class="k">for</span> <span class="n">node_id</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">ranked_nodes</span><span class="p">[</span><span class="o">-</span><span class="n">n_bottom</span><span class="p">:]]</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,752 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Core Modules &mdash; HIPER Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=81f5cde6" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.svg"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Dataset Management" href="datasets.html" />
+    <link rel="prev" title="Examples" href="../examples.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            HIPER
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#installing-hiper">Installing HIPER</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../installation.html#development-installation-recommended">Development Installation (Recommended)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../installation.html#standard-installation">Standard Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#verifying-installation">Verifying Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#uninstalling">Uninstalling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../experiments.html">Running Experiments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../experiments.html#resilience-experiments">Resilience Experiments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../experiments.html#perturbation-analysis">Perturbation Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../experiments.html#comprehensive-node-and-hyperedge-experiments">Comprehensive Node and Hyperedge Experiments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../experiments.html#mcdm-methods-comparison">MCDM Methods Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../experiments.html#statistical-analysis">Statistical Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../experiments.html#working-with-custom-datasets">Working with Custom Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../experiments.html#example-workflow">Example Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#basic-hypernetwork-creation">Basic Hypernetwork Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#loading-datasets">Loading Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#attack-simulation">Attack Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#attack-sequences">Attack Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#resilience-analysis">Resilience Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#topsis-node-ranking">TOPSIS Node Ranking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#mcdm-methods-comparison">MCDM Methods Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#custom-metrics">Custom Metrics</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Core Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-hiper.core.hypernetwork">hiper.core.hypernetwork</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork"><code class="docutils literal notranslate"><span class="pre">Hypernetwork</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork.__init__"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork.lightweight_copy"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.lightweight_copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork.add_node"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.add_node()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork.remove_node"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.remove_node()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork.add_hyperedge"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.add_hyperedge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork.add_node_to_hyperedge"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.add_node_to_hyperedge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork.remove_node_from_hyperedge"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.remove_node_from_hyperedge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork.remove_hyperedge"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.remove_hyperedge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork.get_nodes"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.get_nodes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork.get_hyperedges"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.get_hyperedges()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork.get_neighbors"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.get_neighbors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork.degree"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.degree()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork.hyperdegree"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.hyperdegree()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork.order"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.order()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork.size"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.size()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork.avg_deg"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.avg_deg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork.avg_hyperdegree"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.avg_hyperdegree()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork.hyperedge_size"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.hyperedge_size()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork.avg_hyperedge_size"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.avg_hyperedge_size()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork.line_graph"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.line_graph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork.print_info"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.print_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork.nodes"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.nodes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork.edges"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.edges</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-hiper.core.node">hiper.core.node</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hiper.core.node.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.node.Node.__init__"><code class="docutils literal notranslate"><span class="pre">Node.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.node.Node.node_id"><code class="docutils literal notranslate"><span class="pre">Node.node_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.node.Node.first_incidence"><code class="docutils literal notranslate"><span class="pre">Node.first_incidence</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-hiper.core.hyperedge">hiper.core.hyperedge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hiper.core.hyperedge.Hyperedge"><code class="docutils literal notranslate"><span class="pre">Hyperedge</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hyperedge.Hyperedge.__init__"><code class="docutils literal notranslate"><span class="pre">Hyperedge.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hyperedge.Hyperedge.edge_id"><code class="docutils literal notranslate"><span class="pre">Hyperedge.edge_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.hyperedge.Hyperedge.first_incidence"><code class="docutils literal notranslate"><span class="pre">Hyperedge.first_incidence</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-hiper.core.incidence">hiper.core.incidence</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hiper.core.incidence.Incidence"><code class="docutils literal notranslate"><span class="pre">Incidence</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.incidence.Incidence.__init__"><code class="docutils literal notranslate"><span class="pre">Incidence.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.incidence.Incidence.node"><code class="docutils literal notranslate"><span class="pre">Incidence.node</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.incidence.Incidence.edge"><code class="docutils literal notranslate"><span class="pre">Incidence.edge</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.incidence.Incidence.prev_in_node"><code class="docutils literal notranslate"><span class="pre">Incidence.prev_in_node</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.incidence.Incidence.next_in_node"><code class="docutils literal notranslate"><span class="pre">Incidence.next_in_node</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.incidence.Incidence.prev_in_edge"><code class="docutils literal notranslate"><span class="pre">Incidence.prev_in_edge</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiper.core.incidence.Incidence.next_in_edge"><code class="docutils literal notranslate"><span class="pre">Incidence.next_in_edge</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">Dataset Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datasets.html#module-hiper.datasets">hiper.datasets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datasets.html#hiper.datasets.DataFile"><code class="docutils literal notranslate"><span class="pre">DataFile</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="datasets.html#hiper.datasets.DataFile.hyperedges"><code class="docutils literal notranslate"><span class="pre">DataFile.hyperedges</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="datasets.html#hiper.datasets.DataFile.__init__"><code class="docutils literal notranslate"><span class="pre">DataFile.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="datasets.html#hiper.datasets.DataFile.get_hyperedges"><code class="docutils literal notranslate"><span class="pre">DataFile.get_hyperedges()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="datasets.html#hiper.datasets.Dataset"><code class="docutils literal notranslate"><span class="pre">Dataset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="datasets.html#hiper.datasets.Dataset.name"><code class="docutils literal notranslate"><span class="pre">Dataset.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="datasets.html#hiper.datasets.Dataset.hypernetwork"><code class="docutils literal notranslate"><span class="pre">Dataset.hypernetwork</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="datasets.html#hiper.datasets.Dataset.__init__"><code class="docutils literal notranslate"><span class="pre">Dataset.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="datasets.html#hiper.datasets.Dataset.get_hypernetwork"><code class="docutils literal notranslate"><span class="pre">Dataset.get_hypernetwork()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="datasets.html#hiper.datasets.Dataset.get_name"><code class="docutils literal notranslate"><span class="pre">Dataset.get_name()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datasets.html#module-hiper.config">hiper.config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datasets.html#hiper.config.load_config"><code class="docutils literal notranslate"><span class="pre">load_config()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="metrics.html">Metrics and Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#experimental-frameworks">Experimental Frameworks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="metrics.html#module-hiper.metrics.experiments">hiper.metrics.experiments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="metrics.html#hiper.metrics.experiments.ResilienceExperiment"><code class="docutils literal notranslate"><span class="pre">ResilienceExperiment</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="metrics.html#module-hiper.metrics.comprehensive_resilience">hiper.metrics.comprehensive_resilience</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="metrics.html#hiper.metrics.comprehensive_resilience.ComprehensiveResilienceExperiment"><code class="docutils literal notranslate"><span class="pre">ComprehensiveResilienceExperiment</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#ranking-and-selection">Ranking and Selection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="metrics.html#module-hiper.metrics.topsis">hiper.metrics.topsis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="metrics.html#hiper.metrics.topsis.TopsisNodeRanker"><code class="docutils literal notranslate"><span class="pre">TopsisNodeRanker</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="metrics.html#module-hiper.metrics.hyperedge_topsis">hiper.metrics.hyperedge_topsis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="metrics.html#hiper.metrics.hyperedge_topsis.HyperedgeTopsisRanker"><code class="docutils literal notranslate"><span class="pre">HyperedgeTopsisRanker</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="metrics.html#module-hiper.metrics.wsm">hiper.metrics.wsm</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="metrics.html#hiper.metrics.wsm.WSMNodeRanker"><code class="docutils literal notranslate"><span class="pre">WSMNodeRanker</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="metrics.html#module-hiper.metrics.moora">hiper.metrics.moora</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="metrics.html#hiper.metrics.moora.MOORANodeRanker"><code class="docutils literal notranslate"><span class="pre">MOORANodeRanker</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#structural-metrics">Structural Metrics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="metrics.html#module-hiper.metrics.connectivity">hiper.metrics.connectivity</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="metrics.html#hiper.metrics.connectivity.HypergraphConnectivity"><code class="docutils literal notranslate"><span class="pre">HypergraphConnectivity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="metrics.html#hiper.metrics.connectivity.HyperedgeConnectivity"><code class="docutils literal notranslate"><span class="pre">HyperedgeConnectivity</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="metrics.html#module-hiper.metrics.distance">hiper.metrics.distance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="metrics.html#hiper.metrics.distance.HypergraphDistance"><code class="docutils literal notranslate"><span class="pre">HypergraphDistance</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="metrics.html#module-hiper.metrics.redundancy">hiper.metrics.redundancy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="metrics.html#hiper.metrics.redundancy.RedundancyCoefficient"><code class="docutils literal notranslate"><span class="pre">RedundancyCoefficient</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="metrics.html#module-hiper.metrics.swalk">hiper.metrics.swalk</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="metrics.html#hiper.metrics.swalk.SwalkEfficiency"><code class="docutils literal notranslate"><span class="pre">SwalkEfficiency</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#higher-order-metrics">Higher-Order Metrics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="metrics.html#module-hiper.metrics.higher_order_cohesion">hiper.metrics.higher_order_cohesion</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="metrics.html#hiper.metrics.higher_order_cohesion.HigherOrderCohesionMetrics"><code class="docutils literal notranslate"><span class="pre">HigherOrderCohesionMetrics</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="metrics.html#module-hiper.metrics.hyperedge_fragmentation">hiper.metrics.hyperedge_fragmentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="metrics.html#hiper.metrics.hyperedge_fragmentation.HyperedgeFragmentationIndex"><code class="docutils literal notranslate"><span class="pre">HyperedgeFragmentationIndex</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="metrics.html#module-hiper.metrics.hyperedge_integrity">hiper.metrics.hyperedge_integrity</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="metrics.html#hiper.metrics.hyperedge_integrity.HyperedgeIntegrity"><code class="docutils literal notranslate"><span class="pre">HyperedgeIntegrity</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html#additional-metrics">Additional Metrics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="metrics.html#module-hiper.metrics.average_hyperedge_cardinality">hiper.metrics.average_hyperedge_cardinality</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="metrics.html#hiper.metrics.average_hyperedge_cardinality.AverageHyperedgeCardinality"><code class="docutils literal notranslate"><span class="pre">AverageHyperedgeCardinality</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="metrics.html#module-hiper.metrics.centrality_disruption">hiper.metrics.centrality_disruption</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="metrics.html#hiper.metrics.centrality_disruption.CentralityDisruptionIndex"><code class="docutils literal notranslate"><span class="pre">CentralityDisruptionIndex</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="metrics.html#module-hiper.metrics.entropy_loss">hiper.metrics.entropy_loss</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="metrics.html#hiper.metrics.entropy_loss.EntropyLoss"><code class="docutils literal notranslate"><span class="pre">EntropyLoss</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="simulation.html">Simulation Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="simulation.html#module-hiper.simulation.simulator">hiper.simulation.simulator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="simulation.html#hiper.simulation.simulator.HypernetworkSimulator"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.simulator.HypernetworkSimulator.__init__"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.simulator.HypernetworkSimulator.set_hypernetwork"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.set_hypernetwork()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.simulator.HypernetworkSimulator.simulate_attack"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.simulate_attack()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.simulator.HypernetworkSimulator.simulate_sequence"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.simulate_sequence()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.simulator.HypernetworkSimulator.get_simulation_history"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.get_simulation_history()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.simulator.HypernetworkSimulator.get_baseline_stats"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.get_baseline_stats()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.simulator.HypernetworkSimulator.clear_history"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.clear_history()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.simulator.HypernetworkSimulator.generate_summary_report"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.generate_summary_report()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="simulation.html#module-hiper.simulation.attack">hiper.simulation.attack</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="simulation.html#hiper.simulation.attack.Attack"><code class="docutils literal notranslate"><span class="pre">Attack</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.attack.Attack.__init__"><code class="docutils literal notranslate"><span class="pre">Attack.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.attack.Attack.execute"><code class="docutils literal notranslate"><span class="pre">Attack.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.attack.Attack.describe"><code class="docutils literal notranslate"><span class="pre">Attack.describe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.attack.Attack.is_executed"><code class="docutils literal notranslate"><span class="pre">Attack.is_executed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.attack.Attack.get_result"><code class="docutils literal notranslate"><span class="pre">Attack.get_result()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.attack.Attack.reset"><code class="docutils literal notranslate"><span class="pre">Attack.reset()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="simulation.html#hiper.simulation.attack.AddNodeAttack"><code class="docutils literal notranslate"><span class="pre">AddNodeAttack</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.attack.AddNodeAttack.__init__"><code class="docutils literal notranslate"><span class="pre">AddNodeAttack.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.attack.AddNodeAttack.execute"><code class="docutils literal notranslate"><span class="pre">AddNodeAttack.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.attack.AddNodeAttack.describe"><code class="docutils literal notranslate"><span class="pre">AddNodeAttack.describe()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="simulation.html#hiper.simulation.attack.RemoveNodeAttack"><code class="docutils literal notranslate"><span class="pre">RemoveNodeAttack</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.attack.RemoveNodeAttack.__init__"><code class="docutils literal notranslate"><span class="pre">RemoveNodeAttack.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.attack.RemoveNodeAttack.execute"><code class="docutils literal notranslate"><span class="pre">RemoveNodeAttack.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.attack.RemoveNodeAttack.describe"><code class="docutils literal notranslate"><span class="pre">RemoveNodeAttack.describe()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="simulation.html#hiper.simulation.attack.AddHyperedgeAttack"><code class="docutils literal notranslate"><span class="pre">AddHyperedgeAttack</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.attack.AddHyperedgeAttack.__init__"><code class="docutils literal notranslate"><span class="pre">AddHyperedgeAttack.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.attack.AddHyperedgeAttack.execute"><code class="docutils literal notranslate"><span class="pre">AddHyperedgeAttack.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.attack.AddHyperedgeAttack.describe"><code class="docutils literal notranslate"><span class="pre">AddHyperedgeAttack.describe()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="simulation.html#hiper.simulation.attack.RemoveHyperedgeAttack"><code class="docutils literal notranslate"><span class="pre">RemoveHyperedgeAttack</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.attack.RemoveHyperedgeAttack.__init__"><code class="docutils literal notranslate"><span class="pre">RemoveHyperedgeAttack.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.attack.RemoveHyperedgeAttack.execute"><code class="docutils literal notranslate"><span class="pre">RemoveHyperedgeAttack.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.attack.RemoveHyperedgeAttack.describe"><code class="docutils literal notranslate"><span class="pre">RemoveHyperedgeAttack.describe()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="simulation.html#module-hiper.simulation.sequence">hiper.simulation.sequence</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="simulation.html#hiper.simulation.sequence.AttackSequence"><code class="docutils literal notranslate"><span class="pre">AttackSequence</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.sequence.AttackSequence.__init__"><code class="docutils literal notranslate"><span class="pre">AttackSequence.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.sequence.AttackSequence.add_attack"><code class="docutils literal notranslate"><span class="pre">AttackSequence.add_attack()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.sequence.AttackSequence.add_attacks"><code class="docutils literal notranslate"><span class="pre">AttackSequence.add_attacks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.sequence.AttackSequence.execute"><code class="docutils literal notranslate"><span class="pre">AttackSequence.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.sequence.AttackSequence.get_results"><code class="docutils literal notranslate"><span class="pre">AttackSequence.get_results()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.sequence.AttackSequence.get_execution_stats"><code class="docutils literal notranslate"><span class="pre">AttackSequence.get_execution_stats()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.sequence.AttackSequence.is_executed"><code class="docutils literal notranslate"><span class="pre">AttackSequence.is_executed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.sequence.AttackSequence.reset"><code class="docutils literal notranslate"><span class="pre">AttackSequence.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.sequence.AttackSequence.clear"><code class="docutils literal notranslate"><span class="pre">AttackSequence.clear()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.sequence.AttackSequence.size"><code class="docutils literal notranslate"><span class="pre">AttackSequence.size()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.sequence.AttackSequence.describe"><code class="docutils literal notranslate"><span class="pre">AttackSequence.describe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.sequence.AttackSequence.get_attack"><code class="docutils literal notranslate"><span class="pre">AttackSequence.get_attack()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.sequence.AttackSequence.remove_attack"><code class="docutils literal notranslate"><span class="pre">AttackSequence.remove_attack()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation.html#hiper.simulation.sequence.AttackSequence.insert_attack"><code class="docutils literal notranslate"><span class="pre">AttackSequence.insert_attack()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">License</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../license.html#mit-license">MIT License</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HIPER</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Core Modules</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/core.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="core-modules">
+<h1>Core Modules<a class="headerlink" href="#core-modules" title="Link to this heading"></a></h1>
+<p>The core modules provide the fundamental data structures and operations
+for hypernetwork manipulation.</p>
+<section id="module-hiper.core.hypernetwork">
+<span id="hiper-core-hypernetwork"></span><h2>hiper.core.hypernetwork<a class="headerlink" href="#module-hiper.core.hypernetwork" title="Link to this heading"></a></h2>
+<p>hypernetwork.py</p>
+<p>High-performance Hypernetwork using dict-of-sets representation.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hiper.core.hypernetwork.</span></span><span class="sig-name descname"><span class="pre">Hypernetwork</span></span><a class="reference internal" href="../_modules/hiper/core/hypernetwork.html#Hypernetwork"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Hypernetwork implemented with two dicts:
+- nodes_map: node_id -&gt; set of edge_ids
+- edges_map: edge_id -&gt; set of node_ids</p>
+<p>All operations are optimized to O(1) amortized where possible.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/hypernetwork.html#Hypernetwork.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork.lightweight_copy">
+<span class="sig-name descname"><span class="pre">lightweight_copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/hypernetwork.html#Hypernetwork.lightweight_copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork.lightweight_copy" title="Link to this definition"></a></dt>
+<dd><p>Create a lightweight copy of the hypernetwork.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#hiper.core.hypernetwork.Hypernetwork" title="hiper.core.hypernetwork.Hypernetwork"><code class="xref py py-class docutils literal notranslate"><span class="pre">Hypernetwork</span></code></a></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new Hypernetwork instance with copied structure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork.add_node">
+<span class="sig-name descname"><span class="pre">add_node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/hypernetwork.html#Hypernetwork.add_node"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork.add_node" title="Link to this definition"></a></dt>
+<dd><p>Add a node if not present.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork.remove_node">
+<span class="sig-name descname"><span class="pre">remove_node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/hypernetwork.html#Hypernetwork.remove_node"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork.remove_node" title="Link to this definition"></a></dt>
+<dd><p>Remove a node and its incidences.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork.add_hyperedge">
+<span class="sig-name descname"><span class="pre">add_hyperedge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edge_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">members</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/hypernetwork.html#Hypernetwork.add_hyperedge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork.add_hyperedge" title="Link to this definition"></a></dt>
+<dd><p>Add a hyperedge linking given node IDs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork.add_node_to_hyperedge">
+<span class="sig-name descname"><span class="pre">add_node_to_hyperedge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edge_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/hypernetwork.html#Hypernetwork.add_node_to_hyperedge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork.add_node_to_hyperedge" title="Link to this definition"></a></dt>
+<dd><p>Add a node to an existing hyperedge.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork.remove_node_from_hyperedge">
+<span class="sig-name descname"><span class="pre">remove_node_from_hyperedge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edge_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/hypernetwork.html#Hypernetwork.remove_node_from_hyperedge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork.remove_node_from_hyperedge" title="Link to this definition"></a></dt>
+<dd><p>Remove a node from a given hyperedge.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork.remove_hyperedge">
+<span class="sig-name descname"><span class="pre">remove_hyperedge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edge_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/hypernetwork.html#Hypernetwork.remove_hyperedge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork.remove_hyperedge" title="Link to this definition"></a></dt>
+<dd><p>Remove a hyperedge and its incidences (nodes remain).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork.get_nodes">
+<span class="sig-name descname"><span class="pre">get_nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edge_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/hypernetwork.html#Hypernetwork.get_nodes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork.get_nodes" title="Link to this definition"></a></dt>
+<dd><p>List node IDs in a given hyperedge.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork.get_hyperedges">
+<span class="sig-name descname"><span class="pre">get_hyperedges</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/hypernetwork.html#Hypernetwork.get_hyperedges"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork.get_hyperedges" title="Link to this definition"></a></dt>
+<dd><p>List hyperedge IDs containing a given node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork.get_neighbors">
+<span class="sig-name descname"><span class="pre">get_neighbors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/hypernetwork.html#Hypernetwork.get_neighbors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork.get_neighbors" title="Link to this definition"></a></dt>
+<dd><p>List neighbors of a given node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork.degree">
+<span class="sig-name descname"><span class="pre">degree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/hypernetwork.html#Hypernetwork.degree"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork.degree" title="Link to this definition"></a></dt>
+<dd><p>Return degree (number of neighbors) of a node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork.hyperdegree">
+<span class="sig-name descname"><span class="pre">hyperdegree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/hypernetwork.html#Hypernetwork.hyperdegree"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork.hyperdegree" title="Link to this definition"></a></dt>
+<dd><p>Return hyperdegree (number of hyperedges) of a node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork.order">
+<span class="sig-name descname"><span class="pre">order</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/hypernetwork.html#Hypernetwork.order"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork.order" title="Link to this definition"></a></dt>
+<dd><p>Return number of nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/hypernetwork.html#Hypernetwork.size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork.size" title="Link to this definition"></a></dt>
+<dd><p>Return number of hyperedges.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork.avg_deg">
+<span class="sig-name descname"><span class="pre">avg_deg</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/hypernetwork.html#Hypernetwork.avg_deg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork.avg_deg" title="Link to this definition"></a></dt>
+<dd><p>Return average node degree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork.avg_hyperdegree">
+<span class="sig-name descname"><span class="pre">avg_hyperdegree</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/hypernetwork.html#Hypernetwork.avg_hyperdegree"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork.avg_hyperdegree" title="Link to this definition"></a></dt>
+<dd><p>Return average hyperdegree of nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork.hyperedge_size">
+<span class="sig-name descname"><span class="pre">hyperedge_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edge_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/hypernetwork.html#Hypernetwork.hyperedge_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork.hyperedge_size" title="Link to this definition"></a></dt>
+<dd><p>Return size (number of nodes) of a hyperedge.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork.avg_hyperedge_size">
+<span class="sig-name descname"><span class="pre">avg_hyperedge_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/hypernetwork.html#Hypernetwork.avg_hyperedge_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork.avg_hyperedge_size" title="Link to this definition"></a></dt>
+<dd><p>Return average hyperedge size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork.line_graph">
+<span class="sig-name descname"><span class="pre">line_graph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/hypernetwork.html#Hypernetwork.line_graph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork.line_graph" title="Link to this definition"></a></dt>
+<dd><p>Return line graph (edge_ids, intersecting hyperedges).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>], <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]]]</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork.print_info">
+<span class="sig-name descname"><span class="pre">print_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/hypernetwork.html#Hypernetwork.print_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork.print_info" title="Link to this definition"></a></dt>
+<dd><p>Print basic hypernetwork metrics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork.nodes">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nodes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.14)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Set" title="(in Python v3.14)"><span class="pre">Set</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork.nodes" title="Link to this definition"></a></dt>
+<dd><p>Expose mapping of node IDs to hyperedge sets.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="hiper.core.hypernetwork.Hypernetwork.edges">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">edges</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.14)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Set" title="(in Python v3.14)"><span class="pre">Set</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#hiper.core.hypernetwork.Hypernetwork.edges" title="Link to this definition"></a></dt>
+<dd><p>Expose mapping of hyperedge IDs to node sets.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-hiper.core.node">
+<span id="hiper-core-node"></span><h2>hiper.core.node<a class="headerlink" href="#module-hiper.core.node" title="Link to this heading"></a></h2>
+<p>node.py</p>
+<p>Defines the Node class for hypernetworks.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="hiper.core.node.Node">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hiper.core.node.</span></span><span class="sig-name descname"><span class="pre">Node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/node.html#Node"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.node.Node" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Represents a vertex, holding head pointer to incidence list.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.node.Node.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/node.html#Node.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.node.Node.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="hiper.core.node.Node.node_id">
+<span class="sig-name descname"><span class="pre">node_id</span></span><a class="headerlink" href="#hiper.core.node.Node.node_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="hiper.core.node.Node.first_incidence">
+<span class="sig-name descname"><span class="pre">first_incidence</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a><span class="pre">[</span><a class="reference internal" href="#hiper.core.incidence.Incidence" title="hiper.core.incidence.Incidence"><code class="xref py py-class docutils literal notranslate"><span class="pre">Incidence</span></code></a><span class="pre">]</span></em><a class="headerlink" href="#hiper.core.node.Node.first_incidence" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-hiper.core.hyperedge">
+<span id="hiper-core-hyperedge"></span><h2>hiper.core.hyperedge<a class="headerlink" href="#module-hiper.core.hyperedge" title="Link to this heading"></a></h2>
+<p>hyperedge.py</p>
+<p>Defines the Hyperedge class for hypernetworks.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="hiper.core.hyperedge.Hyperedge">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hiper.core.hyperedge.</span></span><span class="sig-name descname"><span class="pre">Hyperedge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edge_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/hyperedge.html#Hyperedge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hyperedge.Hyperedge" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Represents a hyperedge, holding head pointer to incidence list.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.hyperedge.Hyperedge.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edge_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/hyperedge.html#Hyperedge.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.hyperedge.Hyperedge.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="hiper.core.hyperedge.Hyperedge.edge_id">
+<span class="sig-name descname"><span class="pre">edge_id</span></span><a class="headerlink" href="#hiper.core.hyperedge.Hyperedge.edge_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="hiper.core.hyperedge.Hyperedge.first_incidence">
+<span class="sig-name descname"><span class="pre">first_incidence</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a><span class="pre">[</span><a class="reference internal" href="#hiper.core.incidence.Incidence" title="hiper.core.incidence.Incidence"><code class="xref py py-class docutils literal notranslate"><span class="pre">Incidence</span></code></a><span class="pre">]</span></em><a class="headerlink" href="#hiper.core.hyperedge.Hyperedge.first_incidence" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-hiper.core.incidence">
+<span id="hiper-core-incidence"></span><h2>hiper.core.incidence<a class="headerlink" href="#module-hiper.core.incidence" title="Link to this heading"></a></h2>
+<p>incidence.py</p>
+<p>Defines the Incidence class linking Node and Hyperedge.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="hiper.core.incidence.Incidence">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hiper.core.incidence.</span></span><span class="sig-name descname"><span class="pre">Incidence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/incidence.html#Incidence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.incidence.Incidence" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Links a Node to a Hyperedge in two doubly-linked lists.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="hiper.core.incidence.Incidence.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/hiper/core/incidence.html#Incidence.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hiper.core.incidence.Incidence.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="hiper.core.incidence.Incidence.node">
+<span class="sig-name descname"><span class="pre">node</span></span><a class="headerlink" href="#hiper.core.incidence.Incidence.node" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="hiper.core.incidence.Incidence.edge">
+<span class="sig-name descname"><span class="pre">edge</span></span><a class="headerlink" href="#hiper.core.incidence.Incidence.edge" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="hiper.core.incidence.Incidence.prev_in_node">
+<span class="sig-name descname"><span class="pre">prev_in_node</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a><span class="pre">[</span><a class="reference internal" href="#hiper.core.incidence.Incidence" title="hiper.core.incidence.Incidence"><code class="xref py py-class docutils literal notranslate"><span class="pre">Incidence</span></code></a><span class="pre">]</span></em><a class="headerlink" href="#hiper.core.incidence.Incidence.prev_in_node" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="hiper.core.incidence.Incidence.next_in_node">
+<span class="sig-name descname"><span class="pre">next_in_node</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a><span class="pre">[</span><a class="reference internal" href="#hiper.core.incidence.Incidence" title="hiper.core.incidence.Incidence"><code class="xref py py-class docutils literal notranslate"><span class="pre">Incidence</span></code></a><span class="pre">]</span></em><a class="headerlink" href="#hiper.core.incidence.Incidence.next_in_node" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="hiper.core.incidence.Incidence.prev_in_edge">
+<span class="sig-name descname"><span class="pre">prev_in_edge</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a><span class="pre">[</span><a class="reference internal" href="#hiper.core.incidence.Incidence" title="hiper.core.incidence.Incidence"><code class="xref py py-class docutils literal notranslate"><span class="pre">Incidence</span></code></a><span class="pre">]</span></em><a class="headerlink" href="#hiper.core.incidence.Incidence.prev_in_edge" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="hiper.core.incidence.Incidence.next_in_edge">
+<span class="sig-name descname"><span class="pre">next_in_edge</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a><span class="pre">[</span><a class="reference internal" href="#hiper.core.incidence.Incidence" title="hiper.core.incidence.Incidence"><code class="xref py py-class docutils literal notranslate"><span class="pre">Incidence</span></code></a><span class="pre">]</span></em><a class="headerlink" href="#hiper.core.incidence.Incidence.next_in_edge" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../examples.html" class="btn btn-neutral float-left" title="Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="datasets.html" class="btn btn-neutral float-right" title="Dataset Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

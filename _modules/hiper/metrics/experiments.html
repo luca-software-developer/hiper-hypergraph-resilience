@@ -1,0 +1,815 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>hiper.metrics.experiments &mdash; HIPER Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=81f5cde6" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.svg"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            HIPER
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#installing-hiper">Installing HIPER</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../installation.html#development-installation-recommended">Development Installation (Recommended)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../installation.html#standard-installation">Standard Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#verifying-installation">Verifying Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#uninstalling">Uninstalling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../experiments.html">Running Experiments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../experiments.html#resilience-experiments">Resilience Experiments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../experiments.html#perturbation-analysis">Perturbation Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../experiments.html#comprehensive-node-and-hyperedge-experiments">Comprehensive Node and Hyperedge Experiments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../experiments.html#mcdm-methods-comparison">MCDM Methods Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../experiments.html#statistical-analysis">Statistical Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../experiments.html#working-with-custom-datasets">Working with Custom Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../experiments.html#example-workflow">Example Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples.html#basic-hypernetwork-creation">Basic Hypernetwork Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples.html#loading-datasets">Loading Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples.html#attack-simulation">Attack Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples.html#attack-sequences">Attack Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples.html#resilience-analysis">Resilience Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples.html#topsis-node-ranking">TOPSIS Node Ranking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples.html#mcdm-methods-comparison">MCDM Methods Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples.html#custom-metrics">Custom Metrics</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/core.html">Core Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/core.html#module-hiper.core.hypernetwork">hiper.core.hypernetwork</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork"><code class="docutils literal notranslate"><span class="pre">Hypernetwork</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.__init__"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.lightweight_copy"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.lightweight_copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.add_node"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.add_node()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.remove_node"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.remove_node()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.add_hyperedge"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.add_hyperedge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.add_node_to_hyperedge"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.add_node_to_hyperedge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.remove_node_from_hyperedge"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.remove_node_from_hyperedge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.remove_hyperedge"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.remove_hyperedge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.get_nodes"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.get_nodes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.get_hyperedges"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.get_hyperedges()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.get_neighbors"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.get_neighbors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.degree"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.degree()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.hyperdegree"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.hyperdegree()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.order"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.order()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.size"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.size()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.avg_deg"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.avg_deg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.avg_hyperdegree"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.avg_hyperdegree()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.hyperedge_size"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.hyperedge_size()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.avg_hyperedge_size"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.avg_hyperedge_size()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.line_graph"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.line_graph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.print_info"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.print_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.nodes"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.nodes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hypernetwork.Hypernetwork.edges"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.edges</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/core.html#module-hiper.core.node">hiper.core.node</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/core.html#hiper.core.node.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.node.Node.__init__"><code class="docutils literal notranslate"><span class="pre">Node.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.node.Node.node_id"><code class="docutils literal notranslate"><span class="pre">Node.node_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.node.Node.first_incidence"><code class="docutils literal notranslate"><span class="pre">Node.first_incidence</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/core.html#module-hiper.core.hyperedge">hiper.core.hyperedge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/core.html#hiper.core.hyperedge.Hyperedge"><code class="docutils literal notranslate"><span class="pre">Hyperedge</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hyperedge.Hyperedge.__init__"><code class="docutils literal notranslate"><span class="pre">Hyperedge.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hyperedge.Hyperedge.edge_id"><code class="docutils literal notranslate"><span class="pre">Hyperedge.edge_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.hyperedge.Hyperedge.first_incidence"><code class="docutils literal notranslate"><span class="pre">Hyperedge.first_incidence</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/core.html#module-hiper.core.incidence">hiper.core.incidence</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/core.html#hiper.core.incidence.Incidence"><code class="docutils literal notranslate"><span class="pre">Incidence</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.incidence.Incidence.__init__"><code class="docutils literal notranslate"><span class="pre">Incidence.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.incidence.Incidence.node"><code class="docutils literal notranslate"><span class="pre">Incidence.node</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.incidence.Incidence.edge"><code class="docutils literal notranslate"><span class="pre">Incidence.edge</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.incidence.Incidence.prev_in_node"><code class="docutils literal notranslate"><span class="pre">Incidence.prev_in_node</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.incidence.Incidence.next_in_node"><code class="docutils literal notranslate"><span class="pre">Incidence.next_in_node</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.incidence.Incidence.prev_in_edge"><code class="docutils literal notranslate"><span class="pre">Incidence.prev_in_edge</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/core.html#hiper.core.incidence.Incidence.next_in_edge"><code class="docutils literal notranslate"><span class="pre">Incidence.next_in_edge</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/datasets.html">Dataset Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/datasets.html#module-hiper.datasets">hiper.datasets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/datasets.html#hiper.datasets.DataFile"><code class="docutils literal notranslate"><span class="pre">DataFile</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/datasets.html#hiper.datasets.DataFile.hyperedges"><code class="docutils literal notranslate"><span class="pre">DataFile.hyperedges</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/datasets.html#hiper.datasets.DataFile.__init__"><code class="docutils literal notranslate"><span class="pre">DataFile.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/datasets.html#hiper.datasets.DataFile.get_hyperedges"><code class="docutils literal notranslate"><span class="pre">DataFile.get_hyperedges()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/datasets.html#hiper.datasets.Dataset"><code class="docutils literal notranslate"><span class="pre">Dataset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/datasets.html#hiper.datasets.Dataset.name"><code class="docutils literal notranslate"><span class="pre">Dataset.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/datasets.html#hiper.datasets.Dataset.hypernetwork"><code class="docutils literal notranslate"><span class="pre">Dataset.hypernetwork</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/datasets.html#hiper.datasets.Dataset.__init__"><code class="docutils literal notranslate"><span class="pre">Dataset.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/datasets.html#hiper.datasets.Dataset.get_hypernetwork"><code class="docutils literal notranslate"><span class="pre">Dataset.get_hypernetwork()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/datasets.html#hiper.datasets.Dataset.get_name"><code class="docutils literal notranslate"><span class="pre">Dataset.get_name()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/datasets.html#module-hiper.config">hiper.config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/datasets.html#hiper.config.load_config"><code class="docutils literal notranslate"><span class="pre">load_config()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/metrics.html">Metrics and Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/metrics.html#experimental-frameworks">Experimental Frameworks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.experiments">hiper.metrics.experiments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.experiments.ResilienceExperiment"><code class="docutils literal notranslate"><span class="pre">ResilienceExperiment</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.comprehensive_resilience">hiper.metrics.comprehensive_resilience</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.comprehensive_resilience.ComprehensiveResilienceExperiment"><code class="docutils literal notranslate"><span class="pre">ComprehensiveResilienceExperiment</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/metrics.html#ranking-and-selection">Ranking and Selection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.topsis">hiper.metrics.topsis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.topsis.TopsisNodeRanker"><code class="docutils literal notranslate"><span class="pre">TopsisNodeRanker</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.hyperedge_topsis">hiper.metrics.hyperedge_topsis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.hyperedge_topsis.HyperedgeTopsisRanker"><code class="docutils literal notranslate"><span class="pre">HyperedgeTopsisRanker</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.wsm">hiper.metrics.wsm</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.wsm.WSMNodeRanker"><code class="docutils literal notranslate"><span class="pre">WSMNodeRanker</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.moora">hiper.metrics.moora</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.moora.MOORANodeRanker"><code class="docutils literal notranslate"><span class="pre">MOORANodeRanker</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/metrics.html#structural-metrics">Structural Metrics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.connectivity">hiper.metrics.connectivity</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.connectivity.HypergraphConnectivity"><code class="docutils literal notranslate"><span class="pre">HypergraphConnectivity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.connectivity.HyperedgeConnectivity"><code class="docutils literal notranslate"><span class="pre">HyperedgeConnectivity</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.distance">hiper.metrics.distance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.distance.HypergraphDistance"><code class="docutils literal notranslate"><span class="pre">HypergraphDistance</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.redundancy">hiper.metrics.redundancy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.redundancy.RedundancyCoefficient"><code class="docutils literal notranslate"><span class="pre">RedundancyCoefficient</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.swalk">hiper.metrics.swalk</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.swalk.SwalkEfficiency"><code class="docutils literal notranslate"><span class="pre">SwalkEfficiency</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/metrics.html#higher-order-metrics">Higher-Order Metrics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.higher_order_cohesion">hiper.metrics.higher_order_cohesion</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.higher_order_cohesion.HigherOrderCohesionMetrics"><code class="docutils literal notranslate"><span class="pre">HigherOrderCohesionMetrics</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.hyperedge_fragmentation">hiper.metrics.hyperedge_fragmentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.hyperedge_fragmentation.HyperedgeFragmentationIndex"><code class="docutils literal notranslate"><span class="pre">HyperedgeFragmentationIndex</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.hyperedge_integrity">hiper.metrics.hyperedge_integrity</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.hyperedge_integrity.HyperedgeIntegrity"><code class="docutils literal notranslate"><span class="pre">HyperedgeIntegrity</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/metrics.html#additional-metrics">Additional Metrics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.average_hyperedge_cardinality">hiper.metrics.average_hyperedge_cardinality</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.average_hyperedge_cardinality.AverageHyperedgeCardinality"><code class="docutils literal notranslate"><span class="pre">AverageHyperedgeCardinality</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.centrality_disruption">hiper.metrics.centrality_disruption</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.centrality_disruption.CentralityDisruptionIndex"><code class="docutils literal notranslate"><span class="pre">CentralityDisruptionIndex</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/metrics.html#module-hiper.metrics.entropy_loss">hiper.metrics.entropy_loss</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/metrics.html#hiper.metrics.entropy_loss.EntropyLoss"><code class="docutils literal notranslate"><span class="pre">EntropyLoss</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/simulation.html">Simulation Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/simulation.html#module-hiper.simulation.simulator">hiper.simulation.simulator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.__init__"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.set_hypernetwork"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.set_hypernetwork()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.simulate_attack"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.simulate_attack()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.simulate_sequence"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.simulate_sequence()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.get_simulation_history"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.get_simulation_history()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.get_baseline_stats"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.get_baseline_stats()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.clear_history"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.clear_history()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.generate_summary_report"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.generate_summary_report()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/simulation.html#module-hiper.simulation.attack">hiper.simulation.attack</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.Attack"><code class="docutils literal notranslate"><span class="pre">Attack</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.Attack.__init__"><code class="docutils literal notranslate"><span class="pre">Attack.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.Attack.execute"><code class="docutils literal notranslate"><span class="pre">Attack.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.Attack.describe"><code class="docutils literal notranslate"><span class="pre">Attack.describe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.Attack.is_executed"><code class="docutils literal notranslate"><span class="pre">Attack.is_executed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.Attack.get_result"><code class="docutils literal notranslate"><span class="pre">Attack.get_result()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.Attack.reset"><code class="docutils literal notranslate"><span class="pre">Attack.reset()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.AddNodeAttack"><code class="docutils literal notranslate"><span class="pre">AddNodeAttack</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.AddNodeAttack.__init__"><code class="docutils literal notranslate"><span class="pre">AddNodeAttack.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.AddNodeAttack.execute"><code class="docutils literal notranslate"><span class="pre">AddNodeAttack.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.AddNodeAttack.describe"><code class="docutils literal notranslate"><span class="pre">AddNodeAttack.describe()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.RemoveNodeAttack"><code class="docutils literal notranslate"><span class="pre">RemoveNodeAttack</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.RemoveNodeAttack.__init__"><code class="docutils literal notranslate"><span class="pre">RemoveNodeAttack.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.RemoveNodeAttack.execute"><code class="docutils literal notranslate"><span class="pre">RemoveNodeAttack.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.RemoveNodeAttack.describe"><code class="docutils literal notranslate"><span class="pre">RemoveNodeAttack.describe()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.AddHyperedgeAttack"><code class="docutils literal notranslate"><span class="pre">AddHyperedgeAttack</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.AddHyperedgeAttack.__init__"><code class="docutils literal notranslate"><span class="pre">AddHyperedgeAttack.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.AddHyperedgeAttack.execute"><code class="docutils literal notranslate"><span class="pre">AddHyperedgeAttack.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.AddHyperedgeAttack.describe"><code class="docutils literal notranslate"><span class="pre">AddHyperedgeAttack.describe()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.RemoveHyperedgeAttack"><code class="docutils literal notranslate"><span class="pre">RemoveHyperedgeAttack</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.RemoveHyperedgeAttack.__init__"><code class="docutils literal notranslate"><span class="pre">RemoveHyperedgeAttack.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.RemoveHyperedgeAttack.execute"><code class="docutils literal notranslate"><span class="pre">RemoveHyperedgeAttack.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.attack.RemoveHyperedgeAttack.describe"><code class="docutils literal notranslate"><span class="pre">RemoveHyperedgeAttack.describe()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/simulation.html#module-hiper.simulation.sequence">hiper.simulation.sequence</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence"><code class="docutils literal notranslate"><span class="pre">AttackSequence</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.__init__"><code class="docutils literal notranslate"><span class="pre">AttackSequence.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.add_attack"><code class="docutils literal notranslate"><span class="pre">AttackSequence.add_attack()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.add_attacks"><code class="docutils literal notranslate"><span class="pre">AttackSequence.add_attacks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.execute"><code class="docutils literal notranslate"><span class="pre">AttackSequence.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.get_results"><code class="docutils literal notranslate"><span class="pre">AttackSequence.get_results()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.get_execution_stats"><code class="docutils literal notranslate"><span class="pre">AttackSequence.get_execution_stats()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.is_executed"><code class="docutils literal notranslate"><span class="pre">AttackSequence.is_executed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.reset"><code class="docutils literal notranslate"><span class="pre">AttackSequence.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.clear"><code class="docutils literal notranslate"><span class="pre">AttackSequence.clear()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.size"><code class="docutils literal notranslate"><span class="pre">AttackSequence.size()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.describe"><code class="docutils literal notranslate"><span class="pre">AttackSequence.describe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.get_attack"><code class="docutils literal notranslate"><span class="pre">AttackSequence.get_attack()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.remove_attack"><code class="docutils literal notranslate"><span class="pre">AttackSequence.remove_attack()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/simulation.html#hiper.simulation.sequence.AttackSequence.insert_attack"><code class="docutils literal notranslate"><span class="pre">AttackSequence.insert_attack()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">License</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../license.html#mit-license">MIT License</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">HIPER</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">hiper.metrics.experiments</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for hiper.metrics.experiments</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">experiments.py</span>
+
+<span class="sd">Implements resilience experiments for hypergraphs including node removal</span>
+<span class="sd">simulations with random and TOPSIS-based selection strategies.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Any</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Handle matplotlib import gracefully</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+    <span class="n">HAS_MATPLOTLIB</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">HAS_MATPLOTLIB</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">plt</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">hiper.core.hypernetwork</span><span class="w"> </span><span class="kn">import</span> <span class="n">Hypernetwork</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.connectivity</span><span class="w"> </span><span class="kn">import</span> <span class="n">HypergraphConnectivity</span><span class="p">,</span> <span class="n">HyperedgeConnectivity</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.redundancy</span><span class="w"> </span><span class="kn">import</span> <span class="n">RedundancyCoefficient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.swalk</span><span class="w"> </span><span class="kn">import</span> <span class="n">SwalkEfficiency</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.topsis</span><span class="w"> </span><span class="kn">import</span> <span class="n">TopsisNodeRanker</span>
+
+
+<div class="viewcode-block" id="ResilienceExperiment">
+<a class="viewcode-back" href="../../../api/metrics.html#hiper.metrics.experiments.ResilienceExperiment">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ResilienceExperiment</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Conducts resilience experiments on hypergraphs by simulating various</span>
+<span class="sd">    attack scenarios and measuring their impact on structural metrics.</span>
+
+<span class="sd">    This class provides comprehensive experimental capabilities for analyzing</span>
+<span class="sd">    hypergraph resilience under different node removal strategies including</span>
+<span class="sd">    random selection and TOPSIS-based targeted attacks.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ResilienceExperiment.__init__">
+<a class="viewcode-back" href="../../../api/metrics.html#hiper.metrics.experiments.ResilienceExperiment.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize experiment framework.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            s: Parameter for s-walk computations.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">s</span> <span class="o">=</span> <span class="n">s</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">metrics</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;hypergraph_connectivity&#39;</span><span class="p">:</span> <span class="n">HypergraphConnectivity</span><span class="p">(</span><span class="n">s</span><span class="p">),</span>
+            <span class="s1">&#39;hyperedge_connectivity&#39;</span><span class="p">:</span> <span class="n">HyperedgeConnectivity</span><span class="p">(</span><span class="n">s</span><span class="p">),</span>
+            <span class="s1">&#39;redundancy_coefficient&#39;</span><span class="p">:</span> <span class="n">RedundancyCoefficient</span><span class="p">(),</span>
+            <span class="s1">&#39;swalk_efficiency&#39;</span><span class="p">:</span> <span class="n">SwalkEfficiency</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">topsis_ranker</span> <span class="o">=</span> <span class="n">TopsisNodeRanker</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="ResilienceExperiment.run_node_removal_experiment">
+<a class="viewcode-back" href="../../../api/metrics.html#hiper.metrics.experiments.ResilienceExperiment.run_node_removal_experiment">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">run_node_removal_experiment</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">hypernetwork</span><span class="p">:</span> <span class="n">Hypernetwork</span><span class="p">,</span>
+            <span class="n">removal_percentages</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span>
+            <span class="n">random_trials</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Run comprehensive node removal experiment.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            hypernetwork: Target hypergraph for analysis.</span>
+<span class="sd">            removal_percentages: List of percentages to remove</span>
+<span class="sd">                (e.g., [1, 2, 5, 10, 25]).</span>
+<span class="sd">            random_trials: Number of trials for random removal strategy.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Dictionary containing experimental results and analysis data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Initialize results structure</span>
+        <span class="n">results</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;original_metrics&#39;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="s1">&#39;random_removal&#39;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="s1">&#39;topsis_top_removal&#39;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="s1">&#39;topsis_bottom_removal&#39;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="s1">&#39;removal_percentages&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">removal_percentages</span><span class="p">)</span>
+        <span class="p">}</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting resilience experiment on hypergraph with &quot;</span>
+              <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">hypernetwork</span><span class="o">.</span><span class="n">order</span><span class="p">()</span><span class="si">}</span><span class="s2"> nodes and </span><span class="si">{</span><span class="n">hypernetwork</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="si">}</span><span class="s2"> &quot;</span>
+              <span class="sa">f</span><span class="s2">&quot;hyperedges&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Compute original metrics</span>
+        <span class="n">original_metrics_raw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_all_metrics</span><span class="p">(</span><span class="n">hypernetwork</span><span class="p">)</span>
+        <span class="n">results</span><span class="p">[</span><span class="s1">&#39;original_metrics&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">k</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">original_metrics_raw</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+        <span class="p">}</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original metrics:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">metric_name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;original_metrics&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">metric_name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Run experiments for each removal percentage</span>
+        <span class="k">for</span> <span class="n">percentage</span> <span class="ow">in</span> <span class="n">removal_percentages</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Testing </span><span class="si">{</span><span class="n">percentage</span><span class="si">}</span><span class="s2">% node removal...&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Random removal</span>
+            <span class="n">random_results_raw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_test_random_removal</span><span class="p">(</span>
+                <span class="n">hypernetwork</span><span class="p">,</span> <span class="n">percentage</span><span class="p">,</span> <span class="n">random_trials</span><span class="p">)</span>
+            <span class="n">results</span><span class="p">[</span><span class="s1">&#39;random_removal&#39;</span><span class="p">][</span><span class="n">percentage</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="n">k</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">random_results_raw</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="p">}</span>
+
+            <span class="c1"># TOPSIS top removal</span>
+            <span class="n">top_results_raw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_test_topsis_removal</span><span class="p">(</span>
+                <span class="n">hypernetwork</span><span class="p">,</span> <span class="n">percentage</span><span class="p">,</span> <span class="s1">&#39;top&#39;</span><span class="p">)</span>
+            <span class="n">results</span><span class="p">[</span><span class="s1">&#39;topsis_top_removal&#39;</span><span class="p">][</span><span class="n">percentage</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="n">k</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">top_results_raw</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="p">}</span>
+
+            <span class="c1"># TOPSIS bottom removal</span>
+            <span class="n">bottom_results_raw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_test_topsis_removal</span><span class="p">(</span>
+                <span class="n">hypernetwork</span><span class="p">,</span> <span class="n">percentage</span><span class="p">,</span> <span class="s1">&#39;bottom&#39;</span><span class="p">)</span>
+            <span class="n">results</span><span class="p">[</span><span class="s1">&#39;topsis_bottom_removal&#39;</span><span class="p">][</span><span class="n">percentage</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="n">k</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">bottom_results_raw</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="p">}</span>
+
+        <span class="c1"># Generate plots with proper error handling</span>
+        <span class="k">if</span> <span class="n">HAS_MATPLOTLIB</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">results</span><span class="p">[</span><span class="s1">&#39;plots&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_generate_plots</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Warning: Plot generation failed: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">results</span><span class="p">[</span><span class="s1">&#39;plots&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Warning: matplotlib not available, plots not generated&quot;</span><span class="p">)</span>
+            <span class="n">results</span><span class="p">[</span><span class="s1">&#39;plots&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">return</span> <span class="n">results</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_all_metrics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hypernetwork</span><span class="p">:</span> <span class="n">Hypernetwork</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span>
+        <span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute all resilience metrics for a hypergraph.&quot;&quot;&quot;</span>
+        <span class="n">metrics</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">for</span> <span class="n">metric_name</span><span class="p">,</span> <span class="n">metric_calculator</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">metric_calculator</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="n">hypernetwork</span><span class="p">)</span>
+                <span class="c1"># Ensure the value is always a float</span>
+                <span class="n">metrics</span><span class="p">[</span><span class="n">metric_name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Warning: Could not compute </span><span class="si">{</span><span class="n">metric_name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">metrics</span><span class="p">[</span><span class="n">metric_name</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+        <span class="k">return</span> <span class="n">metrics</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_test_random_removal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                             <span class="n">hypernetwork</span><span class="p">:</span> <span class="n">Hypernetwork</span><span class="p">,</span>
+                             <span class="n">percentage</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                             <span class="n">trials</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test random node removal strategy.&quot;&quot;&quot;</span>
+        <span class="n">all_metrics</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">trial</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">trials</span><span class="p">):</span>
+            <span class="n">test_hn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_copy_hypernetwork</span><span class="p">(</span><span class="n">hypernetwork</span><span class="p">)</span>
+            <span class="n">all_nodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">test_hn</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span>
+            <span class="n">n_remove</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">all_nodes</span><span class="p">)</span> <span class="o">*</span> <span class="n">percentage</span> <span class="o">/</span> <span class="mf">100.0</span><span class="p">))</span>
+            <span class="n">nodes_to_remove</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">all_nodes</span><span class="p">,</span>
+                                            <span class="nb">min</span><span class="p">(</span><span class="n">n_remove</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_nodes</span><span class="p">)))</span>
+
+            <span class="k">for</span> <span class="n">node_id</span> <span class="ow">in</span> <span class="n">nodes_to_remove</span><span class="p">:</span>
+                <span class="n">test_hn</span><span class="o">.</span><span class="n">remove_node</span><span class="p">(</span><span class="n">node_id</span><span class="p">)</span>
+
+            <span class="n">trial_metrics</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_all_metrics</span><span class="p">(</span><span class="n">test_hn</span><span class="p">)</span>
+            <span class="n">all_metrics</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">trial_metrics</span><span class="p">)</span>
+
+        <span class="c1"># Calculate averages</span>
+        <span class="n">averaged_metrics</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">metric_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">trial</span><span class="p">[</span><span class="n">metric_name</span><span class="p">])</span> <span class="k">for</span> <span class="n">trial</span> <span class="ow">in</span> <span class="n">all_metrics</span><span class="p">]</span>
+                <span class="n">averaged_metrics</span><span class="p">[</span><span class="n">metric_name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">values</span><span class="p">))</span>
+                <span class="n">averaged_metrics</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">metric_name</span><span class="si">}</span><span class="s2">_std&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">values</span><span class="p">))</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+                <span class="n">averaged_metrics</span><span class="p">[</span><span class="n">metric_name</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+                <span class="n">averaged_metrics</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">metric_name</span><span class="si">}</span><span class="s2">_std&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+        <span class="k">return</span> <span class="n">averaged_metrics</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_test_topsis_removal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                             <span class="n">hypernetwork</span><span class="p">:</span> <span class="n">Hypernetwork</span><span class="p">,</span>
+                             <span class="n">percentage</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                             <span class="n">strategy</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test TOPSIS-based node removal strategy.&quot;&quot;&quot;</span>
+        <span class="n">test_hn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_copy_hypernetwork</span><span class="p">(</span><span class="n">hypernetwork</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">strategy</span> <span class="o">==</span> <span class="s1">&#39;top&#39;</span><span class="p">:</span>
+            <span class="n">nodes_to_remove</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">topsis_ranker</span><span class="o">.</span><span class="n">get_top_nodes</span><span class="p">(</span><span class="n">test_hn</span><span class="p">,</span>
+                                                               <span class="n">percentage</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">nodes_to_remove</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">topsis_ranker</span><span class="o">.</span><span class="n">get_bottom_nodes</span><span class="p">(</span><span class="n">test_hn</span><span class="p">,</span>
+                                                                  <span class="n">percentage</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">node_id</span> <span class="ow">in</span> <span class="n">nodes_to_remove</span><span class="p">:</span>
+            <span class="n">test_hn</span><span class="o">.</span><span class="n">remove_node</span><span class="p">(</span><span class="n">node_id</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_all_metrics</span><span class="p">(</span><span class="n">test_hn</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_copy_hypernetwork</span><span class="p">(</span><span class="n">hypernetwork</span><span class="p">:</span> <span class="n">Hypernetwork</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Hypernetwork</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a deep copy of a hypernetwork.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            hypernetwork: Original hypernetwork to copy.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            New hypernetwork instance with identical structure.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">new_hn</span> <span class="o">=</span> <span class="n">Hypernetwork</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">edge_id</span> <span class="ow">in</span> <span class="n">hypernetwork</span><span class="o">.</span><span class="n">edges</span><span class="p">:</span>
+            <span class="n">nodes</span> <span class="o">=</span> <span class="n">hypernetwork</span><span class="o">.</span><span class="n">get_nodes</span><span class="p">(</span><span class="n">edge_id</span><span class="p">)</span>
+            <span class="n">new_hn</span><span class="o">.</span><span class="n">add_hyperedge</span><span class="p">(</span><span class="n">edge_id</span><span class="p">,</span> <span class="n">nodes</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">new_hn</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_generate_plots</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">results</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate visualization plots for experiment results.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            results: Dictionary containing experimental results data.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Dictionary containing matplotlib figure objects.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">HAS_MATPLOTLIB</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Warning: matplotlib not available for plotting&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">{}</span>
+
+        <span class="n">percentages</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;removal_percentages&#39;</span><span class="p">]</span>
+        <span class="n">metric_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+        <span class="n">plots</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1"># Create subplot for each metric</span>
+        <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+        <span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">metric_name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">metric_names</span><span class="p">):</span>
+            <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+            <span class="c1"># Extract data for plotting</span>
+            <span class="n">random_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;random_removal&#39;</span><span class="p">][</span><span class="n">p</span><span class="p">][</span><span class="n">metric_name</span><span class="p">]</span>
+                             <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">percentages</span><span class="p">]</span>
+            <span class="n">random_stds</span> <span class="o">=</span> <span class="p">[</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;random_removal&#39;</span><span class="p">][</span><span class="n">p</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">metric_name</span><span class="si">}</span><span class="s2">_std&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">percentages</span><span class="p">]</span>
+            <span class="n">top_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;topsis_top_removal&#39;</span><span class="p">][</span><span class="n">p</span><span class="p">][</span><span class="n">metric_name</span><span class="p">]</span>
+                          <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">percentages</span><span class="p">]</span>
+            <span class="n">bottom_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;topsis_bottom_removal&#39;</span><span class="p">][</span><span class="n">p</span><span class="p">][</span><span class="n">metric_name</span><span class="p">]</span>
+                             <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">percentages</span><span class="p">]</span>
+
+            <span class="c1"># Plot lines</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">percentages</span><span class="p">,</span> <span class="n">random_values</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">random_stds</span><span class="p">,</span>
+                        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Random&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">capsize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">percentages</span><span class="p">,</span> <span class="n">top_values</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;TOPSIS Top&#39;</span><span class="p">,</span>
+                    <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">percentages</span><span class="p">,</span> <span class="n">bottom_values</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;TOPSIS Bottom&#39;</span><span class="p">,</span>
+                    <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+
+            <span class="c1"># Add original value as horizontal line</span>
+            <span class="n">original_value</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;original_metrics&#39;</span><span class="p">][</span><span class="n">metric_name</span><span class="p">]</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">original_value</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span>
+                       <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original&#39;</span><span class="p">)</span>
+
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Removal Percentage (%)&#39;</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">metric_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">())</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">metric_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s1"> vs &#39;</span>
+                         <span class="sa">f</span><span class="s1">&#39;Node Removal&#39;</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+        <span class="n">plots</span><span class="p">[</span><span class="s1">&#39;combined_metrics&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fig</span>
+
+        <span class="c1"># Summary statistics plot</span>
+        <span class="n">fig_summary</span><span class="p">,</span> <span class="n">ax_summary</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+        <span class="c1"># Compute relative impact for each strategy</span>
+        <span class="n">max_percentage</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">percentages</span><span class="p">)</span>
+
+        <span class="n">impact_data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;Random&#39;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s1">&#39;TOPSIS Top&#39;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s1">&#39;TOPSIS Bottom&#39;</span><span class="p">:</span> <span class="p">[]</span>
+        <span class="p">}</span>
+
+        <span class="k">for</span> <span class="n">metric_name</span> <span class="ow">in</span> <span class="n">metric_names</span><span class="p">:</span>
+            <span class="n">original</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;original_metrics&#39;</span><span class="p">][</span><span class="n">metric_name</span><span class="p">]</span>
+
+            <span class="c1"># Impact at maximum removal percentage</span>
+            <span class="n">random_final</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;random_removal&#39;</span><span class="p">][</span><span class="n">max_percentage</span><span class="p">][</span>
+                <span class="n">metric_name</span><span class="p">]</span>
+            <span class="n">top_final</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;topsis_top_removal&#39;</span><span class="p">][</span><span class="n">max_percentage</span><span class="p">][</span>
+                <span class="n">metric_name</span><span class="p">]</span>
+            <span class="n">bottom_final</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;topsis_bottom_removal&#39;</span><span class="p">][</span><span class="n">max_percentage</span><span class="p">][</span>
+                <span class="n">metric_name</span><span class="p">]</span>
+
+            <span class="c1"># Relative change</span>
+            <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1e-10</span>
+            <span class="n">random_impact</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">original</span> <span class="o">-</span> <span class="n">random_final</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">original</span> <span class="o">+</span> <span class="n">epsilon</span><span class="p">)</span>
+            <span class="n">top_impact</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">original</span> <span class="o">-</span> <span class="n">top_final</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">original</span> <span class="o">+</span> <span class="n">epsilon</span><span class="p">)</span>
+            <span class="n">bottom_impact</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">original</span> <span class="o">-</span> <span class="n">bottom_final</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">original</span> <span class="o">+</span> <span class="n">epsilon</span><span class="p">)</span>
+
+            <span class="n">impact_data</span><span class="p">[</span><span class="s1">&#39;Random&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random_impact</span><span class="p">)</span>
+            <span class="n">impact_data</span><span class="p">[</span><span class="s1">&#39;TOPSIS Top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">top_impact</span><span class="p">)</span>
+            <span class="n">impact_data</span><span class="p">[</span><span class="s1">&#39;TOPSIS Bottom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bottom_impact</span><span class="p">)</span>
+
+        <span class="c1"># Create grouped bar chart</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">metric_names</span><span class="p">))</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="mf">0.25</span>
+
+        <span class="n">ax_summary</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">width</span><span class="p">,</span> <span class="n">impact_data</span><span class="p">[</span><span class="s1">&#39;Random&#39;</span><span class="p">],</span> <span class="n">width</span><span class="p">,</span>
+                       <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Random&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+        <span class="n">ax_summary</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">impact_data</span><span class="p">[</span><span class="s1">&#39;TOPSIS Top&#39;</span><span class="p">],</span> <span class="n">width</span><span class="p">,</span>
+                       <span class="n">label</span><span class="o">=</span><span class="s1">&#39;TOPSIS Top&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+        <span class="n">ax_summary</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">width</span><span class="p">,</span> <span class="n">impact_data</span><span class="p">[</span><span class="s1">&#39;TOPSIS Bottom&#39;</span><span class="p">],</span> <span class="n">width</span><span class="p">,</span>
+                       <span class="n">label</span><span class="o">=</span><span class="s1">&#39;TOPSIS Bottom&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+
+        <span class="n">ax_summary</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Metrics&#39;</span><span class="p">)</span>
+        <span class="n">ax_summary</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Relative Impact&#39;</span><span class="p">)</span>
+        <span class="n">ax_summary</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Impact of </span><span class="si">{</span><span class="n">max_percentage</span><span class="si">}</span><span class="s1">% Node Removal &#39;</span>
+                             <span class="sa">f</span><span class="s1">&#39;by Strategy&#39;</span><span class="p">)</span>
+        <span class="n">ax_summary</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">ax_summary</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+                                    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">metric_names</span><span class="p">],</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+        <span class="n">ax_summary</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">ax_summary</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+        <span class="n">plots</span><span class="p">[</span><span class="s1">&#39;impact_summary&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fig_summary</span>
+
+        <span class="k">return</span> <span class="n">plots</span>
+
+<div class="viewcode-block" id="ResilienceExperiment.save_results">
+<a class="viewcode-back" href="../../../api/metrics.html#hiper.metrics.experiments.ResilienceExperiment.save_results">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save_results</span><span class="p">(</span><span class="n">results</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+                     <span class="n">filename_prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Save experiment results and plots to files.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            results: Dictionary containing experimental results and plots.</span>
+<span class="sd">            filename_prefix: Prefix for output filenames.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+
+        <span class="c1"># Save numerical results</span>
+        <span class="n">results_to_save</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="s1">&#39;plots&#39;</span><span class="p">}</span>
+
+        <span class="n">results_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filename_prefix</span><span class="si">}</span><span class="s2">_results.json&quot;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">results_filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">results_to_save</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="c1"># Save plots if available and matplotlib is present</span>
+        <span class="k">if</span> <span class="s1">&#39;plots&#39;</span> <span class="ow">in</span> <span class="n">results</span> <span class="ow">and</span> <span class="n">HAS_MATPLOTLIB</span><span class="p">:</span>
+            <span class="n">plots</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;plots&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s1">&#39;combined_metrics&#39;</span> <span class="ow">in</span> <span class="n">plots</span><span class="p">:</span>
+                <span class="n">plots</span><span class="p">[</span><span class="s1">&#39;combined_metrics&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filename_prefix</span><span class="si">}</span><span class="s2">_metrics.png&quot;</span><span class="p">,</span>
+                    <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="s1">&#39;impact_summary&#39;</span> <span class="ow">in</span> <span class="n">plots</span><span class="p">:</span>
+                <span class="n">plots</span><span class="p">[</span><span class="s1">&#39;impact_summary&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filename_prefix</span><span class="si">}</span><span class="s2">_impact.png&quot;</span><span class="p">,</span>
+                    <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Results saved with prefix: </span><span class="si">{</span><span class="n">filename_prefix</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ResilienceExperiment.print_summary">
+<a class="viewcode-back" href="../../../api/metrics.html#hiper.metrics.experiments.ResilienceExperiment.print_summary">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">print_summary</span><span class="p">(</span><span class="n">results</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Print a comprehensive summary of experiment results.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            results: Dictionary containing experimental results data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RESILIENCE EXPERIMENT SUMMARY&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+
+        <span class="n">original</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;original_metrics&#39;</span><span class="p">]</span>
+        <span class="n">percentages</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;removal_percentages&#39;</span><span class="p">]</span>
+        <span class="n">max_removal</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">percentages</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Original Hypergraph Metrics:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">metric</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">original</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">metric</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Impact of </span><span class="si">{</span><span class="n">max_removal</span><span class="si">}</span><span class="s2">% Node Removal:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">40</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">metric</span> <span class="ow">in</span> <span class="n">original</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">orig_val</span> <span class="o">=</span> <span class="n">original</span><span class="p">[</span><span class="n">metric</span><span class="p">]</span>
+
+            <span class="n">random_val</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;random_removal&#39;</span><span class="p">][</span><span class="n">max_removal</span><span class="p">][</span><span class="n">metric</span><span class="p">]</span>
+            <span class="n">top_val</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;topsis_top_removal&#39;</span><span class="p">][</span><span class="n">max_removal</span><span class="p">][</span><span class="n">metric</span><span class="p">]</span>
+            <span class="n">bottom_val</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;topsis_bottom_removal&#39;</span><span class="p">][</span><span class="n">max_removal</span><span class="p">][</span><span class="n">metric</span><span class="p">]</span>
+
+            <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1e-10</span>
+            <span class="n">random_change</span> <span class="o">=</span> <span class="p">((</span><span class="n">orig_val</span> <span class="o">-</span> <span class="n">random_val</span><span class="p">)</span> <span class="o">/</span>
+                             <span class="p">(</span><span class="n">orig_val</span> <span class="o">+</span> <span class="n">epsilon</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
+            <span class="n">top_change</span> <span class="o">=</span> <span class="p">((</span><span class="n">orig_val</span> <span class="o">-</span> <span class="n">top_val</span><span class="p">)</span> <span class="o">/</span>
+                          <span class="p">(</span><span class="n">orig_val</span> <span class="o">+</span> <span class="n">epsilon</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
+            <span class="n">bottom_change</span> <span class="o">=</span> <span class="p">((</span><span class="n">orig_val</span> <span class="o">-</span> <span class="n">bottom_val</span><span class="p">)</span> <span class="o">/</span>
+                             <span class="p">(</span><span class="n">orig_val</span> <span class="o">+</span> <span class="n">epsilon</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">metric</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Random: </span><span class="si">{</span><span class="n">random_change</span><span class="si">:</span><span class="s2">+.1f</span><span class="si">}</span><span class="s2">% change&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  TOPSIS Top: </span><span class="si">{</span><span class="n">top_change</span><span class="si">:</span><span class="s2">+.1f</span><span class="si">}</span><span class="s2">% change&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  TOPSIS Bottom: </span><span class="si">{</span><span class="n">bottom_change</span><span class="si">:</span><span class="s2">+.1f</span><span class="si">}</span><span class="s2">% change&quot;</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

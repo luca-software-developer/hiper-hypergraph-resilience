@@ -1,0 +1,565 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HIPER: Hypergraph-based Investigation of Perturbation Effects and Resilience &mdash; HIPER Documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=81f5cde6" />
+
+  
+    <link rel="shortcut icon" href="_static/favicon.svg"/>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            HIPER
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installing-hiper">Installing HIPER</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#development-installation-recommended">Development Installation (Recommended)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#standard-installation">Standard Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#verifying-installation">Verifying Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#uninstalling">Uninstalling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="experiments.html">Running Experiments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="experiments.html#resilience-experiments">Resilience Experiments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.html#perturbation-analysis">Perturbation Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.html#comprehensive-node-and-hyperedge-experiments">Comprehensive Node and Hyperedge Experiments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.html#mcdm-methods-comparison">MCDM Methods Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.html#statistical-analysis">Statistical Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.html#working-with-custom-datasets">Working with Custom Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.html#example-workflow">Example Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#basic-hypernetwork-creation">Basic Hypernetwork Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#loading-datasets">Loading Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#attack-simulation">Attack Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#attack-sequences">Attack Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#resilience-analysis">Resilience Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#topsis-node-ranking">TOPSIS Node Ranking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#mcdm-methods-comparison">MCDM Methods Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#custom-metrics">Custom Metrics</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/core.html">Core Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/core.html#module-hiper.core.hypernetwork">hiper.core.hypernetwork</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork"><code class="docutils literal notranslate"><span class="pre">Hypernetwork</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork.__init__"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork.lightweight_copy"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.lightweight_copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork.add_node"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.add_node()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork.remove_node"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.remove_node()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork.add_hyperedge"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.add_hyperedge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork.add_node_to_hyperedge"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.add_node_to_hyperedge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork.remove_node_from_hyperedge"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.remove_node_from_hyperedge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork.remove_hyperedge"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.remove_hyperedge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork.get_nodes"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.get_nodes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork.get_hyperedges"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.get_hyperedges()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork.get_neighbors"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.get_neighbors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork.degree"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.degree()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork.hyperdegree"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.hyperdegree()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork.order"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.order()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork.size"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.size()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork.avg_deg"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.avg_deg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork.avg_hyperdegree"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.avg_hyperdegree()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork.hyperedge_size"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.hyperedge_size()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork.avg_hyperedge_size"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.avg_hyperedge_size()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork.line_graph"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.line_graph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork.print_info"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.print_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork.nodes"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.nodes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork.edges"><code class="docutils literal notranslate"><span class="pre">Hypernetwork.edges</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/core.html#module-hiper.core.node">hiper.core.node</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/core.html#hiper.core.node.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.node.Node.__init__"><code class="docutils literal notranslate"><span class="pre">Node.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.node.Node.node_id"><code class="docutils literal notranslate"><span class="pre">Node.node_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.node.Node.first_incidence"><code class="docutils literal notranslate"><span class="pre">Node.first_incidence</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/core.html#module-hiper.core.hyperedge">hiper.core.hyperedge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/core.html#hiper.core.hyperedge.Hyperedge"><code class="docutils literal notranslate"><span class="pre">Hyperedge</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hyperedge.Hyperedge.__init__"><code class="docutils literal notranslate"><span class="pre">Hyperedge.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hyperedge.Hyperedge.edge_id"><code class="docutils literal notranslate"><span class="pre">Hyperedge.edge_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.hyperedge.Hyperedge.first_incidence"><code class="docutils literal notranslate"><span class="pre">Hyperedge.first_incidence</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/core.html#module-hiper.core.incidence">hiper.core.incidence</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/core.html#hiper.core.incidence.Incidence"><code class="docutils literal notranslate"><span class="pre">Incidence</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.incidence.Incidence.__init__"><code class="docutils literal notranslate"><span class="pre">Incidence.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.incidence.Incidence.node"><code class="docutils literal notranslate"><span class="pre">Incidence.node</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.incidence.Incidence.edge"><code class="docutils literal notranslate"><span class="pre">Incidence.edge</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.incidence.Incidence.prev_in_node"><code class="docutils literal notranslate"><span class="pre">Incidence.prev_in_node</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.incidence.Incidence.next_in_node"><code class="docutils literal notranslate"><span class="pre">Incidence.next_in_node</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.incidence.Incidence.prev_in_edge"><code class="docutils literal notranslate"><span class="pre">Incidence.prev_in_edge</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/core.html#hiper.core.incidence.Incidence.next_in_edge"><code class="docutils literal notranslate"><span class="pre">Incidence.next_in_edge</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/datasets.html">Dataset Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/datasets.html#module-hiper.datasets">hiper.datasets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/datasets.html#hiper.datasets.DataFile"><code class="docutils literal notranslate"><span class="pre">DataFile</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/datasets.html#hiper.datasets.DataFile.hyperedges"><code class="docutils literal notranslate"><span class="pre">DataFile.hyperedges</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/datasets.html#hiper.datasets.DataFile.__init__"><code class="docutils literal notranslate"><span class="pre">DataFile.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/datasets.html#hiper.datasets.DataFile.get_hyperedges"><code class="docutils literal notranslate"><span class="pre">DataFile.get_hyperedges()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/datasets.html#hiper.datasets.Dataset"><code class="docutils literal notranslate"><span class="pre">Dataset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/datasets.html#hiper.datasets.Dataset.name"><code class="docutils literal notranslate"><span class="pre">Dataset.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/datasets.html#hiper.datasets.Dataset.hypernetwork"><code class="docutils literal notranslate"><span class="pre">Dataset.hypernetwork</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/datasets.html#hiper.datasets.Dataset.__init__"><code class="docutils literal notranslate"><span class="pre">Dataset.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/datasets.html#hiper.datasets.Dataset.get_hypernetwork"><code class="docutils literal notranslate"><span class="pre">Dataset.get_hypernetwork()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/datasets.html#hiper.datasets.Dataset.get_name"><code class="docutils literal notranslate"><span class="pre">Dataset.get_name()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/datasets.html#module-hiper.config">hiper.config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/datasets.html#hiper.config.load_config"><code class="docutils literal notranslate"><span class="pre">load_config()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/metrics.html">Metrics and Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/metrics.html#experimental-frameworks">Experimental Frameworks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.experiments">hiper.metrics.experiments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/metrics.html#hiper.metrics.experiments.ResilienceExperiment"><code class="docutils literal notranslate"><span class="pre">ResilienceExperiment</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.comprehensive_resilience">hiper.metrics.comprehensive_resilience</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/metrics.html#hiper.metrics.comprehensive_resilience.ComprehensiveResilienceExperiment"><code class="docutils literal notranslate"><span class="pre">ComprehensiveResilienceExperiment</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/metrics.html#ranking-and-selection">Ranking and Selection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.topsis">hiper.metrics.topsis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/metrics.html#hiper.metrics.topsis.TopsisNodeRanker"><code class="docutils literal notranslate"><span class="pre">TopsisNodeRanker</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.hyperedge_topsis">hiper.metrics.hyperedge_topsis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/metrics.html#hiper.metrics.hyperedge_topsis.HyperedgeTopsisRanker"><code class="docutils literal notranslate"><span class="pre">HyperedgeTopsisRanker</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.wsm">hiper.metrics.wsm</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/metrics.html#hiper.metrics.wsm.WSMNodeRanker"><code class="docutils literal notranslate"><span class="pre">WSMNodeRanker</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.moora">hiper.metrics.moora</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/metrics.html#hiper.metrics.moora.MOORANodeRanker"><code class="docutils literal notranslate"><span class="pre">MOORANodeRanker</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/metrics.html#structural-metrics">Structural Metrics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.connectivity">hiper.metrics.connectivity</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/metrics.html#hiper.metrics.connectivity.HypergraphConnectivity"><code class="docutils literal notranslate"><span class="pre">HypergraphConnectivity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/metrics.html#hiper.metrics.connectivity.HyperedgeConnectivity"><code class="docutils literal notranslate"><span class="pre">HyperedgeConnectivity</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.distance">hiper.metrics.distance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/metrics.html#hiper.metrics.distance.HypergraphDistance"><code class="docutils literal notranslate"><span class="pre">HypergraphDistance</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.redundancy">hiper.metrics.redundancy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/metrics.html#hiper.metrics.redundancy.RedundancyCoefficient"><code class="docutils literal notranslate"><span class="pre">RedundancyCoefficient</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.swalk">hiper.metrics.swalk</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/metrics.html#hiper.metrics.swalk.SwalkEfficiency"><code class="docutils literal notranslate"><span class="pre">SwalkEfficiency</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/metrics.html#higher-order-metrics">Higher-Order Metrics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.higher_order_cohesion">hiper.metrics.higher_order_cohesion</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/metrics.html#hiper.metrics.higher_order_cohesion.HigherOrderCohesionMetrics"><code class="docutils literal notranslate"><span class="pre">HigherOrderCohesionMetrics</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.hyperedge_fragmentation">hiper.metrics.hyperedge_fragmentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/metrics.html#hiper.metrics.hyperedge_fragmentation.HyperedgeFragmentationIndex"><code class="docutils literal notranslate"><span class="pre">HyperedgeFragmentationIndex</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.hyperedge_integrity">hiper.metrics.hyperedge_integrity</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/metrics.html#hiper.metrics.hyperedge_integrity.HyperedgeIntegrity"><code class="docutils literal notranslate"><span class="pre">HyperedgeIntegrity</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/metrics.html#additional-metrics">Additional Metrics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.average_hyperedge_cardinality">hiper.metrics.average_hyperedge_cardinality</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/metrics.html#hiper.metrics.average_hyperedge_cardinality.AverageHyperedgeCardinality"><code class="docutils literal notranslate"><span class="pre">AverageHyperedgeCardinality</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.centrality_disruption">hiper.metrics.centrality_disruption</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/metrics.html#hiper.metrics.centrality_disruption.CentralityDisruptionIndex"><code class="docutils literal notranslate"><span class="pre">CentralityDisruptionIndex</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.entropy_loss">hiper.metrics.entropy_loss</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/metrics.html#hiper.metrics.entropy_loss.EntropyLoss"><code class="docutils literal notranslate"><span class="pre">EntropyLoss</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/simulation.html">Simulation Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/simulation.html#module-hiper.simulation.simulator">hiper.simulation.simulator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.__init__"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.set_hypernetwork"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.set_hypernetwork()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.simulate_attack"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.simulate_attack()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.simulate_sequence"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.simulate_sequence()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.get_simulation_history"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.get_simulation_history()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.get_baseline_stats"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.get_baseline_stats()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.clear_history"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.clear_history()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator.generate_summary_report"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator.generate_summary_report()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/simulation.html#module-hiper.simulation.attack">hiper.simulation.attack</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.Attack"><code class="docutils literal notranslate"><span class="pre">Attack</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.Attack.__init__"><code class="docutils literal notranslate"><span class="pre">Attack.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.Attack.execute"><code class="docutils literal notranslate"><span class="pre">Attack.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.Attack.describe"><code class="docutils literal notranslate"><span class="pre">Attack.describe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.Attack.is_executed"><code class="docutils literal notranslate"><span class="pre">Attack.is_executed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.Attack.get_result"><code class="docutils literal notranslate"><span class="pre">Attack.get_result()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.Attack.reset"><code class="docutils literal notranslate"><span class="pre">Attack.reset()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.AddNodeAttack"><code class="docutils literal notranslate"><span class="pre">AddNodeAttack</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.AddNodeAttack.__init__"><code class="docutils literal notranslate"><span class="pre">AddNodeAttack.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.AddNodeAttack.execute"><code class="docutils literal notranslate"><span class="pre">AddNodeAttack.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.AddNodeAttack.describe"><code class="docutils literal notranslate"><span class="pre">AddNodeAttack.describe()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.RemoveNodeAttack"><code class="docutils literal notranslate"><span class="pre">RemoveNodeAttack</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.RemoveNodeAttack.__init__"><code class="docutils literal notranslate"><span class="pre">RemoveNodeAttack.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.RemoveNodeAttack.execute"><code class="docutils literal notranslate"><span class="pre">RemoveNodeAttack.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.RemoveNodeAttack.describe"><code class="docutils literal notranslate"><span class="pre">RemoveNodeAttack.describe()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.AddHyperedgeAttack"><code class="docutils literal notranslate"><span class="pre">AddHyperedgeAttack</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.AddHyperedgeAttack.__init__"><code class="docutils literal notranslate"><span class="pre">AddHyperedgeAttack.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.AddHyperedgeAttack.execute"><code class="docutils literal notranslate"><span class="pre">AddHyperedgeAttack.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.AddHyperedgeAttack.describe"><code class="docutils literal notranslate"><span class="pre">AddHyperedgeAttack.describe()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.RemoveHyperedgeAttack"><code class="docutils literal notranslate"><span class="pre">RemoveHyperedgeAttack</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.RemoveHyperedgeAttack.__init__"><code class="docutils literal notranslate"><span class="pre">RemoveHyperedgeAttack.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.RemoveHyperedgeAttack.execute"><code class="docutils literal notranslate"><span class="pre">RemoveHyperedgeAttack.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.RemoveHyperedgeAttack.describe"><code class="docutils literal notranslate"><span class="pre">RemoveHyperedgeAttack.describe()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/simulation.html#module-hiper.simulation.sequence">hiper.simulation.sequence</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/simulation.html#hiper.simulation.sequence.AttackSequence"><code class="docutils literal notranslate"><span class="pre">AttackSequence</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.sequence.AttackSequence.__init__"><code class="docutils literal notranslate"><span class="pre">AttackSequence.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.sequence.AttackSequence.add_attack"><code class="docutils literal notranslate"><span class="pre">AttackSequence.add_attack()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.sequence.AttackSequence.add_attacks"><code class="docutils literal notranslate"><span class="pre">AttackSequence.add_attacks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.sequence.AttackSequence.execute"><code class="docutils literal notranslate"><span class="pre">AttackSequence.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.sequence.AttackSequence.get_results"><code class="docutils literal notranslate"><span class="pre">AttackSequence.get_results()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.sequence.AttackSequence.get_execution_stats"><code class="docutils literal notranslate"><span class="pre">AttackSequence.get_execution_stats()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.sequence.AttackSequence.is_executed"><code class="docutils literal notranslate"><span class="pre">AttackSequence.is_executed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.sequence.AttackSequence.reset"><code class="docutils literal notranslate"><span class="pre">AttackSequence.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.sequence.AttackSequence.clear"><code class="docutils literal notranslate"><span class="pre">AttackSequence.clear()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.sequence.AttackSequence.size"><code class="docutils literal notranslate"><span class="pre">AttackSequence.size()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.sequence.AttackSequence.describe"><code class="docutils literal notranslate"><span class="pre">AttackSequence.describe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.sequence.AttackSequence.get_attack"><code class="docutils literal notranslate"><span class="pre">AttackSequence.get_attack()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.sequence.AttackSequence.remove_attack"><code class="docutils literal notranslate"><span class="pre">AttackSequence.remove_attack()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/simulation.html#hiper.simulation.sequence.AttackSequence.insert_attack"><code class="docutils literal notranslate"><span class="pre">AttackSequence.insert_attack()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">License</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="license.html#mit-license">MIT License</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">HIPER</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">HIPER: Hypergraph-based Investigation of Perturbation Effects and Resilience</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="hiper-hypergraph-based-investigation-of-perturbation-effects-and-resilience">
+<h1>HIPER: Hypergraph-based Investigation of Perturbation Effects and Resilience<a class="headerlink" href="#hiper-hypergraph-based-investigation-of-perturbation-effects-and-resilience" title="Link to this heading"></a></h1>
+<img alt="Version 1.0.0" src="https://img.shields.io/badge/version-1.0.0-blue" />
+<img alt="MIT License" src="https://img.shields.io/badge/License-MIT-blue" />
+<p>Welcome to HIPER’s documentation! HIPER provides optimized data structures and
+algorithms for hypernetwork analysis and attack simulation.</p>
+<p>The library implements hypernetworks using efficient dict-of-sets representation
+to achieve O(1) amortized performance for most operations.</p>
+<section id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">hiper</span><span class="w"> </span><span class="kn">import</span> <span class="n">Hypernetwork</span>
+
+<span class="c1"># Create new hypernetwork instance</span>
+<span class="n">hn</span> <span class="o">=</span> <span class="n">Hypernetwork</span><span class="p">()</span>
+
+<span class="c1"># Add hyperedges connecting multiple nodes</span>
+<span class="n">hn</span><span class="o">.</span><span class="n">add_hyperedge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">hn</span><span class="o">.</span><span class="n">add_hyperedge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">hn</span><span class="o">.</span><span class="n">add_hyperedge</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+
+<span class="c1"># Analyze network properties</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Network order: </span><span class="si">{</span><span class="n">hn</span><span class="o">.</span><span class="n">order</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Network size: </span><span class="si">{</span><span class="n">hn</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average degree: </span><span class="si">{</span><span class="n">hn</span><span class="o">.</span><span class="n">avg_deg</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="key-features">
+<h2>Key Features<a class="headerlink" href="#key-features" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Optimized Data Structures</strong>: Efficient dict-of-sets representation for O(1) amortized operations</p></li>
+<li><p><strong>Attack Simulation</strong>: Comprehensive security analysis through individual and coordinated attacks</p></li>
+<li><p><strong>Resilience Analysis</strong>: TOPSIS-based node ranking and removal strategies</p></li>
+<li><p><strong>Modular Architecture</strong>: Selective importing based on application requirements</p></li>
+<li><p><strong>Comprehensive Metrics</strong>: Detailed network characterization and structural features</p></li>
+</ul>
+</section>
+<section id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installing-hiper">Installing HIPER</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#verifying-installation">Verifying Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#uninstalling">Uninstalling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="experiments.html">Running Experiments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="experiments.html#resilience-experiments">Resilience Experiments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.html#perturbation-analysis">Perturbation Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.html#comprehensive-node-and-hyperedge-experiments">Comprehensive Node and Hyperedge Experiments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.html#mcdm-methods-comparison">MCDM Methods Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.html#statistical-analysis">Statistical Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.html#working-with-custom-datasets">Working with Custom Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.html#example-workflow">Example Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#basic-hypernetwork-creation">Basic Hypernetwork Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#loading-datasets">Loading Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#attack-simulation">Attack Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#attack-sequences">Attack Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#resilience-analysis">Resilience Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#topsis-node-ranking">TOPSIS Node Ranking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#mcdm-methods-comparison">MCDM Methods Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#custom-metrics">Custom Metrics</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/core.html">Core Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/core.html#module-hiper.core.hypernetwork">hiper.core.hypernetwork</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/core.html#hiper.core.hypernetwork.Hypernetwork"><code class="docutils literal notranslate"><span class="pre">Hypernetwork</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/core.html#module-hiper.core.node">hiper.core.node</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/core.html#hiper.core.node.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/core.html#module-hiper.core.hyperedge">hiper.core.hyperedge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/core.html#hiper.core.hyperedge.Hyperedge"><code class="docutils literal notranslate"><span class="pre">Hyperedge</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/core.html#module-hiper.core.incidence">hiper.core.incidence</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/core.html#hiper.core.incidence.Incidence"><code class="docutils literal notranslate"><span class="pre">Incidence</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/datasets.html">Dataset Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/datasets.html#module-hiper.datasets">hiper.datasets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/datasets.html#hiper.datasets.DataFile"><code class="docutils literal notranslate"><span class="pre">DataFile</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/datasets.html#hiper.datasets.Dataset"><code class="docutils literal notranslate"><span class="pre">Dataset</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/datasets.html#module-hiper.config">hiper.config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/datasets.html#hiper.config.load_config"><code class="docutils literal notranslate"><span class="pre">load_config()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/metrics.html">Metrics and Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/metrics.html#experimental-frameworks">Experimental Frameworks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.experiments">hiper.metrics.experiments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.comprehensive_resilience">hiper.metrics.comprehensive_resilience</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/metrics.html#ranking-and-selection">Ranking and Selection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.topsis">hiper.metrics.topsis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.hyperedge_topsis">hiper.metrics.hyperedge_topsis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.wsm">hiper.metrics.wsm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.moora">hiper.metrics.moora</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/metrics.html#structural-metrics">Structural Metrics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.connectivity">hiper.metrics.connectivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.distance">hiper.metrics.distance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.redundancy">hiper.metrics.redundancy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.swalk">hiper.metrics.swalk</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/metrics.html#higher-order-metrics">Higher-Order Metrics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.higher_order_cohesion">hiper.metrics.higher_order_cohesion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.hyperedge_fragmentation">hiper.metrics.hyperedge_fragmentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.hyperedge_integrity">hiper.metrics.hyperedge_integrity</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/metrics.html#additional-metrics">Additional Metrics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.average_hyperedge_cardinality">hiper.metrics.average_hyperedge_cardinality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.centrality_disruption">hiper.metrics.centrality_disruption</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/metrics.html#module-hiper.metrics.entropy_loss">hiper.metrics.entropy_loss</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/simulation.html">Simulation Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/simulation.html#module-hiper.simulation.simulator">hiper.simulation.simulator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/simulation.html#hiper.simulation.simulator.HypernetworkSimulator"><code class="docutils literal notranslate"><span class="pre">HypernetworkSimulator</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/simulation.html#module-hiper.simulation.attack">hiper.simulation.attack</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.Attack"><code class="docutils literal notranslate"><span class="pre">Attack</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.AddNodeAttack"><code class="docutils literal notranslate"><span class="pre">AddNodeAttack</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.RemoveNodeAttack"><code class="docutils literal notranslate"><span class="pre">RemoveNodeAttack</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.AddHyperedgeAttack"><code class="docutils literal notranslate"><span class="pre">AddHyperedgeAttack</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/simulation.html#hiper.simulation.attack.RemoveHyperedgeAttack"><code class="docutils literal notranslate"><span class="pre">RemoveHyperedgeAttack</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/simulation.html#module-hiper.simulation.sequence">hiper.simulation.sequence</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/simulation.html#hiper.simulation.sequence.AttackSequence"><code class="docutils literal notranslate"><span class="pre">AttackSequence</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">License</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
