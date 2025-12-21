@@ -346,7 +346,7 @@ make.bat html  # Windows
     - Dataset management (loading and configuration)
     - Metrics (experiments, TOPSIS, connectivity, distance, etc.)
     - Simulation framework (simulator, attacks, sequences)
-- **Development**: Contributing guidelines and license
+- **License**: Project license information
 
 ## Configuration
 
