@@ -12,7 +12,7 @@ from .distance import HypergraphDistance
 
 
 class SwalkEfficiency:
-    """
+    r"""
     Computes average s-walk efficiency ℰs(H).
 
     The s-walk efficiency measures how efficiently nodes can reach each

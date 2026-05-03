@@ -26,6 +26,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Import core classes
+from hiper.datasets import DataFile, Dataset
 from hiper.core.hypernetwork import Hypernetwork
 from hiper.metrics.experiments import ResilienceExperiment
 
@@ -68,7 +69,7 @@ def load_hypernetwork_from_file(
         filepath: str
 ) -> Optional[Hypernetwork]:
     """
-    Load a hypernetwork from a file (placeholder).
+    Load a hypernetwork from a file.
 
     Args:
         filepath: path to hypernetwork data file
@@ -76,11 +77,13 @@ def load_hypernetwork_from_file(
     Returns:
         Loaded Hypernetwork or None if error
     """
-    print(
-        f"Loading from {filepath} not implemented. "
-        "Using sample hypernetwork..."
-    )
-    return None
+    try:
+        datafile = DataFile(filepath)
+        dataset = Dataset(Path(filepath).stem, datafile)
+        return dataset.get_hypernetwork()
+    except Exception as e:
+        print(f"Error loading {filepath}: {e}")
+        return None
 
 
 def setup_experiment_parameters() -> Dict[str, Any]:
