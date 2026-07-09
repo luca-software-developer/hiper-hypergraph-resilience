@@ -1,0 +1,21 @@
+/* Custom CSS for HIPER documentation - Read the Docs theme */
+
+/* Make content area wider on large screens */
+.wy-nav-content {
+    max-width: none !important;
+}
+
+/* On very large screens, limit to reasonable width but wider than default */
+@media screen and (min-width: 1400px) {
+    .wy-nav-content {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
+
+/* On extra large screens, use even more space */
+@media screen and (min-width: 1800px) {
+    .wy-nav-content {
+        max-width: 1600px;
+    }
+}
